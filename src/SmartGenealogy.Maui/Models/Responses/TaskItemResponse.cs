@@ -1,5 +1,5 @@
 ﻿namespace SmartGenealogy.Maui.Models.Responses;
 
-public class TaskResponse : BaseReponse
+public class TaskItemResponse : BaseReponse
 {
 }

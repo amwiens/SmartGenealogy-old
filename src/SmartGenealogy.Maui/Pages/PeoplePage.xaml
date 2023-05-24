@@ -2,17 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:res="clr-namespace:SmartGenealogy.Maui.Resources.Strings"
+             Title="{x:Static res:AppResource.People}"
+             x:Name="this"
              xmlns:view="clr-namespace:SmartGenealogy.Maui.Views"
              xmlns:viewmodels="clr-namespace:SmartGenealogy.Maui.ViewModels"
              xmlns:controls="clr-namespace:SmartGenealogy.Maui.Controls"
+             Shell.NavBarIsVisible="False"
              xmlns:models="clr-namespace:SmartGenealogy.Maui.Models"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
              Style="{StaticResource DetailPageStyle}"
+             x:DataType="viewmodels:PeopleViewModel"
              x:Class="SmartGenealogy.Maui.Pages.PeoplePage">
     <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}"
           RowDefinitions="auto,*">
         <StackLayout Margin="10,0">
-            <controls:HeaderControl TextToSearch="{Binding Text, Mode=OneWayToSource}"
+            <controls:HeaderControl TextToSearch="{Binding TextToSearch, Mode=OneWayToSource}"
                                     SearchCommand="{Binding SearchCommand}"
                                     SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}"
                                     Margin="5"

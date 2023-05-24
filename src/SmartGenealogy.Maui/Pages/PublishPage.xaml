@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartGenealogy.Maui.Pages.PublishPage"
-             Title="PublishPage">
+             xmlns:res="clr-namespace:SmartGenealogy.Maui.Resources.Strings"
+             Title="{x:Static res:AppResource.Publish}"
+             x:Name="this"
+             xmlns:view="clr-namespace:SmartGenealogy.Maui.ViewModels"
+             xmlns:viewmodels="clr-namespace:SmartGenealogy.Maui.ViewModels"
+             xmlns:controls="clr-namespace:SmartGenealogy.Maui.Controls"
+             Shell.NavBarIsVisible="False"
+             x:DataType="viewmodels:PublishViewModel"
+             x:Class="SmartGenealogy.Maui.Pages.PublishPage">
     <VerticalStackLayout>
         <Label 
             Text="Publish Page"

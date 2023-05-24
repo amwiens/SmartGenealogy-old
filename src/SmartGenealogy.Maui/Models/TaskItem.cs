@@ -2,11 +2,11 @@
 
 namespace SmartGenealogy.Maui.Models;
 
-public class Task : BaseEntity
+public class TaskItem : BaseEntity
 {
-    public Task() { }
+    public TaskItem() { }
 
-    public Task(TaskResponse response)
+    public TaskItem(TaskItemResponse response)
     {
         Id = response.Id;
 
