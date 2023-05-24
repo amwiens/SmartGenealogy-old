@@ -23,7 +23,14 @@ public partial class HeaderControl : ContentView
 			typeof(HeaderControl),
 			true);
 
-	public bool ShowSearchCategories
+    public static readonly BindableProperty HeaderTextProperty =
+		BindableProperty.Create(
+			nameof(HeaderText),
+			typeof(string),
+			typeof(HeaderControl),
+			string.Empty);
+
+    public bool ShowSearchCategories
 	{
 		get { return (bool)GetValue(ShowSearchCategoriesProperty); }
 		set { SetValue(ShowSearchCategoriesProperty, value); }
@@ -41,7 +48,13 @@ public partial class HeaderControl : ContentView
 		set { SetValue(TextToSearchProperty, value); }
 	}
 
-	public HeaderControl()
+    public string HeaderText
+    {
+        get { return (string)GetValue(HeaderTextProperty); }
+        set { SetValue(HeaderTextProperty, value); }
+    }
+
+    public HeaderControl()
 	{
 		AutomationProperties.SetIsInAccessibleTree(this, true);
 		InitializeComponent();

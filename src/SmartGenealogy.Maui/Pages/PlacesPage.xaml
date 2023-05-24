@@ -17,10 +17,10 @@
           RowDefinitions="auto,*">
         <StackLayout Margin="10,0">
             <controls:HeaderControl TextToSearch="{Binding TextToSearch, Mode=OneWayToSource}"
+                                    HeaderText="{x:Static res:AppResource.Places}"
                                     SearchCommand="{Binding SearchCommand}"
                                     SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}"
                                     Margin="5"
-                                    ShowSearchCategories="False"
                                     IsVisible="{OnIdiom Default=true, Phone=false}"
                                     Grid.Row="0"
                                     VerticalOptions="Start" />
