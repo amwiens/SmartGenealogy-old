@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:SmartGenealogy.Maui.Pages"
+       xmlns:root="clr-namespace:SmartGenealogy.Maui"
+       xmlns:viewmodels="clr-namespace:SmartGenealogy.Maui.ViewModels"
+       x:DataType="viewmodels:ShellViewModel"
+       x:Class="SmartGenealogy.Maui.Pages.MobileShell">
+    <TabBar>
+        <Tab Title="{Binding Home.Title}"
+             Icon="{Binding Home.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" />
+        </Tab>
+        <Tab Title="{Binding People.Title}"
+             Icon="{Binding People.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate pages:PeoplePage}" />
+        </Tab>
+        <Tab Title="{Binding Settings.Title}"
+             Icon="{Binding Settings.Icon}">
+            <ShellContent ContentTemplate="{DataTemplate pages:SettingsPage}" />
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33620.401
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGenealogy.Maui", "SmartGenealogy.Maui\SmartGenealogy.Maui.csproj", "{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {267BED8C-4A5B-4A12-8F43-2547F065B263}
+	EndGlobalSection
+EndGlobal

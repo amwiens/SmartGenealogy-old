@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{x:Static res:AppResource.Settings}"
+             xmlns:res="clr-namespace:SmartGenealogy.Maui.Resources.Strings"
+             xmlns:viewmodels="clr-namespace:SmartGenealogy.Maui.ViewModels"
+             Style="{StaticResource MainSectionStyle}"
+             x:Class="SmartGenealogy.Maui.Pages.SettingsPage">
+    <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto"
+          ColumnDefinitions="2*,8*"
+          Padding="16" Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}">
+        <Label Text="{x:Static res:AppResource.Download_Settings}"
+               Margin="0,0,0,20"
+               Style="{StaticResource H6LabelStyle}"
+               Grid.ColumnSpan="2" />
+        <Switch
+            Grid.Row="1"
+            HorizontalOptions="Center" />
+        <Label Text="{x:Static res:AppResource.Autodownload_Using_Data}"
+               Grid.Column="1"
+               Grid.Row="1"
+               SemanticProperties.Description="{x:Static res:AppResource.Autodownload_Using_Data}"
+               Style="{StaticResource BodySLabelStyle}"
+               VerticalOptions="Center" />
+        <Label Text="{x:Static res:AppResource.Autodownload_Using_Data_Subtitle}"
+               Grid.Column="1"
+               Grid.Row="2"
+               SemanticProperties.Description="{x:Static res:AppResource.Autodownload_Using_Data_Subtitle}"
+               Style="{StaticResource BodySLabelStyle}" />
+        <Switch HorizontalOptions="Center"
+                Grid.Row="3"
+                SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Toggle_Mode}"
+                IsToggled="{Binding IsDarkModeEnabled}"
+                Margin="0,24,0,0" />
+        <Label Text="{x:Static res:AppResource.Dark_Mode}"
+               Grid.Column="1"
+               Grid.Row="4"
+               SemanticProperties.Description="{x:Static res:AppResource.Dark_Mode}"
+               Margin="0,24,0,0"
+               VerticalOptions="Center"
+               Style="{StaticResource BodySLabelStyle}" />
+    </Grid>
+</ContentPage>
