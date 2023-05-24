@@ -2,7 +2,7 @@
 
 namespace SmartGenealogy.Maui.Models;
 
-public class Person : ObservableObject
+public class Person : BaseEntity
 {
     public Person() { }
 
@@ -15,15 +15,9 @@ public class Person : ObservableObject
         UpdatedDate = response.UpdatedDate;
     }
 
-    public Guid Id { get; set; }
-
     public string GivenName { get; set; }
 
     public string Surname { get; set; }
-
-    public DateTime CreatedDate { get; set; }
-
-    public DateTime UpdatedDate { get; set; }
 
     public string Name => $"{GivenName} {Surname}";
 }

@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartGenealogy.Maui.Pages.AddressesPage"
-             Title="AddressesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Addresses Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:res="clr-namespace:SmartGenealogy.Maui.Resources.Strings"
+             Title="{x:Static res:AppResource.Addresses}"
+             x:Name="this"
+             xmlns:view="clr-namespace:SmartGenealogy.Maui.ViewModels"
+             xmlns:viewmodels="clr-namespace:SmartGenealogy.Maui.ViewModels"
+             xmlns:controls="clr-namespace:SmartGenealogy.Maui.Controls"
+             Shell.NavBarIsVisible="False"
+             x:DataType="viewmodels:AddressesViewModel"
+             x:Class="SmartGenealogy.Maui.Pages.AddressesPage">
+    <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}"
+          RowDefinitions="auto,*">
+        <StackLayout Margin="10,0">
+            <controls:HeaderControl TextToSearch="{Binding TextToSearch, Mode=OneWayToSource}"
+                                    HeaderText="{x:Static res:AppResource.Addresses}"
+                                    SearchCommand="{Binding SearchCommand}"
+                                    SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}"
+                                    Margin="5"
+                                    IsVisible="{OnIdiom Default=true, Phone=false}"
+                                    Grid.Row="0"
+                                    VerticalOptions="Start" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

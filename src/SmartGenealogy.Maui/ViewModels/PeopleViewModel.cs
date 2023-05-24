@@ -5,7 +5,7 @@ public partial class PeopleViewModel : ViewModelBase
     private readonly PeopleService _peopleService;
 
     [ObservableProperty]
-    string text;
+    string textToSearch;
 
     [ObservableProperty]
     List<Person> people;
@@ -26,7 +26,7 @@ public partial class PeopleViewModel : ViewModelBase
     async Task Search()
     {
         IEnumerable<Person> list;
-        if (string.IsNullOrWhiteSpace(Text))
+        if (string.IsNullOrWhiteSpace(TextToSearch))
         {
             //list = await
         }
