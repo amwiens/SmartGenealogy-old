@@ -1,4 +1,6 @@
-﻿namespace SmartGenealogy
+﻿using SmartGenealogy.Views;
+
+namespace SmartGenealogy
 {
     public partial class App : Application
     {

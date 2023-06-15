@@ -1,4 +1,4 @@
-﻿namespace SmartGenealogy
+﻿namespace SmartGenealogy.Views
 {
     public partial class AppShell : Shell
     {
