@@ -1,9 +1,0 @@
-﻿global using CommunityToolkit.Mvvm.ComponentModel;
-global using CommunityToolkit.Mvvm.Input;
-global using Microsoft.Extensions.DependencyInjection.Extensions;
-global using SmartGenealogy.Maui.Models;
-global using SmartGenealogy.Maui.Pages;
-global using SmartGenealogy.Maui.Services;
-global using SmartGenealogy.Maui.ViewModels;
-global using System.Windows.Input;
-global using SmartGenealogy.Maui.Helpers;
