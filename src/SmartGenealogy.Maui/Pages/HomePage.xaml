@@ -12,13 +12,12 @@
              x:Class="SmartGenealogy.Maui.Pages.HomePage">
     <ContentPage.Resources>
         <Style x:Key="ListTitleStyle"
-               TargetType="Label"
-               BasedOn="{OnIdiom Default={StaticResource H5LabelStyle}, Phone={StaticResource H6LabelStyle}}">
+               TargetType="Label">
             <Setter Property="Padding"
                     Value="{OnIdiom Desktop='48,0,0,12', Phone='16,0,0,0'}" />
         </Style>
     </ContentPage.Resources>
-    <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}">
+    <Grid Background="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}">
         <StackLayout Margin="10,0">
             <controls:HeaderControl TextToSearch="{Binding Text, Mode=OneWayToSource}"
                                     SearchCommand="{Binding SearchCommand}"
@@ -28,6 +27,7 @@
         <Label 
             Text="Home Page"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}" />
     </Grid>
 </ContentPage>

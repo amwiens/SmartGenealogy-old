@@ -8,11 +8,11 @@
              x:Class="SmartGenealogy.Maui.Pages.SettingsPage">
     <Grid RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto"
           ColumnDefinitions="2*,8*"
-          Padding="16" Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}">
+          Padding="16" Background="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}">
         <Label Text="{x:Static res:AppResource.Download_Settings}"
                Margin="0,0,0,20"
-               Style="{StaticResource H6LabelStyle}"
-               Grid.ColumnSpan="2" />
+               Grid.ColumnSpan="2"
+               TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}" />
         <Switch
             Grid.Row="1"
             HorizontalOptions="Center" />
@@ -20,13 +20,13 @@
                Grid.Column="1"
                Grid.Row="1"
                SemanticProperties.Description="{x:Static res:AppResource.Autodownload_Using_Data}"
-               Style="{StaticResource BodySLabelStyle}"
+               TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}"
                VerticalOptions="Center" />
         <Label Text="{x:Static res:AppResource.Autodownload_Using_Data_Subtitle}"
                Grid.Column="1"
                Grid.Row="2"
                SemanticProperties.Description="{x:Static res:AppResource.Autodownload_Using_Data_Subtitle}"
-               Style="{StaticResource BodySLabelStyle}" />
+               TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}" />
         <Switch HorizontalOptions="Center"
                 Grid.Row="3"
                 SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Toggle_Mode}"
@@ -38,6 +38,6 @@
                SemanticProperties.Description="{x:Static res:AppResource.Dark_Mode}"
                Margin="0,24,0,0"
                VerticalOptions="Center"
-               Style="{StaticResource BodySLabelStyle}" />
+               TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}" />
     </Grid>
 </ContentPage>

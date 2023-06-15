@@ -10,8 +10,7 @@
                 <On Platform="UWP, MacCatalyst">
                     <Grid ColumnDefinitions="auto, auto">
                         <Label Text="{Binding HeaderText, Source={x:Reference selfMediaElementView}}"
-                               Style="{StaticResource BodyLLabelStyle}"
-                               TextColor="{StaticResource Primary}"
+                               TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"
                                Grid.Column="0"
                                HorizontalOptions="End"
                                Margin="0,0,30,0"
@@ -24,20 +23,6 @@
                                    Text="{Binding TextToSearch, Source={x:Reference selfMediaElementView}}"
                                    SearchCommand="{Binding SearchCommand, Source={x:Reference selfMediaElementView}}"
                                    SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_Search}" />
-
-                        <!--<Label Text="{x:Static res:AppResource.See_All_Categories}"
-                               Style="{StaticResource BodyLLabelStyle}"
-                               TextColor="{StaticResource Primary}"
-                               Grid.Column="1"
-                               HorizontalOptions="End"
-                               Margin="0,0,30,0"
-                               SemanticProperties.Description="{x:Static res:AppResource.Semantic_Description_Tap_See_All_Categories}"
-                               IsVisible="{Binding ShowSearchCategories, Source={x:Reference selfMediaElementView}}"
-                               FontSize="16">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-                            </Label.GestureRecognizers>
-                        </Label>-->
                     </Grid>
                 </On>
                 <On Platform="Android,iOS">

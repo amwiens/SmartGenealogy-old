@@ -10,7 +10,7 @@
              Shell.NavBarIsVisible="False"
              x:DataType="viewmodels:MediaViewModel"
              x:Class="SmartGenealogy.Maui.Pages.MediaPage">
-    <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}"
+    <Grid Background="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}"
           RowDefinitions="auto,*">
         <StackLayout Margin="10,0">
             <controls:HeaderControl TextToSearch="{Binding TextToSearch, Mode=OneWayToSource}"

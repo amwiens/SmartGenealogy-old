@@ -10,10 +10,11 @@
              Shell.NavBarIsVisible="False"
              xmlns:models="clr-namespace:SmartGenealogy.Maui.Models"
              xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:dg="clr-namespace:Maui.DataGrid;assembly=Maui.DataGrid"
              Style="{StaticResource DetailPageStyle}"
              x:DataType="viewmodels:PeopleViewModel"
              x:Class="SmartGenealogy.Maui.Pages.PeoplePage">
-    <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}"
+    <Grid Background="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}"
           RowDefinitions="auto,*">
         <StackLayout Margin="10,0">
             <controls:HeaderControl TextToSearch="{Binding TextToSearch, Mode=OneWayToSource}"
@@ -25,36 +26,33 @@
                                     Grid.Row="0"
                                     VerticalOptions="Start" />
         </StackLayout>
-        <!--<CollectionView ItemsSource="{Binding People}"
-                        SelectionMode="None"
-                        Margin="{OnIdiom Phone='10,0', Default='10,50,10,0'}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Person">
-                    <Grid Margin="0,6"
-                          Padding="22,0"
-                          ColumnDefinitions="auto,*"
-                          ColumnSpacing="10"
-                          RowDefinitions="56, auto">
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:PeopleViewModel}}, Path=TapPersonCommand}"
-                                                  CommandParameter="{Binding}" />
-                        </Grid.GestureRecognizers>
-
-                        <Label Grid.Column="1"
-                               Grid.Row="0"
-                               HorizontalOptions="FillAndExpand"
-                               Style="{StaticResource LinkLLabelStyle}"
-                               Text="{Binding Name}" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
-        <syncfusion:SfDataGrid x:Name="dataGrid"
-                               ItemsSource="{Binding People}"
-                               SelectionMode="Single"
-                               
-                               Grid.Row="1">
-            
-        </syncfusion:SfDataGrid>
+        <StackLayout Margin="10,0" Grid.Row="1">
+            <dg:DataGrid ItemsSource="{Binding People}"
+                         SelectedItem="{Binding SelectedPerson}"
+                         SelectionEnabled="True"
+                         ActiveRowColor="Beige"
+                         BackgroundColor="{StaticResource Background}"
+                         HeaderBackground="{AppThemeBinding Light={StaticResource SurfaceVariant}, Dark={StaticResource SurfaceVariantDark}}">
+                <!--BackgroundColor="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}"
+                         RowsTextColorPalette="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}"
+                         RowsBackgroundColorPalette="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}">-->
+                <dg:DataGrid.Columns>
+                    <dg:DataGridColumn Title="Given Name" PropertyName="GivenName" />
+                    <dg:DataGridColumn Title="Surname" PropertyName="Surname" />
+                </dg:DataGrid.Columns>
+                <dg:DataGrid.RowsBackgroundColorPalette>
+                    <dg:PaletteCollection>
+                        <Color>#625B71</Color>
+                    </dg:PaletteCollection>
+                </dg:DataGrid.RowsBackgroundColorPalette>
+            </dg:DataGrid>
+            <Label Text="{Binding SelectedPerson.Name}"
+                   TextColor="{AppThemeBinding Light={StaticResource OnBackground}, Dark={StaticResource OnBackgroundDark}}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:PeopleViewModel}}, Path=TapPersonCommand}"
+                                          CommandParameter="{Binding SelectedPerson}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
     </Grid>
 </ContentPage>

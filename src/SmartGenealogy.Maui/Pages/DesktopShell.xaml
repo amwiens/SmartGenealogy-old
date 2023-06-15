@@ -9,9 +9,10 @@
        x:Class="SmartGenealogy.Maui.Pages.DesktopShell">
     <Shell.FlyoutHeader>
         <Label 
-            Text="Desktop Shell!"
+            Text="Smart Genealogy"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center"
+            TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"/>
     </Shell.FlyoutHeader>
 
     <FlyoutItem Title="{Binding Home.Title}"

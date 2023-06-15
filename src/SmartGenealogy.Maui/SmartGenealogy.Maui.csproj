@@ -49,11 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
+		<PackageReference Include="akgul.Maui.DataGrid" Version="2.0.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Mapsui.Maui" Version="4.0.0-rc.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
-		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="21.2.6" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="21.2.8" />
+		<PackageReference Include="UraniumUI.Icons.FontAwesome" Version="2.5.0" />
+		<PackageReference Include="UraniumUI.Material" Version="2.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -118,6 +121,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\ToolsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\Colors.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\DefaultTheme.xaml">

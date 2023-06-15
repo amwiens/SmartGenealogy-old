@@ -10,6 +10,9 @@ public partial class PeopleViewModel : ViewModelBase
     [ObservableProperty]
     List<Person> people;
 
+    [ObservableProperty]
+    Person selectedPerson;
+
     public PeopleViewModel(PeopleService people)
     {
         _peopleService = people;
@@ -19,6 +22,8 @@ public partial class PeopleViewModel : ViewModelBase
     {
         var people = await _peopleService.GetAllPeople();
 
+        if (People != null)
+            People.Clear();
         People = people?.ToList();
     }
 

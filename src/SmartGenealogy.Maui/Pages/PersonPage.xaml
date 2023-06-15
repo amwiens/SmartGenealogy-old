@@ -13,7 +13,7 @@
             
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid Background="{AppThemeBinding Light={StaticResource Grey1}, Dark={StaticResource Grey9}}">
+    <Grid Background="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource BackgroundDark}}">
         <ScrollView>
             <VerticalStackLayout Padding="16"
                                  Spacing="8">

@@ -9,8 +9,8 @@ public partial class PlacesPage : ContentPage
 		InitializeComponent();
 		BindingContext = vm;
 
-		var mapControl = new Mapsui.UI.Maui.MapControl();
-		mapControl.Map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
-		Content = mapControl;
+		//var mapControl = new Mapsui.UI.Maui.MapControl();
+		//mapControl.Map?.Layers.Add(Mapsui.Tiling.OpenStreetMap.CreateTileLayer());
+		//Content = mapControl;
 	}
 }

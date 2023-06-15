@@ -4,7 +4,9 @@ using Microsoft.Extensions.Logging;
 
 using SkiaSharp.Views.Maui.Controls.Hosting;
 
-using Syncfusion.Maui.Core.Hosting;
+//using Syncfusion.Maui.Core.Hosting;
+
+using UraniumUI;
 
 namespace SmartGenealogy.Maui
 {
@@ -27,12 +29,14 @@ namespace SmartGenealogy.Maui
                     fonts.AddFont("Segoe-Ui-Regular.ttf", "SegoeUiRegular");
                     fonts.AddFont("Segoe-Ui-Semibold.ttf", "SegoeUiSemibold");
                     fonts.AddFont("Segoe-Ui-Semilight.ttf", "SegoeUiSemilight");
-                });
+                })
+                .UseUraniumUI()
+                .UseUraniumUIMaterial();
 
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-            builder.ConfigureSyncfusionCore();
+            //builder.ConfigureSyncfusionCore();
 
             return builder.Build();
         }
