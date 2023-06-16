@@ -1,10 +1,9 @@
-﻿namespace SmartGenealogy.Views
+﻿namespace SmartGenealogy.Views;
+
+public partial class DesktopShell : Shell
 {
-    public partial class DesktopShell : Shell
+    public DesktopShell()
     {
-        public DesktopShell()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }
