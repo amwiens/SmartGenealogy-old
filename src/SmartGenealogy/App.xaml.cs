@@ -9,7 +9,7 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        if (Settings.IsDesktop)
+        if (AppSettings.IsDesktop)
         {
             MainPage = new DesktopShell();
         }

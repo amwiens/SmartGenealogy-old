@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.Constants;
 
-internal static class Settings
+internal static class AppSettings
 {
     public static bool IsDesktop
     {
