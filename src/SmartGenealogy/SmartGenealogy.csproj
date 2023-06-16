@@ -57,6 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\SmartGenealogy.Core\SmartGenealogy.Core.csproj" />
+	  <ProjectReference Include="..\SmartGenealogy.Maui\SmartGenealogy.Maui.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Views\DesktopShell.xaml.cs">
 	    <DependentUpon>DesktopShell.xaml</DependentUpon>
 	  </Compile>
