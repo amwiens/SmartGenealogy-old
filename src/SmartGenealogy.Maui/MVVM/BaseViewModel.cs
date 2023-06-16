@@ -1,15 +1,30 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using SmartGenealogy.Maui.Navigation;
 
 namespace SmartGenealogy.Maui.MVVM;
 
-public class BaseViewModel : ObservableRecipient
+public abstract partial class BaseViewModel : ObservableRecipient
 {
+    protected IAppNavigator AppNavigator { get; }
 
-    protected BaseViewModel()
+    protected BaseViewModel(IAppNavigator appNavigator)
     {
-
+        AppNavigator = appNavigator;
     }
 
-    //[RelayCommand]
-    //protected virtual Task BackAsync() => AppNavigator.GoBackAsync();
+    public virtual Task OnAppearingAsync()
+    {
+        System.Diagnostics.Debug.WriteLine($"{GetType().Name}.{nameof(OnAppearingAsync)}");
+
+        return Task.CompletedTask;
+    }
+
+    public virtual Task OnDisappearingAsync()
+    {
+        System.Diagnostics.Debug.WriteLine($"{GetType().Name}.{nameof(OnDisappearingAsync)}");
+
+        return Task.CompletedTask;
+    }
+
+    [RelayCommand]
+    protected virtual Task BackAsync() => AppNavigator.GoBackAsync();
 }
