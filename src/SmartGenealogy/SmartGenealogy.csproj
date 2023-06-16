@@ -53,10 +53,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="ViewModels\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\SmartGenealogy.Core\SmartGenealogy.Core.csproj" />
 	  <ProjectReference Include="..\SmartGenealogy.Maui\SmartGenealogy.Maui.csproj" />
 	</ItemGroup>
@@ -68,6 +64,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Features\Home\Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MobileShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

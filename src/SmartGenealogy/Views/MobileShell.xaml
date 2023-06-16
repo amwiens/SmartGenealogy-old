@@ -2,25 +2,10 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        x:Class="SmartGenealogy.Views.MobileShell"
-       xmlns:local="clr-namespace:SmartGenealogy.Views">
+       xmlns:local="clr-namespace:SmartGenealogy">
     <Tab Title="Tab 1">
         <ShellContent Title="One"
-                      ContentTemplate="{DataTemplate local:MainPage}"
+                      ContentTemplate="{DataTemplate local:HomePage}"
                       Route="OnePage" />
-    </Tab>
-    <Tab Title="Tab 2">
-        <ShellContent Title="Two"
-                      ContentTemplate="{DataTemplate local:MainPage}"
-                      Route="TwoPage" />
-    </Tab>
-    <Tab Title="Tab 3">
-        <ShellContent Title="Three"
-                      ContentTemplate="{DataTemplate local:MainPage}"
-                      Route="ThreePage" />
-    </Tab>
-    <Tab Title="Tab 4">
-        <ShellContent Title="Four"
-                      ContentTemplate="{DataTemplate local:MainPage}"
-                      Route="FourPage" />
     </Tab>
 </Shell>

@@ -3,7 +3,7 @@
     x:Class="SmartGenealogy.Views.DesktopShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SmartGenealogy.Views"
+    xmlns:local="clr-namespace:SmartGenealogy"
     Shell.FlyoutBehavior="Flyout">
 
     <!--<ShellContent
@@ -11,19 +11,19 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />-->
 
-    <FlyoutItem Title="Flyout One">
+    <!--<FlyoutItem Title="Flyout One">
         <ShellContent
             Title="One"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="OnePage" />
-    </FlyoutItem>
-    <FlyoutItem Title="Flyout Two">
+    </FlyoutItem>-->
+    <FlyoutItem Title="Home">
         <ShellContent
-            Title="Two"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="TwoPage" />
+            Title="Home"
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="Home" />
     </FlyoutItem>
-    <FlyoutItem Title="Flyout Three">
+    <!--<FlyoutItem Title="Flyout Three">
         <ShellContent
             Title="Three"
             ContentTemplate="{DataTemplate local:MainPage}"
@@ -34,5 +34,5 @@
             Title="Four"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="FourPage" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 </Shell>
