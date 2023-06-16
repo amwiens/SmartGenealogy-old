@@ -1,6 +1,6 @@
 ﻿using SmartGenealogy.Maui.Navigation;
 
-namespace SmartGenealogy.Maui.MVVM;
+namespace SmartGenealogy.Maui;
 
 public abstract partial class BaseViewModel : ObservableRecipient
 {
