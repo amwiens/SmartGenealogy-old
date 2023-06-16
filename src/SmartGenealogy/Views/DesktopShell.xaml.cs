@@ -1,8 +1,8 @@
 ﻿namespace SmartGenealogy.Views
 {
-    public partial class AppShell : Shell
+    public partial class DesktopShell : Shell
     {
-        public AppShell()
+        public DesktopShell()
         {
             InitializeComponent();
         }

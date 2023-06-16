@@ -9,6 +9,31 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+            <!--<Tab Title="Tab 1">
+                <ShellContent
+                Title="One"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="OnePage" />
+            </Tab>
+            <Tab Title="Tab 2">
+                <ShellContent
+                Title="Two"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="TwoPage" />
+            </Tab>
+            <Tab Title="Tab 3">
+                <ShellContent
+                Title="Three"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="ThreePage" />
+            </Tab>
+            <Tab Title="Tab 4">
+                <ShellContent
+                Title="Four"
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="FourPage" />
+            </Tab>-->
+
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"

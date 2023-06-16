@@ -56,4 +56,16 @@
 	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Views\DesktopShell.xaml.cs">
+	    <DependentUpon>DesktopShell.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\MobileShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>

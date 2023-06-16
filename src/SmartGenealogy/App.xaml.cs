@@ -1,14 +1,21 @@
-﻿using SmartGenealogy.Views;
+﻿using SmartGenealogy.Constants;
+using SmartGenealogy.Views;
 
-namespace SmartGenealogy
+namespace SmartGenealogy;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            MainPage = new AppShell();
+        if (Settings.IsDesktop)
+        {
+            MainPage = new DesktopShell();
+        }
+        else
+        {
+            MainPage = new MobileShell();
         }
     }
 }
