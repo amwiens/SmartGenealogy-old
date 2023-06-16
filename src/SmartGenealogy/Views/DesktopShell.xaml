@@ -35,5 +35,4 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="FourPage" />
     </FlyoutItem>
-
 </Shell>
