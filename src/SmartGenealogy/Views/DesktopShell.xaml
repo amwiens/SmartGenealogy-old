@@ -4,35 +4,13 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SmartGenealogy"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="Locked"
+    FlyoutBackground="LightGray">
 
-    <!--<ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />-->
-
-    <!--<FlyoutItem Title="Flyout One">
-        <ShellContent
-            Title="One"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="OnePage" />
-    </FlyoutItem>-->
     <FlyoutItem Title="Home">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:HomePage}"
             Route="Home" />
     </FlyoutItem>
-    <!--<FlyoutItem Title="Flyout Three">
-        <ShellContent
-            Title="Three"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="ThreePage" />
-    </FlyoutItem>
-    <FlyoutItem Title="Flyout Four">
-        <ShellContent
-            Title="Four"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="FourPage" />
-    </FlyoutItem>-->
 </Shell>

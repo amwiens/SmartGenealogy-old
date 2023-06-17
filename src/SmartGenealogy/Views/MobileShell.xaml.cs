@@ -5,5 +5,6 @@ public partial class MobileShell : Shell
     public MobileShell()
     {
         InitializeComponent();
+        BindingContext = new MobileShellViewModel();
     }
 }
