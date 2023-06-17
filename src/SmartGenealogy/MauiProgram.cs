@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core;
 
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 using SmartGenealogy.Maui.Navigation;
@@ -25,7 +26,8 @@ public static class MauiProgram
             })
             .RegisterServices()
             .RegisterPages()
-            .RegisterPages("Shell");
+            .RegisterPages("Shell")
+            .GetAppSettings();
 
 #if DEBUG
         builder.Logging.AddDebug();
@@ -38,6 +40,7 @@ public static class MauiProgram
 
     static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
     {
+        builder.Services.AddSingleton<IFilePicker, FilePicker>();
         builder.Services.AddSingleton<IAppNavigator, AppNavigator>();
 
         return builder;
@@ -64,6 +67,20 @@ public static class MauiProgram
             //    Routing.RegisterRoute(pageType.FullName, pageType);
             //}
         }
+
+        return builder;
+    }
+
+    static MauiAppBuilder GetAppSettings(this MauiAppBuilder builder)
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        using var stream = assembly.GetManifestResourceStream("SmartGenealogy.appsettings.Development.json");
+
+        var appSettings = new ConfigurationBuilder()
+            .AddJsonStream(stream)
+            .Build();
+
+        builder.Configuration.AddConfiguration(appSettings);
 
         return builder;
     }

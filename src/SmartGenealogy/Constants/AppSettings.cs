@@ -1,16 +1,6 @@
 ﻿namespace SmartGenealogy.Constants;
 
-internal static class AppSettings
+public class AppSettings
 {
-    public static bool IsDesktop
-    {
-        get
-        {
-#if WINDOWS || MACCATALYST
-            return true;
-#else
-            return false;
-#endif
-        }
-    }
+    public string ModelPath { get; set; }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="SmartGenealogy.SettingsPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:app="clr-namespace:SmartGenealogy.Maui;assembly=SmartGenealogy.Maui"
+             xmlns:viewModels="clr-namespace:SmartGenealogy"
+             Title="Settings Page"
+             x:DataType="viewModels:SettingsPageViewModel">
+    <Grid RowDefinitions="Auto,Auto"
+          ColumnDefinitions="Auto, *">
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Model Path" />
+
+        <HorizontalStackLayout Grid.Row="0"
+                               Grid.Column="1">
+            <Button Command="{Binding OpenFileCommand}"
+                    Text="Select model" />
+
+            <Label Text="{Binding ModelPath}" />
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

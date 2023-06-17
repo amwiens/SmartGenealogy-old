@@ -9,13 +9,10 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        if (AppSettings.IsDesktop)
-        {
-            MainPage = new DesktopShell();
-        }
-        else
-        {
-            MainPage = new MobileShell();
-        }
+#if WINDOWS || MACCATALYST
+        MainPage = new DesktopShell();
+#else
+        MainPage = new MobileShell();
+#endif
     }
 }
