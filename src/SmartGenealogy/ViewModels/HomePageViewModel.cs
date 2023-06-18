@@ -1,6 +1,6 @@
 ﻿using SmartGenealogy.Maui.Navigation;
 
-namespace SmartGenealogy;
+namespace SmartGenealogy.ViewModels;
 
 public partial class HomePageViewModel : NavigationAwareBaseViewModel
 {

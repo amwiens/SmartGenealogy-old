@@ -25,8 +25,8 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             })
             .RegisterServices()
-            .RegisterPages()
-            .RegisterPages("Shell")
+            .RegisterAppServices()
+            .RegisterViewModels()
             .GetAppSettings();
 
 #if DEBUG
@@ -46,27 +46,23 @@ public static class MauiProgram
         return builder;
     }
 
-
-
-    static MauiAppBuilder RegisterPages(this MauiAppBuilder builder, string pattern = "Page")
+    static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
     {
-        var assemblies = new Assembly[] { typeof(MauiProgram).Assembly };
-        var pageTypes = assemblies.SelectMany(assembly => assembly.GetTypes().Where(a => a.Name.EndsWith(pattern) && !a.IsAbstract && !a.IsInterface));
-        foreach (var pageType in pageTypes)
-        {
-            var viewModelFullName = $"{pageType.FullName}ViewModel";
-            var viewModelType = Type.GetType(viewModelFullName);
+        builder.Services.AddSingleton<DesktopShell>();
+        builder.Services.AddSingleton<MobileShell>();
 
-            builder.Services.AddTransient(pageType);
+        return builder;
+    }
 
-            if (viewModelType != null)
-                builder.Services.AddTransient(viewModelType);
 
-            //if (pageType.IsAssignableTo(typeof(IControlPage)))
-            //{
-            //    Routing.RegisterRoute(pageType.FullName, pageType);
-            //}
-        }
+    static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
+    {
+        builder.Services.AddTransient<HomePage>();
+        builder.Services.AddTransient<SettingsPage>();
+
+        builder.Services.AddTransient<HomePageViewModel>();
+        builder.Services.AddTransient<SettingsPageViewModel>();
+
 
         return builder;
     }

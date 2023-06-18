@@ -86,10 +86,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Features\Home\Pages\HomePage.xaml">
+	  <MauiXaml Update="Views\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Features\Settings\Pages\SettingsPage.xaml">
+	  <MauiXaml Update="Views\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Themes\DarkTheme.xaml">
@@ -104,6 +104,11 @@
 	  <MauiXaml Update="Views\MobileShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Features\Home\Pages\" />
+	  <Folder Include="Features\Settings\Pages\" />
 	</ItemGroup>
 
 </Project>

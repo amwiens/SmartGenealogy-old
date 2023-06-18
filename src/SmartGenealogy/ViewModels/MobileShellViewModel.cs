@@ -1,4 +1,4 @@
-﻿namespace SmartGenealogy;
+﻿namespace SmartGenealogy.ViewModels;
 
 public class MobileShellViewModel : ObservableObject
 {

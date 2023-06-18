@@ -1,4 +1,4 @@
-﻿namespace SmartGenealogy;
+﻿namespace SmartGenealogy.Models;
 
 public class ImageFile
 {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<app:BasePage x:Class="SmartGenealogy.HomePage"
+<app:BasePage x:Class="SmartGenealogy.Views.HomePage"
               xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:app="clr-namespace:SmartGenealogy.Maui;assembly=SmartGenealogy.Maui"

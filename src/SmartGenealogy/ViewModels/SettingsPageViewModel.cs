@@ -1,11 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
 using SmartGenealogy.Maui.Navigation;
 
-namespace SmartGenealogy;
+namespace SmartGenealogy.ViewModels;
 
 public partial class SettingsPageViewModel : NavigationAwareBaseViewModel
 {
@@ -24,7 +21,7 @@ public partial class SettingsPageViewModel : NavigationAwareBaseViewModel
         : base(appNavigator)
     {
         _filePicker = filePicker;
-        _settings = configuration.GetRequiredSection("AppSettings").Get<AppSettings.AppSettings>();
+        //_settings = configuration.GetRequiredSection("AppSettings").Get<AppSettings.AppSettings>();
         LoadSettings();
     }
 
@@ -33,10 +30,12 @@ public partial class SettingsPageViewModel : NavigationAwareBaseViewModel
     {
         File = await _filePicker.OpenMediaPickerAsync();
         ModelPath = File.FullPath;
+        AppSettings.AppSettings.ModelPath = ModelPath;
     }
 
     private void LoadSettings()
     {
-        ModelPath = Preferences.Default.Get<string>("ModelPath", string.Empty);
+        //ModelPath = Preferences.Default.Get<string>("ModelPath", string.Empty);
+        ModelPath = AppSettings.AppSettings.ModelPath;
     }
 }
