@@ -1,7 +1,4 @@
-﻿using SmartGenealogy.Constants;
-using SmartGenealogy.Views;
-
-namespace SmartGenealogy;
+﻿namespace SmartGenealogy;
 
 public partial class App : Application
 {
