@@ -1,4 +1,6 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using SmartGenealogy.AppSettings;
+
+namespace SmartGenealogy.ViewModels;
 
 public partial class SettingsPageViewModel : BaseViewModel
 {
@@ -9,6 +11,9 @@ public partial class SettingsPageViewModel : BaseViewModel
 
     [ObservableProperty]
     FileResult file;
+
+    [ObservableProperty]
+    ThemePalette selectedPrimaryColorItem;
 
     public SettingsPageViewModel()
     {
