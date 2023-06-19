@@ -35,7 +35,6 @@ public static class MauiProgram
                 fonts.AddFont("ionicons.ttf", "IonIcons");
                 fonts.AddFont("icon.ttf", "MauiKitIcons");
             })
-            .RegisterServices()
             .RegisterAppServices()
             .RegisterViewModels()
             .GetAppSettings();
@@ -45,15 +44,6 @@ public static class MauiProgram
 #endif
 
         return builder.Build();
-    }
-
-
-
-    static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
-    {
-        builder.Services.AddSingleton<IFilePicker, FilePicker>();
-
-        return builder;
     }
 
     static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)

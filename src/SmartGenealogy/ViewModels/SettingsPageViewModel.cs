@@ -2,7 +2,7 @@
 
 public partial class SettingsPageViewModel : BaseViewModel
 {
-    private readonly IFilePicker _filePicker;
+    private readonly Services.FilePicker _filePicker;
 
     [ObservableProperty]
     string modelPath;
@@ -12,12 +12,7 @@ public partial class SettingsPageViewModel : BaseViewModel
 
     public SettingsPageViewModel()
     {
-        LoadSettings();
-    }
-
-    public SettingsPageViewModel(IFilePicker filePicker)
-    {
-        _filePicker = filePicker;
+        _filePicker = Services.FilePicker.Instance;
         LoadSettings();
     }
 
@@ -25,8 +20,11 @@ public partial class SettingsPageViewModel : BaseViewModel
     private async Task OpenFileAsync()
     {
         File = await _filePicker.OpenMediaPickerAsync();
-        ModelPath = File.FullPath;
-        AppSettings.AppSettings.ModelPath = ModelPath;
+        if (File != null)
+        {
+            ModelPath = File.FullPath;
+            AppSettings.AppSettings.ModelPath = ModelPath;
+        }
     }
 
     private void LoadSettings()

@@ -1,7 +1,20 @@
-﻿namespace SmartGenealogy;
+﻿namespace SmartGenealogy.Services;
 
-public class FilePicker : IFilePicker
+public class FilePicker
 {
+    static FilePicker _instance;
+
+    public static FilePicker Instance
+    {
+        get
+        {
+            if (_instance == null )
+                _instance = new FilePicker();
+
+            return _instance;
+        }
+    }
+
     /// <summary>
     /// Convert byte[] to Stream
     /// </summary>
