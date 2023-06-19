@@ -21,8 +21,21 @@ public static class MauiProgram
             .UseMauiCommunityToolkitCore()
             .ConfigureFonts(fonts =>
             {
-                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("Poppins-Regular.otf", "RegularFont");
+                fonts.AddFont("Poppins-Medium.otf", "MediumFont");
+                fonts.AddFont("Poppins-SemiBold.otf", "SemiBoldFont");
+                fonts.AddFont("Poppins-Bold.otf", "BoldFont");
+                fonts.AddFont("Roboto-Bold.ttf", "SecondBoldFontFamily");
+                fonts.AddFont("Roboto-Medium.ttf", "SecondMediumFontFamily");
+                fonts.AddFont("Roboto-Regular.ttf", "SecondFontFamily");
+
+                fonts.AddFont("fa-solid-900.ttf", "FaPro");
+                fonts.AddFont("fa-brands-400.ttf", "FaBrands");
+                fonts.AddFont("fa-regular-400.ttf", "FaRegular");
+                fonts.AddFont("line-awesome.ttf", "LineAwesome");
+                fonts.AddFont("material-icons-outlined-regular.otf", "MaterialDesign");
+                fonts.AddFont("ionicons.ttf", "IonIcons");
+                fonts.AddFont("icon.ttf", "MauiKitIcons");
             })
             .RegisterServices()
             .RegisterAppServices()
@@ -58,9 +71,11 @@ public static class MauiProgram
     static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
     {
         builder.Services.AddTransient<HomePage>();
+        builder.Services.AddTransient<MainMenuPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         builder.Services.AddTransient<HomePageViewModel>();
+        builder.Services.AddTransient<MainMenuViewModel>();
         builder.Services.AddTransient<SettingsPageViewModel>();
 
 

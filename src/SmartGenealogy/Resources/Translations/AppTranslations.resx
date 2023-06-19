@@ -117,7 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="LabelApp" xml:space="preserve">
+    <value>Test App</value>
+  </data>
+  <data name="LabelAppDescription" xml:space="preserve">
+    <value>Test app description</value>
+  </data>
+  <data name="MenuMainHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="MenuMainSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="StringWelcomeToSmartGenealogy" xml:space="preserve">
-    <value>Welcom to Smart Genealogy</value>
+    <value>Welcome to Smart Genealogy</value>
   </data>
 </root>

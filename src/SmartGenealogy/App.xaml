@@ -14,9 +14,13 @@
             <ResourceDictionary Source="Themes/DarkThemeTheme.xaml" />
             -->
             <ResourceDictionary Source="Themes/LightTheme.xaml" />
-            <!--<ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-            <ResourceDictionary Source="Resources/Styles/Styles.xaml" />-->
-                
+
+            <ResourceDictionary Source="Styles/Buttons.xaml" />
+            <ResourceDictionary Source="Styles/Icons.xaml" />
+            <ResourceDictionary Source="Styles/Colors.xaml" />
+            <ResourceDictionary Source="Styles/Labels.xaml" />
+            <ResourceDictionary Source="Styles/Styles.xaml" />
+
             <!-- UNITS -->
             <x:Double x:Key="BaseFontSize">14</x:Double>
             <x:Double x:Key="BaseButtonHeight">44</x:Double>

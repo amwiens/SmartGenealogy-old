@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="SmartGenealogy.Views.MainMenuPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Menu"
+             Background="{DynamicResource BasePageColor}"
+             NavigationPage.HasNavigationBar="True">
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Background Image -->
+        <Image Grid.RowSpan="3"
+               Margin="-1"
+               Aspect="Fill"
+               Opacity="0.6"
+               Source="bg_purple.png" />
+        
+        <!-- Gradient Mask -->
+        <Grid Grid.RowSpan="3">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Offset="0.1" Color="#BF3e5aff" />
+                    <GradientStop Offset="1.0" Color="#BF1363df" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+            
+        <!-- Branding Logo -->
+        
+            
+        <!-- Main Menu -->
+        <ListView x:Name="sampleListView"
+                  Grid.Row="1"
+                  Margin="0,0,0,10"
+                  BackgroundColor="Transparent"
+                  CachingStrategy="RecycleElement"
+                  ItemsSource="{Binding MainMenuEntries}"
+                  RowHeight="46"
+                  SelectedItem="{Binding MainMenuSelectedItem, Mode=TwoWay}"
+                  SeparatorVisibility="None"
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="25,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label FontFamily="MaterialDesign"
+                                   FontSize="20"
+                                   Text="{Binding Icon}"
+                                   TextColor="{DynamicResource White}"
+                                   TranslationY="-2"
+                                   VerticalOptions="Center" />
+
+                            <Label Grid.Column="1"
+                                   Margin="20,0"
+                                   Style="{DynamicResource Title2}"
+                                   Text="{Binding Title, Mode=TwoWay}"
+                                   TextColor="{DynamicResource White}"
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            
+        <!-- Copyright Footer -->
+            
+    </Grid>
+</ContentPage>

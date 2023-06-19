@@ -7,6 +7,7 @@ global using SmartGenealogy.Handlers;
 global using SmartGenealogy.Messages;
 global using SmartGenealogy.Models;
 global using SmartGenealogy.Resources.Translations;
+global using SmartGenealogy.Services;
 global using SmartGenealogy.Views;
 global using SmartGenealogy.ViewModels;
 
@@ -18,4 +19,5 @@ global using System.ComponentModel.DataAnnotations;
 global using System.Diagnostics.CodeAnalysis;
 global using System.Globalization;
 global using System.Linq;
+global using System.Runtime.CompilerServices;
 global using System.Windows.Input;

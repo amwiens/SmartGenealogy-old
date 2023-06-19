@@ -61,7 +61,43 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcom to Smart Genealogy.
+        ///   Looks up a localized string similar to Test App.
+        /// </summary>
+        internal static string LabelApp {
+            get {
+                return ResourceManager.GetString("LabelApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test app description.
+        /// </summary>
+        internal static string LabelAppDescription {
+            get {
+                return ResourceManager.GetString("LabelAppDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        internal static string MenuMainHome {
+            get {
+                return ResourceManager.GetString("MenuMainHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string MenuMainSettings {
+            get {
+                return ResourceManager.GetString("MenuMainSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to Smart Genealogy.
         /// </summary>
         internal static string StringWelcomeToSmartGenealogy {
             get {

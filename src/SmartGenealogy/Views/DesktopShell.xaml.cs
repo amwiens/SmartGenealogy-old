@@ -1,10 +1,17 @@
 ﻿namespace SmartGenealogy.Views;
 
-public partial class DesktopShell : Shell
+public partial class DesktopShell : FlyoutPage
 {
     public DesktopShell()
     {
         InitializeComponent();
-        BindingContext = new DesktopShellViewModel();
+
+        Flyout = new MainMenuPage(LaunchPageInDetail);
+    }
+
+    private void LaunchPageInDetail(Page page)
+    {
+        Detail = page;
+        IsPresented = false;
     }
 }

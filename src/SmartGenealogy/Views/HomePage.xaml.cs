@@ -2,9 +2,9 @@ namespace SmartGenealogy.Views;
 
 public partial class HomePage
 {
-	public HomePage(HomePageViewModel vm)
+	public HomePage()
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = new HomePageViewModel();
 	}
 }
