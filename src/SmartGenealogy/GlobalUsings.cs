@@ -4,6 +4,7 @@ global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm.Messaging;
 global using CommunityToolkit.Mvvm.Messaging.Messages;
 
+global using SmartGenealogy.Enums;
 global using SmartGenealogy.Handlers;
 global using SmartGenealogy.Helpers;
 global using SmartGenealogy.Messages;
