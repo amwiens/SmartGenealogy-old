@@ -4,8 +4,6 @@ using CommunityToolkit.Maui.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-using SmartGenealogy.Maui.Navigation;
-
 using System.Reflection;
 
 namespace SmartGenealogy;
@@ -54,7 +52,6 @@ public static class MauiProgram
     static MauiAppBuilder RegisterServices(this MauiAppBuilder builder)
     {
         builder.Services.AddSingleton<IFilePicker, FilePicker>();
-        builder.Services.AddSingleton<IAppNavigator, AppNavigator>();
 
         return builder;
     }

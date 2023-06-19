@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-using SmartGenealogy.Maui.Navigation;
-
 namespace SmartGenealogy.ViewModels;
 
-public partial class SettingsPageViewModel : NavigationAwareBaseViewModel
+public partial class SettingsPageViewModel : ObservableObject
 {
     private readonly IFilePicker _filePicker;
     AppSettings.AppSettings _settings;
@@ -15,10 +13,8 @@ public partial class SettingsPageViewModel : NavigationAwareBaseViewModel
     [ObservableProperty]
     FileResult file;
 
-    public SettingsPageViewModel(IAppNavigator appNavigator,
-        IConfiguration configuration,
+    public SettingsPageViewModel(IConfiguration configuration,
         IFilePicker filePicker)
-        : base(appNavigator)
     {
         _filePicker = filePicker;
         //_settings = configuration.GetRequiredSection("AppSettings").Get<AppSettings.AppSettings>();
