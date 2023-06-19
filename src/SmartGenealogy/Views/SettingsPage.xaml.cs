@@ -2,9 +2,9 @@ namespace SmartGenealogy.Views;
 
 public partial class SettingsPage
 {
-	public SettingsPage(SettingsPageViewModel vm)
+	public SettingsPage()
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = new SettingsPageViewModel();
 	}
 }

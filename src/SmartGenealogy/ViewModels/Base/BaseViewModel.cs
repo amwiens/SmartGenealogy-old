@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public class BaseViewModel : INotifyPropertyChanged
+public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
 {
     //private bool _isBusy;
     //public bool IsBusy
@@ -12,6 +12,14 @@ public class BaseViewModel : INotifyPropertyChanged
     public virtual Task InitializeAsync(object navigationData)
     {
         return Task.FromResult(false);
+    }
+
+    /// <summary>
+    /// On received culture changed message, reload Menu item
+    /// </summary>
+    /// <param name="message"></param>
+    public virtual void Receive(CultureChangeMessage message)
+    {
     }
 
     private bool isBusy = false;

@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿namespace SmartGenealogy.ViewModels;
 
-namespace SmartGenealogy.ViewModels;
-
-public partial class SettingsPageViewModel : ObservableObject
+public partial class SettingsPageViewModel : BaseViewModel
 {
     private readonly IFilePicker _filePicker;
-    AppSettings.AppSettings _settings;
 
     [ObservableProperty]
     string modelPath;
@@ -13,11 +10,14 @@ public partial class SettingsPageViewModel : ObservableObject
     [ObservableProperty]
     FileResult file;
 
-    public SettingsPageViewModel(IConfiguration configuration,
-        IFilePicker filePicker)
+    public SettingsPageViewModel()
+    {
+        LoadSettings();
+    }
+
+    public SettingsPageViewModel(IFilePicker filePicker)
     {
         _filePicker = filePicker;
-        //_settings = configuration.GetRequiredSection("AppSettings").Get<AppSettings.AppSettings>();
         LoadSettings();
     }
 
@@ -31,7 +31,6 @@ public partial class SettingsPageViewModel : ObservableObject
 
     private void LoadSettings()
     {
-        //ModelPath = Preferences.Default.Get<string>("ModelPath", string.Empty);
         ModelPath = AppSettings.AppSettings.ModelPath;
     }
 }

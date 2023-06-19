@@ -1,11 +1,28 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public class MainMenuViewModel : ObservableObject, IRecipient<CultureChangeMessage>
+public partial class MainMenuViewModel : BaseViewModel //, IRecipient<CultureChangeMessage>
 {
     private readonly INavigation _navigation;
     private readonly Action<Page> _openPageAsRoot;
+
+    [ObservableProperty]
     private List<MenuEntry> _mainMenuEntries;
-    private MenuEntry _selectedMainMenuEntry;
+
+    [ObservableProperty]
+    private MenuEntry _mainMenuSelectedItem;
+
+    partial void OnMainMenuSelectedItemChanging(MenuEntry oldValue, MenuEntry newValue)
+    {
+        if (SetProperty(ref oldValue, newValue) && newValue != null)
+        {
+            NavigationPage navigationPage = new NavigationPage((Page)Activator.CreateInstance(newValue.TargetType));
+
+            _openPageAsRoot(navigationPage);
+
+            MainMenuSelectedItem = null;
+            OnPropertyChanged(nameof(MainMenuSelectedItem));
+        }
+    }
 
     public MainMenuViewModel(INavigation navigation, Action<Page> openPageAsRoot)
     {
@@ -24,7 +41,7 @@ public class MainMenuViewModel : ObservableObject, IRecipient<CultureChangeMessa
     /// On received culture changed message, reload Menu item
     /// </summary>
     /// <param name="message"></param>
-    public void Receive(CultureChangeMessage message)
+    public override void Receive(CultureChangeMessage message)
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
@@ -51,26 +68,26 @@ public class MainMenuViewModel : ObservableObject, IRecipient<CultureChangeMessa
         };
     }
 
-    public List<MenuEntry> MainMenuEntries
-    {
-        get { return _mainMenuEntries; }
-        set { SetProperty(ref _mainMenuEntries, value); }
-    }
+    //public List<MenuEntry> MainMenuEntries
+    //{
+    //    get { return _mainMenuEntries; }
+    //    set { SetProperty(ref _mainMenuEntries, value); }
+    //}
 
-    public MenuEntry MainMenuSelectedItem
-    {
-        get { return _selectedMainMenuEntry; }
-        set
-        {
-            if (SetProperty(ref _selectedMainMenuEntry, value) && value != null)
-            {
-                NavigationPage navigationPage = new NavigationPage((Page)Activator.CreateInstance(value.TargetType));
+    //public MenuEntry MainMenuSelectedItem
+    //{
+    //    get { return _selectedMainMenuEntry; }
+    //    set
+    //    {
+    //        if (SetProperty(ref _selectedMainMenuEntry, value) && value != null)
+    //        {
+    //            NavigationPage navigationPage = new NavigationPage((Page)Activator.CreateInstance(value.TargetType));
 
-                _openPageAsRoot(navigationPage);
+    //            _openPageAsRoot(navigationPage);
 
-                _selectedMainMenuEntry = null;
-                OnPropertyChanged(nameof(MainMenuSelectedItem));
-            }
-        }
-    }
+    //            _selectedMainMenuEntry = null;
+    //            OnPropertyChanged(nameof(MainMenuSelectedItem));
+    //        }
+    //    }
+    //}
 }
