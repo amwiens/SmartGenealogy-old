@@ -136,9 +136,4 @@
 	  </MauiXaml>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Features\Common\Services\Implementations\" />
-	  <Folder Include="Features\Common\Services\Interfaces\" />
-	</ItemGroup>
-
 </Project>
