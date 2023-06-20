@@ -147,6 +147,9 @@
   <data name="MenuMainSettings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="StringEnterMessage" xml:space="preserve">
+    <value>Type your message...</value>
+  </data>
   <data name="StringWelcomeToSmartGenealogy" xml:space="preserve">
     <value>Welcome to Smart Genealogy</value>
   </data>

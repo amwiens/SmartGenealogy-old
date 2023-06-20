@@ -33,7 +33,7 @@ public static class MauiProgram
                 fonts.AddFont("line-awesome.ttf", "LineAwesome");
                 fonts.AddFont("material-icons-outlined-regular.otf", "MaterialDesign");
                 fonts.AddFont("ionicons.ttf", "IonIcons");
-                fonts.AddFont("icon.ttf", "MauiKitIcons");
+                fonts.AddFont("icon.ttf", "SmartGenealogyIcons");
             })
             .RegisterAppServices()
             .RegisterViewModels()
@@ -59,12 +59,13 @@ public static class MauiProgram
     {
         builder.Services.AddTransient<HomePage>();
         builder.Services.AddTransient<MainMenuPage>();
+        builder.Services.AddTransient<ChatDetailPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         builder.Services.AddTransient<HomePageViewModel>();
         builder.Services.AddTransient<MainMenuViewModel>();
+        builder.Services.AddTransient<ChatDetailPageViewModel>();
         builder.Services.AddTransient<SettingsPageViewModel>();
-
 
         return builder;
     }

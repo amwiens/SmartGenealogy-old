@@ -24,7 +24,7 @@ public partial class SettingsPageViewModel : BaseViewModel
     [RelayCommand]
     private async Task OpenFileAsync()
     {
-        File = await _filePicker.OpenMediaPickerAsync();
+        File = await _filePicker.OpenModelPickerAsync();
         if (File != null)
         {
             ModelPath = File.FullPath;

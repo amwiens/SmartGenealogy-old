@@ -61,6 +61,12 @@ public partial class MainMenuViewModel : BaseViewModel //, IRecipient<CultureCha
             },
             new MenuEntry
             {
+                Title = "Chat", // LocalizationResourceManager.Translate("MenuMainSettings"),
+                Icon = MaterialDesignIcons.Chat,
+                TargetType = typeof(ChatDetailPage)
+            },
+            new MenuEntry
+            {
                 Title = LocalizationResourceManager.Translate("MenuMainSettings"),
                 Icon = MaterialDesignIcons.Settings,
                 TargetType = typeof(SettingsPage)

@@ -72,6 +72,35 @@ public class FilePicker
     }
 
     /// <summary>
+    /// Open Media Picker
+    /// </summary>
+    /// <returns>Task</returns>
+    public async Task<FileResult> OpenModelPickerAsync()
+    {
+        try
+        {
+            var result = await Microsoft.Maui.Storage.FilePicker.Default.PickAsync(new PickOptions
+            {
+                PickerTitle = "Please pick a model"
+            });
+
+            if (result != null)
+            {
+                return result;
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose a new model", "Ok");
+
+            return null;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    /// <summary>
     /// Convert string to byte[]
     /// </summary>
     /// <param name="text">string</param>

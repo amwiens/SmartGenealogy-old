@@ -151,6 +151,15 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type your message....
+        /// </summary>
+        internal static string StringEnterMessage {
+            get {
+                return ResourceManager.GetString("StringEnterMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to Smart Genealogy.
         /// </summary>
         internal static string StringWelcomeToSmartGenealogy {
