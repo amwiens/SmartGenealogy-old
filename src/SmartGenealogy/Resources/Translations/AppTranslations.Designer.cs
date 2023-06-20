@@ -61,6 +61,24 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark Theme.
+        /// </summary>
+        internal static string ButtonDarkTheme {
+            get {
+                return ResourceManager.GetString("ButtonDarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light Theme.
+        /// </summary>
+        internal static string ButtonLightTheme {
+            get {
+                return ResourceManager.GetString("ButtonLightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test App.
         /// </summary>
         internal static string LabelApp {
@@ -75,6 +93,24 @@ namespace SmartGenealogy.Resources.Translations {
         internal static string LabelAppDescription {
             get {
                 return ResourceManager.GetString("LabelAppDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose your Theme.
+        /// </summary>
+        internal static string LabelChooseTheme {
+            get {
+                return ResourceManager.GetString("LabelChooseTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick your Color.
+        /// </summary>
+        internal static string LabelPickColor {
+            get {
+                return ResourceManager.GetString("LabelPickColor", resourceCulture);
             }
         }
         

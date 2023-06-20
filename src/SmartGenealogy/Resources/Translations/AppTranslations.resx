@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ButtonDarkTheme" xml:space="preserve">
+    <value>Dark Theme</value>
+  </data>
+  <data name="ButtonLightTheme" xml:space="preserve">
+    <value>Light Theme</value>
+  </data>
   <data name="LabelApp" xml:space="preserve">
     <value>Test App</value>
   </data>
   <data name="LabelAppDescription" xml:space="preserve">
     <value>Test app description</value>
+  </data>
+  <data name="LabelChooseTheme" xml:space="preserve">
+    <value>Choose your Theme</value>
+  </data>
+  <data name="LabelPickColor" xml:space="preserve">
+    <value>Pick your Color</value>
   </data>
   <data name="MenuMainHome" xml:space="preserve">
     <value>Home</value>
