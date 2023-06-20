@@ -13,16 +13,36 @@
         <!-- Model path -->
         <Grid RowDefinitions="Auto,Auto"
               ColumnDefinitions="Auto, *">
-            <Label Grid.Row="0"
-                   Grid.Column="0"
-                   Text="Model Path" />
+            <StackLayout Grid.Row="0"
+                         Padding="15,0"
+                         HorizontalOptions="Fill"
+                         Orientation="Horizontal"
+                         Spacing="0">
+
+                <Label x:Name="pickModelText"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       HorizontalOptions="Start"
+                       Text="{localization:Translate LabelModelPath}"
+                       TextColor="{DynamicResource BaseTextColor}"
+                       VerticalOptions="Center" />
+
+            </StackLayout>
 
             <HorizontalStackLayout Grid.Row="0"
-                                   Grid.Column="1">
+                                   Grid.Column="1"
+                                   VerticalOptions="Center">
                 <Button Command="{Binding OpenFileCommand}"
-                        Text="Select model" />
+                        BackgroundColor="{DynamicResource PrimaryColor}"
+                        CornerRadius="10"
+                        FontAttributes="Bold"
+                        HeightRequest="44"
+                        Text="{localization:Translate ButtonChooseModel}"
+                        TextColor="{DynamicResource White}" />
 
-                <Label Text="{Binding ModelPath}" />
+                <Label Text="{Binding ModelPath}"
+                       VerticalTextAlignment="Center"
+                       Padding="15" />
             </HorizontalStackLayout>
         </Grid>
         
@@ -31,7 +51,6 @@
                 BackgroundColor="{DynamicResource BasePageColor}"
                 Opacity="1"
                 Stroke="{DynamicResource BasePageColor}"
-                StrokeShape="{RoundRectangle CornerRadius='0,0,36,36'}"
                 VerticalOptions="Start">
 
             <Grid RowDefinitions="30, Auto, Auto, 44, Auto, Auto">
@@ -48,26 +67,6 @@
                            Text="{localization:Translate LabelChooseTheme}"
                            TextColor="{DynamicResource BaseTextColor}"
                            VerticalOptions="Center" />
-
-                    <!--  Close Icon  -->
-                    <Grid HorizontalOptions="EndAndExpand"
-                          TranslationY="-15"
-                          WidthRequest="30">
-                        <!--<Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnCloseSetting_Tapped" />
-                        </Grid.GestureRecognizers>-->
-                        <Label FontFamily="IonIcons"
-                               FontSize="25"
-                               HorizontalOptions="EndAndExpand"
-                               Text="{x:Static views:IonIcons.AndroidClose}"
-                               TextColor="{DynamicResource BaseTextColor}"
-                               VerticalOptions="Start"
-                               WidthRequest="30">
-                            <!--<Label.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnCloseSetting_Tapped" />
-                            </Label.GestureRecognizers>-->
-                        </Label>
-                    </Grid>
 
                 </StackLayout>
 

@@ -61,6 +61,15 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Model.
+        /// </summary>
+        internal static string ButtonChooseModel {
+            get {
+                return ResourceManager.GetString("ButtonChooseModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark Theme.
         /// </summary>
         internal static string ButtonDarkTheme {
@@ -102,6 +111,15 @@ namespace SmartGenealogy.Resources.Translations {
         internal static string LabelChooseTheme {
             get {
                 return ResourceManager.GetString("LabelChooseTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model Path.
+        /// </summary>
+        internal static string LabelModelPath {
+            get {
+                return ResourceManager.GetString("LabelModelPath", resourceCulture);
             }
         }
         
