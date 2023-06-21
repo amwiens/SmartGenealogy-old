@@ -5,9 +5,12 @@ namespace SmartGenealogy.ViewModels;
 
 public partial class ChatDetailPageViewModel : BaseViewModel
 {
+    ChatSession _session;
+
     public ChatDetailPageViewModel()
     {
         LoadData();
+        InitializeChatSession();
     }
 
     void LoadData()
@@ -20,6 +23,23 @@ public partial class ChatDetailPageViewModel : BaseViewModel
             //Application.Current.Dispatcher.Dispatch(() =>
             //{
             //});
+        });
+    }
+
+    private void InitializeChatSession()
+    {
+        string modelPath = Path.Combine(FileSystem.Current.AppDataDirectory, "wizardLM-7B.ggmlv3.q4_1.bin"); //AppSettings.AppSettings.ModelPath; //@"C:\Users\m075542\Downloads\wizardLM-7B.ggmlv3.q4_1.bin"; // change it to your own model path
+        var prompt = "Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.\r\n\r\nUser: Hello, Bob.\r\nBob: Hello. How may I help you today?\r\nUser: Please tell me the largest city in Europe.\r\nBob: Sure. The largest city in Europe is Moscow, the capital of Russia."; // use the "chat-with-bob" prompt here.
+
+        // Initialize a chat session
+        var ex = new InteractiveExecutor(new LLamaModel(new ModelParams(modelPath, contextSize: 1024, seed: 1337, gpuLayerCount: 5)));
+        _session = new ChatSession(ex);
+
+        Messages.Add(new SocialMessage()
+        {
+            Text = prompt,
+            Time = DateTime.Now.ToString(),
+            Sender = new SocialUser { Name = "Bob", Status = "Online" }
         });
     }
 
@@ -46,36 +66,23 @@ public partial class ChatDetailPageViewModel : BaseViewModel
 
     private void GetMessageResponse(string message)
     {
-        string modelPath = AppSettings.AppSettings.ModelPath; //@"C:\Users\m075542\Downloads\wizardLM-7B.ggmlv3.q4_1.bin"; // change it to your own model path
-        var prompt = "Transcript of a dialog, where the User interacts with an Assistant named Bob. Bob is helpful, kind, honest, good at writing, and never fails to answer the User's requests immediately and with precision.\r\n\r\nUser: Hello, Bob.\r\nBob: Hello. How may I help you today?\r\nUser: Please tell me the largest city in Europe.\r\nBob: Sure. The largest city in Europe is Moscow, the capital of Russia.\r\nUser:"; // use the "chat-with-bob" prompt here.
+        var textString = string.Empty;
 
-        // Initialize a chat session
-        //var ex = new InteractiveExecutor(new LLamaModel(new ModelParams(modelPath, contextSize: 1024, seed: 1337, gpuLayerCount: 5)));
-        //ChatSession session = new ChatSession(ex);
+        // run the inference in a loop to chat with LLM
+        foreach (var text in _session.Chat(message, new InferenceParams() { Temperature = 0.6f, AntiPrompts = new List<string> { "User:" } }))
+        {
+            if (textString.Length == 0 && text == "\n")
+                continue;
+            textString = string.Concat(textString, text);
+        }
 
-        // show the prompt
-        //Console.WriteLine();
+        textString = textString.Substring(0, textString.Length - 7);
+
         Messages.Add(new SocialMessage()
         {
-            Text = prompt,
+            Text = textString,
             Time = DateTime.Now.ToString(),
             Sender = new SocialUser { Name = "Bob", Status = "Online" }
         });
-        //Console.Write(prompt);
-        prompt = message;
-        // run the inference in a loop to chat with LLM
-        //while (prompt != "stop")
-        //{
-            //foreach (var text in session.Chat(prompt, new InferenceParams() { Temperature = 0.6f, AntiPrompts = new List<string> { "User:" } }))
-            //{
-                Messages.Add(new SocialMessage()
-                {
-                    Text = "Test",
-                    Time = DateTime.Now.ToString(),
-                    Sender = new SocialUser { Name = "Bob", Status = "Online" }
-                });
-            //}
-            //prompt = Console.ReadLine();
-        //}
     }
 }
