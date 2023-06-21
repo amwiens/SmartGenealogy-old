@@ -59,11 +59,29 @@ public static class MauiProgram
     {
         builder.Services.AddTransient<HomePage>();
         builder.Services.AddTransient<MainMenuPage>();
+        builder.Services.AddTransient<PeoplePage>();
+        builder.Services.AddTransient<PlacesPage>();
+        builder.Services.AddTransient<SourcesPage>();
+        builder.Services.AddTransient<MediaPage>();
+        builder.Services.AddTransient<TasksPage>();
+        builder.Services.AddTransient<AddressesPage>();
+        builder.Services.AddTransient<SearchPage>();
+        builder.Services.AddTransient<PublishPage>();
+        builder.Services.AddTransient<ToolsPage>();
         builder.Services.AddTransient<ChatDetailPage>();
         builder.Services.AddTransient<SettingsPage>();
 
         builder.Services.AddTransient<HomePageViewModel>();
         builder.Services.AddTransient<MainMenuViewModel>();
+        builder.Services.AddTransient<PeoplePageViewModel>();
+        builder.Services.AddTransient<PlacesPageViewModel>();
+        builder.Services.AddTransient<SourcesPageViewModel>();
+        builder.Services.AddTransient<MediaPageViewModel>();
+        builder.Services.AddTransient<TasksPageViewModel>();
+        builder.Services.AddTransient<AddressesPageViewModel>();
+        builder.Services.AddTransient<SearchPageViewModel>();
+        builder.Services.AddTransient<PublishPageViewModel>();
+        builder.Services.AddTransient<ToolsPageViewModel>();
         builder.Services.AddTransient<ChatDetailPageViewModel>();
         builder.Services.AddTransient<SettingsPageViewModel>();
 

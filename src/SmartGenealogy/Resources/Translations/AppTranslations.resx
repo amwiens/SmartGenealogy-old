@@ -141,11 +141,44 @@
   <data name="LabelPickColor" xml:space="preserve">
     <value>Pick your Color</value>
   </data>
+  <data name="MenuMainAddresses" xml:space="preserve">
+    <value>Addresses</value>
+  </data>
+  <data name="MenuMainChat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="MenuMainFile" xml:space="preserve">
+    <value>File</value>
+  </data>
   <data name="MenuMainHome" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="MenuMainMedia" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="MenuMainPeople" xml:space="preserve">
+    <value>People</value>
+  </data>
+  <data name="MenuMainPlaces" xml:space="preserve">
+    <value>Places</value>
+  </data>
+  <data name="MenuMainPublish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="MenuMainSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
   <data name="MenuMainSettings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="MenuMainSources" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="MenuMainTasks" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="MenuMainTools" xml:space="preserve">
+    <value>Tools</value>
   </data>
   <data name="StringEnterMessage" xml:space="preserve">
     <value>Type your message...</value>

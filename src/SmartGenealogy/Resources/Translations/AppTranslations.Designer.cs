@@ -133,6 +133,33 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Addresses.
+        /// </summary>
+        internal static string MenuMainAddresses {
+            get {
+                return ResourceManager.GetString("MenuMainAddresses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chat.
+        /// </summary>
+        internal static string MenuMainChat {
+            get {
+                return ResourceManager.GetString("MenuMainChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        internal static string MenuMainFile {
+            get {
+                return ResourceManager.GetString("MenuMainFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         internal static string MenuMainHome {
@@ -142,11 +169,83 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Media.
+        /// </summary>
+        internal static string MenuMainMedia {
+            get {
+                return ResourceManager.GetString("MenuMainMedia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to People.
+        /// </summary>
+        internal static string MenuMainPeople {
+            get {
+                return ResourceManager.GetString("MenuMainPeople", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Places.
+        /// </summary>
+        internal static string MenuMainPlaces {
+            get {
+                return ResourceManager.GetString("MenuMainPlaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publish.
+        /// </summary>
+        internal static string MenuMainPublish {
+            get {
+                return ResourceManager.GetString("MenuMainPublish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string MenuMainSearch {
+            get {
+                return ResourceManager.GetString("MenuMainSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string MenuMainSettings {
             get {
                 return ResourceManager.GetString("MenuMainSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sources.
+        /// </summary>
+        internal static string MenuMainSources {
+            get {
+                return ResourceManager.GetString("MenuMainSources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        internal static string MenuMainTasks {
+            get {
+                return ResourceManager.GetString("MenuMainTasks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string MenuMainTools {
+            get {
+                return ResourceManager.GetString("MenuMainTools", resourceCulture);
             }
         }
         

@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public partial class MainMenuViewModel : BaseViewModel //, IRecipient<CultureChangeMessage>
+public partial class MainMenuViewModel : BaseViewModel
 {
     private readonly INavigation _navigation;
     private readonly Action<Page> _openPageAsRoot;
@@ -61,7 +61,67 @@ public partial class MainMenuViewModel : BaseViewModel //, IRecipient<CultureCha
             },
             new MenuEntry
             {
-                Title = "Chat", // LocalizationResourceManager.Translate("MenuMainSettings"),
+                Title = LocalizationResourceManager.Translate("MenuMainFile"),
+                Icon = MaterialDesignIcons.Pageview,
+                TargetType = typeof(FilePage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPeople"),
+                Icon = MaterialDesignIcons.People,
+                TargetType = typeof(PeoplePage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPlaces"),
+                Icon = MaterialDesignIcons.Place,
+                TargetType = typeof(PlacesPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainSources"),
+                Icon = MaterialDesignIcons.Tablet,
+                TargetType = typeof(SourcesPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainMedia"),
+                Icon = MaterialDesignIcons.Image,
+                TargetType = typeof(MediaPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainTasks"),
+                Icon = MaterialDesignIcons.CheckBox,
+                TargetType = typeof(TasksPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainAddresses"),
+                Icon = MaterialDesignIcons.Mail,
+                TargetType = typeof(AddressesPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainSearch"),
+                Icon = MaterialDesignIcons.Search,
+                TargetType = typeof(SearchPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPublish"),
+                Icon = MaterialDesignIcons.Print,
+                TargetType = typeof(PublishPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainTools"),
+                Icon = MaterialDesignIcons.Dashboard,
+                TargetType = typeof(ToolsPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainChat"),
                 Icon = MaterialDesignIcons.Chat,
                 TargetType = typeof(ChatDetailPage)
             },
@@ -73,27 +133,4 @@ public partial class MainMenuViewModel : BaseViewModel //, IRecipient<CultureCha
             }
         };
     }
-
-    //public List<MenuEntry> MainMenuEntries
-    //{
-    //    get { return _mainMenuEntries; }
-    //    set { SetProperty(ref _mainMenuEntries, value); }
-    //}
-
-    //public MenuEntry MainMenuSelectedItem
-    //{
-    //    get { return _selectedMainMenuEntry; }
-    //    set
-    //    {
-    //        if (SetProperty(ref _selectedMainMenuEntry, value) && value != null)
-    //        {
-    //            NavigationPage navigationPage = new NavigationPage((Page)Activator.CreateInstance(value.TargetType));
-
-    //            _openPageAsRoot(navigationPage);
-
-    //            _selectedMainMenuEntry = null;
-    //            OnPropertyChanged(nameof(MainMenuSelectedItem));
-    //        }
-    //    }
-    //}
 }
