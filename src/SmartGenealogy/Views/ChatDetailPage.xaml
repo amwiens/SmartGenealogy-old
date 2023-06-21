@@ -8,6 +8,7 @@
              xmlns:templates="clr-namespace:SmartGenealogy.Views.Templates"
              xmlns:views="clr-namespace:SmartGenealogy.Views"
              xmlns:viewModels="clr-namespace:SmartGenealogy.ViewModels"
+             xmlns:windows="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.WindowsSpecific;assembly=Microsoft.Maui.Controls"
              x:DataType="viewModels:ChatDetailPageViewModel">
 
     <ContentPage.Resources>
@@ -169,7 +170,8 @@
                                                   HeightRequest="46"
                                                   Placeholder="{localization:Translate StringEnterMessage}"
                                                   Text="{Binding Message}"
-                                                  Style="{StaticResource ChatEntryStyle}" />
+                                                  Style="{StaticResource ChatEntryStyle}"
+                                                  ReturnCommand="{Binding SendMessageCommand}" />
 
                         <Image Grid.Column="2"
                                Aspect="AspectFit"

@@ -51,6 +51,7 @@ public partial class ChatDetailPageViewModel : BaseViewModel
             Text = Message,
             Time = DateTime.Now.ToString()
         });
+
         GetMessageResponse(Message);
         Message = string.Empty;
     }

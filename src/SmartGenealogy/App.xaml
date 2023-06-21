@@ -11,9 +11,9 @@
             <!-- Default theme
                 Choose from one of the available prebuilt themes:
             <ResourceDictionary Source="Themes/LightTheme.xaml" />
-            <ResourceDictionary Source="Themes/DarkThemeTheme.xaml" />
+            <ResourceDictionary Source="Themes/DarkTheme.xaml" />
             -->
-            <ResourceDictionary Source="Themes/LightTheme.xaml" />
+            <ResourceDictionary Source="Themes/DarkTheme.xaml" />
 
             <ResourceDictionary Source="Styles/Buttons.xaml" />
             <ResourceDictionary Source="Styles/Icons.xaml" />
