@@ -2,8 +2,10 @@
 <ContentPage x:Class="SmartGenealogy.Views.MainMenuPage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SmartGenealogy.Controls"
              Title="Menu"
              Background="{DynamicResource BasePageColor}"
+             IconImageSource="menu_icon.png"
              NavigationPage.HasNavigationBar="True">
     <Grid RowDefinitions="Auto,*,Auto">
         <!-- Background Image -->
@@ -24,8 +26,8 @@
         </Grid>
             
         <!-- Branding Logo -->
-        
-            
+        <controls:FlyoutHeader />
+
         <!-- Main Menu -->
         <ListView x:Name="sampleListView"
                   Grid.Row="1"
@@ -66,6 +68,6 @@
         </ListView>
             
         <!-- Copyright Footer -->
-            
+        <controls:FlyoutFooter Grid.Row="2" />
     </Grid>
 </ContentPage>

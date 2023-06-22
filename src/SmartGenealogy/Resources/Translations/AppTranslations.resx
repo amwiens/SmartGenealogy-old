@@ -180,6 +180,9 @@
   <data name="MenuMainTools" xml:space="preserve">
     <value>Tools</value>
   </data>
+  <data name="StringCopyright" xml:space="preserve">
+    <value>Smart Genealogy</value>
+  </data>
   <data name="StringEnterMessage" xml:space="preserve">
     <value>Type your message...</value>
   </data>

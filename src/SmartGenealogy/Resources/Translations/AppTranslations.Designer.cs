@@ -250,6 +250,15 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Smart Genealogy.
+        /// </summary>
+        internal static string StringCopyright {
+            get {
+                return ResourceManager.GetString("StringCopyright", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type your message....
         /// </summary>
         internal static string StringEnterMessage {

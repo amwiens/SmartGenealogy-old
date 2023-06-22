@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="SmartGenealogy.Controls.FlyoutHeader"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SmartGenealogy.Controls"
+             HeightRequest="200">
+    <Grid BackgroundColor="Transparent">
+        <StackLayout Padding="30"
+                     HorizontalOptions="Start"
+                     Spacing="15"
+                     VerticalOptions="End">
+            <Border Padding="0"
+                    BackgroundColor="{DynamicResource White}"
+                    HeightRequest="70"
+                    HorizontalOptions="Start"
+                    Stroke="{StaticResource BlurBlue}"
+                    StrokeShape="{RoundRectangle CornerRadius=14}"
+                    StrokeThickness="2"
+                    WidthRequest="70">
+                <controls:RoundedCornerImage BackgroundColor="{DynamicResource White}"
+                                             HeightRequest="50"
+                                             HorizontalOptions="CenterAndExpand"
+                                             Source="logo.png"
+                                             Stroke="Transparent"
+                                             StrokeShape="{RoundRectangle CornerRadius=25}"
+                                             VerticalOptions="Center"
+                                             WidthRequest="50" />
+            </Border>
+            <HorizontalStackLayout Spacing="15">
+                <Label FontAttributes="Bold"
+                       FontSize="22"
+                       HorizontalTextAlignment="Start"
+                       Style="{StaticResource Title1}"
+                       Text="Smart Genealogy"
+                       TextColor="{DynamicResource White}"
+                       TranslationY="2"
+                       VerticalOptions="End"
+                       VerticalTextAlignment="End" />
+                <Frame Padding="8,3"
+                       BackgroundColor="{StaticResource White}"
+                       BorderColor="Transparent"
+                       CornerRadius="6"
+                       HorizontalOptions="EndAndExpand"
+                       IsVisible="{OnIdiom Default=True,
+                                           Desktop=False}"
+                       TranslationY="-2"
+                       VerticalOptions="Center">
+                    <Label x:Name="labelVersion"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text=""
+                           TextColor="{DynamicResource PrimaryColor}"
+                           VerticalOptions="Center" />
+                </Frame>
+            </HorizontalStackLayout>
+        </StackLayout>
+    </Grid>
+</ContentView>
