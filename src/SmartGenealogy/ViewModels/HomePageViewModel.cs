@@ -1,25 +1,34 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public partial class HomePageViewModel : BaseViewModel, IRecipient<CultureChangeMessage>
+public partial class HomePageViewModel : BaseViewModel
 {
     private List<HomeBanner> _bannerItems;
     private int _position;
 
     public HomePageViewModel()
     {
+        LoadBannerCollection();
         WeakReferenceMessenger.Default.Register<CultureChangeMessage>(this);
+
+        CarouselRotateService();
     }
 
     /// <summary>
     /// On received culture changed message, reload banner items
     /// </summary>
     /// <param name="message"></param>
-    public void Receive(CultureChangeMessage message)
+    public override void Receive(CultureChangeMessage message)
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
             LoadBannerCollection();
         });
+    }
+
+    [RelayCommand]
+    public async void NavigateToPeopleAsync()
+    {
+        //await Navigation.
     }
 
     public void LoadBannerCollection()

@@ -275,7 +275,7 @@
 
                             <Border Style="{StaticResource FeatureBorder}">
                                 <Border.GestureRecognizers>
-                                    <!--<TapGestureRecognizer Tapped="AppFlowTapGestureRecognizer_Tapped" />-->
+                                    <TapGestureRecognizer Command="{Binding NavigateToPeopleAsyncCommand}" />
                                 </Border.GestureRecognizers>
                                 <VerticalStackLayout Spacing="20" VerticalOptions="Center">
                                     <Border Padding="0"
@@ -311,83 +311,4 @@
             </Grid>
         </ScrollView>
     </Grid>
-    
-    <!--<Grid RowDefinitions="*,*"
-          ColumnDefinitions="*,*,*"
-          Padding="10">
-        <Frame Padding="10"
-               Margin="10"
-               BorderColor="Gray"
-               CornerRadius="8"
-               Grid.RowSpan="2">
-            <StackLayout>
-                <HorizontalStackLayout>
-                    <Label FontAttributes="Bold"
-                           FontSize="16"
-                           Text="Files" />
-                </HorizontalStackLayout>
-                <BoxView HeightRequest="2"
-                         HorizontalOptions="Fill"
-                         Color="Gray" />
-                <Label Text="Files go here" />
-            </StackLayout>
-        </Frame>
-
-        <Frame Padding="10"
-               Margin="10"
-               BorderColor="Gray"
-               CornerRadius="8"
-               Grid.Column="1"
-               Grid.ColumnSpan="2">
-            <StackLayout>
-                <HorizontalStackLayout>
-                    <Label FontAttributes="Bold"
-                           FontSize="16"
-                           Text="News" />
-                </HorizontalStackLayout>
-                <BoxView HeightRequest="2"
-                         HorizontalOptions="Fill"
-                         Color="Gray" />
-                <Label Text="News goes here" />
-            </StackLayout>
-        </Frame>
-
-        <Frame Padding="10"
-               Margin="10"
-               BorderColor="Gray"
-               CornerRadius="8"
-               Grid.Row="1"
-               Grid.Column="1">
-            <StackLayout>
-                <HorizontalStackLayout>
-                    <Label FontAttributes="Bold"
-                           FontSize="16"
-                           Text="Help and Support" />
-                </HorizontalStackLayout>
-                <BoxView HeightRequest="2"
-                         HorizontalOptions="Fill"
-                         Color="Gray" />
-                <Label Text="Help and support goes here" />
-            </StackLayout>
-        </Frame>
-
-        <Frame Padding="10"
-               Margin="10"
-               BorderColor="Gray"
-               CornerRadius="8"
-               Grid.Row="1"
-               Grid.Column="2">
-            <StackLayout>
-                <HorizontalStackLayout>
-                    <Label FontAttributes="Bold"
-                           FontSize="16"
-                           Text="Updates" />
-                </HorizontalStackLayout>
-                <BoxView HeightRequest="2"
-                         HorizontalOptions="Fill"
-                         Color="Gray" />
-                <Label Text="Updates go here" />
-            </StackLayout>
-        </Frame>
-    </Grid>-->
 </ContentPage>
