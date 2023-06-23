@@ -11,7 +11,7 @@ public partial class MainMenuViewModel : BaseViewModel
     [ObservableProperty]
     private MenuEntry _mainMenuSelectedItem;
 
-    private partial void OnMainMenuSelectedItemChanging(MenuEntry oldValue, MenuEntry newValue)
+    partial void OnMainMenuSelectedItemChanging(MenuEntry? oldValue, MenuEntry newValue)
     {
         if (SetProperty(ref oldValue, newValue) && newValue != null)
         {
