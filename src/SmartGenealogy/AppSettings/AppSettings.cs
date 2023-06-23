@@ -41,6 +41,18 @@ public class AppSettings
         set => Preferences.Set(nameof(ModelPath), value);
     }
 
+    public static string FilePath
+    {
+        get => Preferences.Get(nameof(FilePath), string.Empty);
+        set => Preferences.Set(nameof(FilePath), value);
+    }
+
+    public static string AppVersion
+    {
+        get => Preferences.Get(nameof(AppVersion), string.Empty);
+        set => Preferences.Set(nameof(AppVersion), value);
+    }
+
     public static bool IsFirstLaunching
     {
         get => Preferences.Get(nameof(IsFirstLaunching), true);

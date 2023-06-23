@@ -1,4 +1,4 @@
-namespace SmartGenealogy.Controls.SharedViews;
+namespace SmartGenealogy.Controls;
 
 public partial class HeaderTemplate : Grid
 {

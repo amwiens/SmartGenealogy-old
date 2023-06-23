@@ -45,10 +45,16 @@ public partial class App : Application
 
         #endregion Handlers
 
+        if (AppSettings.AppSettings.IsFirstLaunching)
+        {
+            AppSettings.AppSettings.IsFirstLaunching = true; // Set to 'false' in production
+            MainPage = new DesktopShell();
+        }
+        else
 #if WINDOWS || MACCATALYST
-        MainPage = new DesktopShell();
+            MainPage = new DesktopShell();
 #else
-        MainPage = new MobileShell();
+            MainPage = new MobileShell();
 #endif
     }
 }

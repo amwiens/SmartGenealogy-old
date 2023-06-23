@@ -2,11 +2,84 @@
 <ContentPage x:Class="SmartGenealogy.Views.FilePage"
              xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="File Page">
-    <VerticalStackLayout>
-        <Label
-            Text="File page"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:controls="clr-namespace:SmartGenealogy.Controls"
+             xmlns:localization="clr-namespace:SmartGenealogy.Resources.Translations"
+             xmlns:views="clr-namespace:SmartGenealogy.Views"
+             Title="">
+    <Grid RowDefinitions="Auto,*" RowSpacing="15">
+        <controls:HeaderTemplate Margin="30,30,30,0"
+                                 IconColor="#1A73E8"
+                                 IconFontFamily="MaterialDesign"
+                                 IconSize="35"
+                                 IconText="{x:Static views:MaterialDesignIcons.Apps}"
+                                 Text="{localization:Translate LabelFiles}"
+                                 TextSize="25" />
+
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="30,0,30,30" Spacing="18">
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NewFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelNewFile}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelNewFileDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelOpenFile}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelOpenFileDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RestoreFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelRestoreFile}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelRestoreFileDescription}" />
+                    </StackLayout>
+                </Border>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

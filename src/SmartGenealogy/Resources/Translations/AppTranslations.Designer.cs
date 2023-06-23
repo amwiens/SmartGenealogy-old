@@ -124,6 +124,15 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Files.
+        /// </summary>
+        internal static string LabelFiles {
+            get {
+                return ResourceManager.GetString("LabelFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Model Path.
         /// </summary>
         internal static string LabelModelPath {
@@ -133,11 +142,65 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create a New Smart Genealogy file.
+        /// </summary>
+        internal static string LabelNewFile {
+            get {
+                return ResourceManager.GetString("LabelNewFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create a new Smart Genealogy database file.
+        /// </summary>
+        internal static string LabelNewFileDescription {
+            get {
+                return ResourceManager.GetString("LabelNewFileDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open a Smart Genealogy file.
+        /// </summary>
+        internal static string LabelOpenFile {
+            get {
+                return ResourceManager.GetString("LabelOpenFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open an existing Smart Genealogy database file.
+        /// </summary>
+        internal static string LabelOpenFileDescription {
+            get {
+                return ResourceManager.GetString("LabelOpenFileDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pick your Color.
         /// </summary>
         internal static string LabelPickColor {
             get {
                 return ResourceManager.GetString("LabelPickColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore from Backup.
+        /// </summary>
+        internal static string LabelRestoreFile {
+            get {
+                return ResourceManager.GetString("LabelRestoreFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore a Smart Genealogy file from backup.
+        /// </summary>
+        internal static string LabelRestoreFileDescription {
+            get {
+                return ResourceManager.GetString("LabelRestoreFileDescription", resourceCulture);
             }
         }
         

@@ -138,11 +138,32 @@
   <data name="LabelChooseTheme" xml:space="preserve">
     <value>Choose your Theme</value>
   </data>
+  <data name="LabelFiles" xml:space="preserve">
+    <value>Files</value>
+  </data>
   <data name="LabelModelPath" xml:space="preserve">
     <value>Model Path</value>
   </data>
+  <data name="LabelNewFile" xml:space="preserve">
+    <value>Create a New Smart Genealogy file</value>
+  </data>
+  <data name="LabelNewFileDescription" xml:space="preserve">
+    <value>Create a new Smart Genealogy database file</value>
+  </data>
+  <data name="LabelOpenFile" xml:space="preserve">
+    <value>Open a Smart Genealogy file</value>
+  </data>
+  <data name="LabelOpenFileDescription" xml:space="preserve">
+    <value>Open an existing Smart Genealogy database file</value>
+  </data>
   <data name="LabelPickColor" xml:space="preserve">
     <value>Pick your Color</value>
+  </data>
+  <data name="LabelRestoreFile" xml:space="preserve">
+    <value>Restore from Backup</value>
+  </data>
+  <data name="LabelRestoreFileDescription" xml:space="preserve">
+    <value>Restore a Smart Genealogy file from backup</value>
   </data>
   <data name="MenuMainAbout" xml:space="preserve">
     <value>About Us</value>
