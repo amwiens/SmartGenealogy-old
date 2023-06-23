@@ -48,7 +48,7 @@ public static class MauiProgram
         return builder.Build();
     }
 
-    static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
+    private static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
     {
         builder.Services.AddSingleton<DesktopShell>();
         builder.Services.AddSingleton<MobileShell>();
@@ -56,8 +56,7 @@ public static class MauiProgram
         return builder;
     }
 
-
-    static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
+    private static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
     {
         builder.Services.AddTransient<HomePage>();
         builder.Services.AddTransient<MainMenuPage>();
@@ -92,7 +91,7 @@ public static class MauiProgram
         return builder;
     }
 
-    static MauiAppBuilder GetAppSettings(this MauiAppBuilder builder)
+    private static MauiAppBuilder GetAppSettings(this MauiAppBuilder builder)
     {
         var assembly = Assembly.GetExecutingAssembly();
         using var stream = assembly.GetManifestResourceStream("SmartGenealogy.appsettings.Development.json");

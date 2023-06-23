@@ -2,10 +2,10 @@ namespace SmartGenealogy.Views;
 
 public partial class BasePage : ContentPage
 {
-	public IList<Microsoft.Maui.IView> PageContent => PageContentGrid.Children;
+    public IList<Microsoft.Maui.IView> PageContent => PageContentGrid.Children;
 
-	public BasePage()
-	{
-		InitializeComponent();
-	}
+    public BasePage()
+    {
+        InitializeComponent();
+    }
 }

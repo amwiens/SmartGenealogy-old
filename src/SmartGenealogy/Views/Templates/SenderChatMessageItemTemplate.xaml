@@ -51,10 +51,9 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="10, 0, 10, 0" />
             </Style>
-
         </ResourceDictionary>
     </ContentView.Resources>
-    
+
     <ContentView.Content>
         <Grid ColumnDefinitions="Auto, *, Auto"
               RowDefinitions="*"

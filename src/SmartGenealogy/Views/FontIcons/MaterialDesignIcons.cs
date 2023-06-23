@@ -4657,7 +4657,6 @@ public static partial class MaterialDesignIcons
     /// </summary>
     public const string PushPin = "\uf10d";
 
-
     /// <summary>
     /// query_builder unicode value ("\ue8ae").
     /// <para/>

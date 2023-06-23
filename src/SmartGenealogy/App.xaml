@@ -7,7 +7,7 @@
              android:Application.WindowSoftInputModeAdjust="Pan">
     <Application.Resources>
         <ResourceDictionary>
-                
+
             <!-- Default theme
                 Choose from one of the available prebuilt themes:
             <ResourceDictionary Source="Themes/LightTheme.xaml" />

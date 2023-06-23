@@ -419,5 +419,4 @@
         <!--<Setter Property="SelectedBackgroundColor" Value="{DynamicResource PrimaryColor}" />-->
         <!--<Setter Property="SelectedTextColor" Value="{DynamicResource White}" />-->
     </Style>
-
 </ResourceDictionary>

@@ -6,7 +6,7 @@
              Title="">
     <ScrollView VerticalScrollBarVisibility="Default">
         <Grid RowDefinitions="*,Auto">
-            
+
             <!-- Grid to contain Page Content -->
             <Grid x:Name="PageContentGrid" IgnoreSafeArea="True" />
 

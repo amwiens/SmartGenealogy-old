@@ -27,7 +27,7 @@ public static class RTLHelper
     public static readonly BindableProperty CornerRadiusProperty = BindableProperty.CreateAttached(
         "CornerRadius", typeof(Thickness), typeof(RTLHelper), ZeroThickness, propertyChanged: OnCornerRadiusPropertyChanged);
 
-    #endregion
+    #endregion Bindable Properties
 
     #region Private Fields
 
@@ -36,7 +36,7 @@ public static class RTLHelper
     /// </summary>
     private static readonly Thickness ZeroThickness = 0;
 
-    #endregion
+    #endregion Private Fields
 
     #region Methods
 
@@ -61,7 +61,7 @@ public static class RTLHelper
     }
 
     /// <summary>
-    /// Gets the value of corner radius. 
+    /// Gets the value of corner radius.
     /// </summary>
     /// <param name="bindable">The view</param>
     /// <returns>Returns the corner radius.</returns>
@@ -336,5 +336,5 @@ public static class RTLHelper
         element.PropertyChanged -= OnElementPropertyChanged;
     }
 
-    #endregion
+    #endregion Methods
 }

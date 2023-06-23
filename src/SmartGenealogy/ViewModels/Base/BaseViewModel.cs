@@ -23,6 +23,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private bool isBusy = false;
+
     public bool IsBusy
     {
         get { return isBusy; }
@@ -30,6 +31,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private bool isRefreshing = false;
+
     public bool IsRefreshing
     {
         get { return isRefreshing; }
@@ -37,6 +39,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private string loadingText = string.Empty;
+
     public string LoadingText
     {
         get { return loadingText; }
@@ -44,6 +47,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private bool dataLoaded = false;
+
     public bool DataLoaded
     {
         get { return dataLoaded; }
@@ -51,6 +55,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private bool isErrorState = false;
+
     public bool IsErrorState
     {
         get { return isErrorState; }
@@ -58,6 +63,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private string errorMessage = string.Empty;
+
     public string ErrorMessage
     {
         get { return errorMessage; }
@@ -65,6 +71,7 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
     }
 
     private string errorImage = string.Empty;
+
     public string ErrorImage
     {
         get { return errorImage; }
@@ -118,5 +125,5 @@ public class BaseViewModel : ObservableObject, IRecipient<CultureChangeMessage>
         changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    #endregion
+    #endregion INotifyPropertyChanged
 }

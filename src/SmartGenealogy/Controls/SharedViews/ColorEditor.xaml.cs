@@ -2,20 +2,20 @@ namespace SmartGenealogy.Controls;
 
 public partial class ColorEditor : ContentView
 {
-	public Color SelectedColor
-	{
-		get { return (Color)GetValue(SelectedColorProperty); }
-		set { SetValue(SelectedColorProperty, value); }
-	}
+    public Color SelectedColor
+    {
+        get { return (Color)GetValue(SelectedColorProperty); }
+        set { SetValue(SelectedColorProperty, value); }
+    }
 
-	public float SelectedColorRed
-	{
-		get { return (float)GetValue(SelectedColorRedProperty); }
-		set { SetValue(SelectedColorRedProperty, value); }
-	}
+    public float SelectedColorRed
+    {
+        get { return (float)GetValue(SelectedColorRedProperty); }
+        set { SetValue(SelectedColorRedProperty, value); }
+    }
 
-	public float SelectedColorGreen
-	{
+    public float SelectedColorGreen
+    {
         get { return (float)GetValue(SelectedColorGreenProperty); }
         set { SetValue(SelectedColorGreenProperty, value); }
     }
@@ -32,16 +32,16 @@ public partial class ColorEditor : ContentView
         set { SetValue(SelectedColorAlphaProperty, value); }
     }
 
-	public static readonly BindableProperty SelectedColorProperty = BindableProperty.Create(nameof(SelectedColor), typeof(Color), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorPropertyChanged);
+    public static readonly BindableProperty SelectedColorProperty = BindableProperty.Create(nameof(SelectedColor), typeof(Color), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorPropertyChanged);
     public static readonly BindableProperty SelectedColorRedProperty = BindableProperty.Create(nameof(SelectedColorRed), typeof(float), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorRedPropertyChanged);
     public static readonly BindableProperty SelectedColorGreenProperty = BindableProperty.Create(nameof(SelectedColorGreen), typeof(float), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorGreenPropertyChanged);
     public static readonly BindableProperty SelectedColorBlueProperty = BindableProperty.Create(nameof(SelectedColorBlue), typeof(float), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorBluePropertyChanged);
     public static readonly BindableProperty SelectedColorAlphaProperty = BindableProperty.Create(nameof(SelectedColorAlpha), typeof(float), typeof(ColorEditor), defaultBindingMode: BindingMode.TwoWay, propertyChanged: SelectedColorAlphaPropertyChanged);
 
     public ColorEditor()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
     private static void SelectedColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
     {

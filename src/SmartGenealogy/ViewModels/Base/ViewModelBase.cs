@@ -4,7 +4,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
 {
     public ICommand BackCommand => new Command(OnBack);
 
-    void OnBack()
+    private void OnBack()
     {
         NavigationService.Instance.NavigateBackAsync();
     }
@@ -15,6 +15,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private bool _isBusy = true;
+
     public bool IsBusy
     {
         get { return _isBusy; }
@@ -22,6 +23,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private string _loadingText = string.Empty;
+
     public string LoadingText
     {
         get { return _loadingText; }
@@ -29,6 +31,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private bool _dataLoaded = false;
+
     public bool DataLoaded
     {
         get { return _dataLoaded; }
@@ -36,6 +39,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private bool _isErrorState = false;
+
     public bool IsErrorState
     {
         get { return _isErrorState; }
@@ -43,6 +47,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private string _errorMessage = string.Empty;
+
     public string ErrorMessage
     {
         get { return _errorMessage; }
@@ -50,6 +55,7 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
     }
 
     private string _errorImage = string.Empty;
+
     public string ErrorImage
     {
         get { return _errorImage; }
@@ -104,5 +110,5 @@ public partial class ViewModelBase : BindableObject, INotifyPropertyChanged
         changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 
-    #endregion
+    #endregion INotifyPropertyChanged
 }

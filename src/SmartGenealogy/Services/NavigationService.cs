@@ -4,7 +4,7 @@ public class NavigationService
 {
     protected readonly Dictionary<Type, Type> _mappings;
 
-    static NavigationService _instance;
+    private static NavigationService _instance;
 
     public NavigationService()
     {
@@ -17,7 +17,7 @@ public class NavigationService
     {
         get
         {
-            if (_instance == null )
+            if (_instance == null)
                 _instance = new NavigationService();
 
             return _instance;
@@ -93,7 +93,7 @@ public class NavigationService
         await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
     }
 
-    void CreatePageViewModelMappings()
+    private void CreatePageViewModelMappings()
     {
         _mappings.Add(typeof(HomePageViewModel), typeof(HomePage));
         _mappings.Add(typeof(SettingsPageViewModel), typeof(SettingsPage));

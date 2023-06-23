@@ -18,8 +18,8 @@ public partial class ColorDialogPopup : Popup
 
     public ColorDialogPopup()
         : this(new Color())
-	{
-	}
+    {
+    }
 
     public ColorDialogPopup(Color InitialSelectedColor)
     {

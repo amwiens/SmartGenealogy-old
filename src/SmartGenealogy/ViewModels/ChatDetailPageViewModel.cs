@@ -1,11 +1,11 @@
-﻿using LLama.Common;
-using LLama;
+﻿using LLama;
+using LLama.Common;
 
 namespace SmartGenealogy.ViewModels;
 
 public partial class ChatDetailPageViewModel : BaseViewModel
 {
-    ChatSession _session;
+    private ChatSession _session;
 
     public ChatDetailPageViewModel()
     {
@@ -13,7 +13,7 @@ public partial class ChatDetailPageViewModel : BaseViewModel
         InitializeChatSession();
     }
 
-    void LoadData()
+    private void LoadData()
     {
         IsBusy = true;
         Task.Run(async () =>
@@ -57,13 +57,13 @@ public partial class ChatDetailPageViewModel : BaseViewModel
     }
 
     [ObservableProperty]
-    string _message;
+    private string _message;
 
     [ObservableProperty]
-    SocialUser _user;
+    private SocialUser _user;
 
     [ObservableProperty]
-    ObservableCollection<SocialMessage> _messages = new ObservableCollection<SocialMessage>();
+    private ObservableCollection<SocialMessage> _messages = new ObservableCollection<SocialMessage>();
 
     private void GetMessageResponse(string message)
     {

@@ -17,5 +17,4 @@
         <Setter Property="WidthRequest" Value="30" />
         <Setter Property="Text" Value="{x:Static views:SmartGenealogyIcons.ArrowLeft}" />
     </Style>
-
 </ResourceDictionary>

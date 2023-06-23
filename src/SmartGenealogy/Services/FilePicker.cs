@@ -2,13 +2,13 @@
 
 public class FilePicker
 {
-    static FilePicker _instance;
+    private static FilePicker _instance;
 
     public static FilePicker Instance
     {
         get
         {
-            if (_instance == null )
+            if (_instance == null)
                 _instance = new FilePicker();
 
             return _instance;

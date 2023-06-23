@@ -90,7 +90,7 @@
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="*" />
                                             </Grid.RowDefinitions>
-                                            
+
                                             <!-- Background color -->
                                             <Grid Grid.RowSpan="4"
                                                   HorizontalOptions="FillAndExpand"
@@ -104,7 +104,7 @@
                                                     </LinearGradientBrush>
                                                 </Grid.Background>
                                             </Grid>
-                                            
+
                                             <!-- Background image -->
                                             <Image Grid.RowSpan="4"
                                                    Aspect="AspectFill"
@@ -115,7 +115,7 @@
                                                    Source="{OnIdiom Phone='main_bg.png',
                                                                     Tablet='main_bg.png',
                                                                     Desktop='main_bg_desktop.png'}" />
-                                            
+
                                             <!-- Icon -->
                                             <Border Grid.Row="1"
                                                     Margin="20,0,20,0"

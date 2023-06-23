@@ -7,13 +7,13 @@ public partial class SettingsPageViewModel : BaseViewModel
     private readonly Services.FilePicker _filePicker;
 
     [ObservableProperty]
-    string modelPath;
+    private string modelPath;
 
     [ObservableProperty]
-    FileResult file;
+    private FileResult file;
 
     [ObservableProperty]
-    ThemePalette selectedPrimaryColorItem;
+    private ThemePalette selectedPrimaryColorItem;
 
     public SettingsPageViewModel()
     {

@@ -26,7 +26,6 @@
                        Text="{localization:Translate LabelModelPath}"
                        TextColor="{DynamicResource BaseTextColor}"
                        VerticalOptions="Center" />
-
             </StackLayout>
 
             <HorizontalStackLayout Grid.Row="0"
@@ -45,7 +44,7 @@
                        Padding="15" />
             </HorizontalStackLayout>
         </Grid>
-        
+
         <!-- Theme -->
         <Border x:Name="MainContent"
                 BackgroundColor="{DynamicResource BasePageColor}"
@@ -67,7 +66,6 @@
                            Text="{localization:Translate LabelChooseTheme}"
                            TextColor="{DynamicResource BaseTextColor}"
                            VerticalOptions="Center" />
-
                 </StackLayout>
 
                 <Grid Grid.Row="2"
@@ -153,7 +151,6 @@
                             ThumbColor="{DynamicResource PrimaryColor}"
                             Toggled="OnRTL_Toggled" />
                 </Grid>-->
-
             </Grid>
         </Border>
     </VerticalStackLayout>

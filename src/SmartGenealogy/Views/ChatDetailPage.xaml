@@ -113,14 +113,13 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="1" />
                 </Grid.RowDefinitions>
-                
+
                 <!-- Back Icon -->
                 <!--<Label HorizontalOptions="Center"
                        HorizontalTextAlignment="Center"
                        Style="{StaticResource IconBackLabelStyle}"
                        TextColor="{DynamicResource BaseTextColor}"
                        VerticalOptions="Center">
-                    
                 </Label>-->
 
                 <Grid Grid.Column="1"
@@ -142,7 +141,7 @@
                          Style="{StaticResource DividerStyle}"
                          VerticalOptions="EndAndExpand" />
             </Grid>
-        
+
             <!-- CHAT MESSAGES -->
             <CollectionView Grid.Row="1"
                             ItemSizingStrategy="MeasureAllItems"
@@ -180,7 +179,7 @@
                                VerticalOptions="Center" />
                     </Grid>
                 </Border>
-                
+
                 <!-- Send Button -->
                 <Button Grid.Column="1"
                         Padding="0"

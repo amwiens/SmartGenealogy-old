@@ -77,7 +77,6 @@
         <Setter Property="BorderColor" Value="{DynamicResource DeleteButtonColor}" />
     </Style>
 
-
     <!--  FILLED BUTTONS  -->
     <Style
         x:Key="PrimaryActionButtonStyle"
@@ -188,5 +187,4 @@
         <Setter Property="CornerRadius" Value="14" />
         <Setter Property="HeightRequest" Value="44" />
     </Style>
-
 </ResourceDictionary>

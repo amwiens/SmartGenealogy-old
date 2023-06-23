@@ -2,10 +2,10 @@ namespace SmartGenealogy.Controls;
 
 public partial class FlyoutFooter : ContentView
 {
-	public FlyoutFooter()
-	{
-		InitializeComponent();
+    public FlyoutFooter()
+    {
+        InitializeComponent();
 
-		labelVersion.Text = "Version" + " " + AppInfo.Current.VersionString;
-	}
+        labelVersion.Text = "Version" + " " + AppInfo.Current.VersionString;
+    }
 }

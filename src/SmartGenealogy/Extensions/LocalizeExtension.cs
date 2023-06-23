@@ -5,7 +5,7 @@ namespace SmartGenealogy.Extensions;
 [ContentProperty(nameof(Key))]
 public class LocalizeExtension : IMarkupExtension
 {
-    IStringLocalizer<AppTranslations> _localizer;
+    private IStringLocalizer<AppTranslations> _localizer;
 
     public string Key { get; set; } = string.Empty;
 

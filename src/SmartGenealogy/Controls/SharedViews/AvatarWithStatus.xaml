@@ -44,7 +44,7 @@
                     <RoundRectangle CornerRadius="8" />
                 </Border.StrokeShape>
             </Border>
-            
+
             <!-- STATUS NOTIFICATION -->
             <Border Padding="0"
                     BackgroundColor="{Binding Status, Source={x:Reference Root}, Converter={StaticResource ColorConverter}}"

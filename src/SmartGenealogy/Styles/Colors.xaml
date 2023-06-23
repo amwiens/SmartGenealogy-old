@@ -99,5 +99,4 @@
         <GradientStop Offset="0.1" Color="#ff9632" />
         <GradientStop Offset="1.0" Color="#e55313" />
     </LinearGradientBrush>
-
 </ResourceDictionary>

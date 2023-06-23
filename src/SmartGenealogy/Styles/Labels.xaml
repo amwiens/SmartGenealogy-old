@@ -102,5 +102,4 @@
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="{DynamicResource BaseTextColor}" />
     </Style>
-
 </ResourceDictionary>

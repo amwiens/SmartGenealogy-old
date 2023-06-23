@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.Views;
 
-static class IonIcons
+internal static class IonIcons
 {
     public const string Alert = "\uf101";
     public const string AlertCircled = "\uf100";

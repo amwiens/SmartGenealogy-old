@@ -47,7 +47,6 @@ public class AppSettings
         set => Preferences.Set(nameof(IsFirstLaunching), value);
     }
 
-
     public bool EnableRTL
     {
         get => this.enableRTL;

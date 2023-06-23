@@ -2,9 +2,9 @@ namespace SmartGenealogy.Views;
 
 public partial class TasksPage : ContentPage
 {
-	public TasksPage()
-	{
-		InitializeComponent();
-		BindingContext = new TasksPageViewModel();
-	}
+    public TasksPage()
+    {
+        InitializeComponent();
+        BindingContext = new TasksPageViewModel();
+    }
 }

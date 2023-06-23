@@ -2,7 +2,7 @@
 
 public class LazyAsync<T>
 {
-    readonly Lazy<Task<T>> instance;
+    private readonly Lazy<Task<T>> instance;
 
     public LazyAsync(Func<T> factory)
     {

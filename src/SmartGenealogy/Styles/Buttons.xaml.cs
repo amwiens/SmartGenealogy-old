@@ -2,8 +2,8 @@ namespace SmartGenealogy;
 
 public partial class Buttons : ResourceDictionary
 {
-	public Buttons()
-	{
-		InitializeComponent();
-	}
+    public Buttons()
+    {
+        InitializeComponent();
+    }
 }

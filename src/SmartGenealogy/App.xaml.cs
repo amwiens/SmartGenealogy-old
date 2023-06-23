@@ -43,7 +43,7 @@ public partial class App : Application
             }
         });
 
-        #endregion
+        #endregion Handlers
 
 #if WINDOWS || MACCATALYST
         MainPage = new DesktopShell();

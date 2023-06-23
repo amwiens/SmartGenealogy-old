@@ -6,7 +6,7 @@
              Title="Places Page">
     <VerticalStackLayout>
         <Label Text="Places page"
-               VerticalOptions="Center" 
+               VerticalOptions="Center"
                HorizontalOptions="Center" />
         <maps:Map x:Name="myMap"
                   WidthRequest="500"
