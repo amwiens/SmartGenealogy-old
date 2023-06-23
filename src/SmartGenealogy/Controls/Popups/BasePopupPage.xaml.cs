@@ -21,7 +21,7 @@ public partial class BasePopupPage : ContentPage
 		returnType: typeof(Color),
 		declaringType: typeof(BasePopupPage),
 		defaultValue: Color.FromArgb("#00000000"),
-		defaultBindingMode: BindingMode.OneWay);
+		defaultBindingMode: BindingMode.TwoWay);
 
 	public Color ForegroundColor
 	{
@@ -36,7 +36,7 @@ public partial class BasePopupPage : ContentPage
 		returnType: typeof(LayoutOptions),
 		declaringType: typeof(BasePopupPage),
 		defaultValue: LayoutOptions.Center,
-		defaultBindingMode: BindingMode.OneWay);
+		defaultBindingMode: BindingMode.TwoWay);
 
 	public LayoutOptions VerticalOptions
 	{
@@ -49,7 +49,7 @@ public partial class BasePopupPage : ContentPage
 		returnType: typeof(LayoutOptions),
 		declaringType: typeof(BasePopupPage),
 		defaultValue: LayoutOptions.Center,
-		defaultBindingMode: BindingMode.OneWay);
+		defaultBindingMode: BindingMode.TwoWay);
 
 	public LayoutOptions HorizontalOptions
 	{
@@ -61,7 +61,7 @@ public partial class BasePopupPage : ContentPage
 		propertyName: nameof(Margin),
 		returnType: typeof(Thickness),
 		declaringType: typeof(BasePopupPage),
-		defaultBindingMode: BindingMode.OneWay);
+		defaultBindingMode: BindingMode.TwoWay);
 
 	public Thickness Margin
 	{

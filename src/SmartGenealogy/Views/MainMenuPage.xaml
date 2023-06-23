@@ -7,14 +7,14 @@
              Background="{DynamicResource BasePageColor}"
              IconImageSource="menu_icon.png"
              NavigationPage.HasNavigationBar="True">
-    <Grid RowDefinitions="Auto,*,Auto">
+    <Grid RowDefinitions="200,*,60">
         <!-- Background Image -->
         <Image Grid.RowSpan="3"
                Margin="-1"
                Aspect="Fill"
                Opacity="0.6"
                Source="bg_purple.png" />
-        
+
         <!-- Gradient Mask -->
         <Grid Grid.RowSpan="3">
             <Grid.Background>
@@ -24,9 +24,9 @@
                 </LinearGradientBrush>
             </Grid.Background>
         </Grid>
-            
+
         <!-- Branding Logo -->
-        <controls:FlyoutHeader />
+        <controls:FlyoutHeader Grid.Row="0" />
 
         <!-- Main Menu -->
         <ListView x:Name="sampleListView"
@@ -66,7 +66,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-            
+
         <!-- Copyright Footer -->
         <controls:FlyoutFooter Grid.Row="2" />
     </Grid>

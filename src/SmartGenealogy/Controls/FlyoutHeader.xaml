@@ -26,6 +26,7 @@
                                              VerticalOptions="Center"
                                              WidthRequest="50" />
             </Border>
+
             <HorizontalStackLayout Spacing="15">
                 <Label FontAttributes="Bold"
                        FontSize="22"
@@ -36,6 +37,7 @@
                        TranslationY="2"
                        VerticalOptions="End"
                        VerticalTextAlignment="End" />
+
                 <Frame Padding="8,3"
                        BackgroundColor="{StaticResource White}"
                        BorderColor="Transparent"
