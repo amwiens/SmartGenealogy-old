@@ -70,6 +70,15 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CONTACT US.
+        /// </summary>
+        internal static string ButtonContactUs {
+            get {
+                return ResourceManager.GetString("ButtonContactUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dark Theme.
         /// </summary>
         internal static string ButtonDarkTheme {
@@ -129,6 +138,15 @@ namespace SmartGenealogy.Resources.Translations {
         internal static string LabelPickColor {
             get {
                 return ResourceManager.GetString("LabelPickColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        internal static string MenuMainAbout {
+            get {
+                return ResourceManager.GetString("MenuMainAbout", resourceCulture);
             }
         }
         
@@ -246,6 +264,24 @@ namespace SmartGenealogy.Resources.Translations {
         internal static string MenuMainTools {
             get {
                 return ResourceManager.GetString("MenuMainTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        internal static string PageTitleAboutUs {
+            get {
+                return ResourceManager.GetString("PageTitleAboutUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        internal static string StringAboutUs {
+            get {
+                return ResourceManager.GetString("StringAboutUs", resourceCulture);
             }
         }
         

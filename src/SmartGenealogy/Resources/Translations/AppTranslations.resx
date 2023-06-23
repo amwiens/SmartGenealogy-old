@@ -120,6 +120,9 @@
   <data name="ButtonChooseModel" xml:space="preserve">
     <value>Select Model</value>
   </data>
+  <data name="ButtonContactUs" xml:space="preserve">
+    <value>CONTACT US</value>
+  </data>
   <data name="ButtonDarkTheme" xml:space="preserve">
     <value>Dark Theme</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="LabelPickColor" xml:space="preserve">
     <value>Pick your Color</value>
+  </data>
+  <data name="MenuMainAbout" xml:space="preserve">
+    <value>About Us</value>
   </data>
   <data name="MenuMainAddresses" xml:space="preserve">
     <value>Addresses</value>
@@ -179,6 +185,12 @@
   </data>
   <data name="MenuMainTools" xml:space="preserve">
     <value>Tools</value>
+  </data>
+  <data name="PageTitleAboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="StringAboutUs" xml:space="preserve">
+    <value>About Us</value>
   </data>
   <data name="StringCopyright" xml:space="preserve">
     <value>Smart Genealogy</value>

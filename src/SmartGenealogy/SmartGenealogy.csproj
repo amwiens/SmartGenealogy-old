@@ -129,6 +129,9 @@
 	  <MauiXaml Update="Styles\Styles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\AddressesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

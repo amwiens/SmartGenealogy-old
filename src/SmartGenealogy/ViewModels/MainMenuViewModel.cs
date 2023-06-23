@@ -130,6 +130,12 @@ public partial class MainMenuViewModel : BaseViewModel
                 Title = LocalizationResourceManager.Translate("MenuMainSettings"),
                 Icon = MaterialDesignIcons.Settings,
                 TargetType = typeof(SettingsPage)
+            },
+            new MenuEntry
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainAbout"),
+                Icon = MaterialDesignIcons.Info,
+                TargetType = typeof(AboutPage)
             }
         };
     }
