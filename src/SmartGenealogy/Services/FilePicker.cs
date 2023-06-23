@@ -72,7 +72,7 @@ public class FilePicker
     }
 
     /// <summary>
-    /// Open Media Picker
+    /// Open Model Picker
     /// </summary>
     /// <returns>Task</returns>
     public async Task<FileResult> OpenModelPickerAsync()
@@ -90,6 +90,35 @@ public class FilePicker
             }
             else
                 await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose a new model", "Ok");
+
+            return null;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    /// <summary>
+    /// Open Database Picker
+    /// </summary>
+    /// <returns>Task</returns>
+    public async Task<FileResult> OpenDatabasePickerAsync()
+    {
+        try
+        {
+            var result = await Microsoft.Maui.Storage.FilePicker.Default.PickAsync(new PickOptions
+            {
+                PickerTitle = "Please pick a database"
+            });
+
+            if (result != null)
+            {
+                return result;
+            }
+            else
+                await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose a new database", "Ok");
 
             return null;
         }

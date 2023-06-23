@@ -2,10 +2,11 @@
 
 public partial class FilePageViewModel : BaseViewModel
 {
+    private readonly Services.FilePicker _filePicker;
 
     public FilePageViewModel()
     {
-
+        _filePicker = Services.FilePicker.Instance;
     }
 
     [RelayCommand]
@@ -15,9 +16,14 @@ public partial class FilePageViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public void OpenFile()
+    public async void OpenFile()
     {
-        WeakReferenceMessenger.Default.Send(new OpenFileMessage("ar-AE"));
+        var file = await _filePicker.OpenDatabasePickerAsync();
+        if (file != null)
+        {
+            AppSettings.AppSettings.FilePath = file.FullPath;
+            WeakReferenceMessenger.Default.Send(new OpenFileMessage(file.FullPath));
+        }
     }
 
     [RelayCommand]
