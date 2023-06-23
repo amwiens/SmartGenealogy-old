@@ -108,6 +108,9 @@
 	  <MauiXaml Update="Controls\SharedViews\ColorEditor.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Controls\SharedViews\HeaderTemplate.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Controls\SharedViews\RoundedCornerImage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
