@@ -80,7 +80,7 @@
 	    <AutoGen>True</AutoGen>
 	    <DependentUpon>AppTranslations.resx</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\DesktopShell.xaml.cs">
+	  <Compile Update="Views\Main\DesktopShell.xaml.cs">
 	    <DependentUpon>DesktopShell.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
@@ -132,10 +132,10 @@
 	  <MauiXaml Update="Styles\Styles.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AboutPage.xaml">
+	  <MauiXaml Update="Views\Main\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddressesPage.xaml">
+	  <MauiXaml Update="Views\Addresses\AddressesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Base\BasePage.xaml">
@@ -144,22 +144,22 @@
 	  <MauiXaml Update="Views\ChatDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\FilePage.xaml">
+	  <MauiXaml Update="Views\File\FilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\HomePage.xaml">
+	  <MauiXaml Update="Views\Main\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MainMenuPage.xaml">
+	  <MauiXaml Update="Views\Main\MainMenuPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MediaPage.xaml">
+	  <MauiXaml Update="Views\Media\MediaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PeoplePage.xaml">
+	  <MauiXaml Update="Views\People\PeoplePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PlacesPage.xaml">
+	  <MauiXaml Update="Views\Places\PlacesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Popups\ColorDialogPopup.xaml">
@@ -171,13 +171,13 @@
 	  <MauiXaml Update="Views\Popups\SelectItemDialogPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\PublishPage.xaml">
+	  <MauiXaml Update="Views\Publish\PublishPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SearchPage.xaml">
+	  <MauiXaml Update="Views\Search\SearchPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SettingsPage.xaml">
+	  <MauiXaml Update="Views\Main\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Themes\DarkTheme.xaml">
@@ -189,13 +189,13 @@
 	  <MauiXaml Update="Themes\LightTheme.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\MobileShell.xaml">
+	  <MauiXaml Update="Views\Main\MobileShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SourcesPage.xaml">
+	  <MauiXaml Update="Views\Sources\SourcesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TasksPage.xaml">
+	  <MauiXaml Update="Views\Tasks\TasksPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Templates\ReceiverChatMessageItemTemplate.xaml">
@@ -204,7 +204,7 @@
 	  <MauiXaml Update="Views\Templates\SenderChatMessageItemTemplate.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ToolsPage.xaml">
+	  <MauiXaml Update="Views\Tools\ToolsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

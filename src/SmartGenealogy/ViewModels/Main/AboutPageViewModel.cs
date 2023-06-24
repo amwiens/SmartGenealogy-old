@@ -56,4 +56,10 @@ public partial class AboutPageViewModel : BaseViewModel
 
     [ObservableProperty]
     private ObservableCollection<TestimonialModel> _testimonialItems;
+
+    [RelayCommand]
+    private void Tap()
+    {
+
+    }
 }
