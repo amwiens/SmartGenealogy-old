@@ -39,7 +39,8 @@ public static class MauiProgram
             })
             .RegisterAppServices()
             .RegisterViewModels()
-            .GetAppSettings();
+            .GetAppSettings()
+            .RegisterDatabase();
 
 #if DEBUG
         builder.Logging.AddDebug();
@@ -87,6 +88,16 @@ public static class MauiProgram
         builder.Services.AddTransient<ChatDetailPageViewModel>();
         builder.Services.AddTransient<SettingsPageViewModel>();
         builder.Services.AddTransient<AboutPageViewModel>();
+
+        return builder;
+    }
+
+    private static MauiAppBuilder RegisterDatabase(this MauiAppBuilder builder)
+    {
+        builder.Services.AddTransient<SmartGenealogyContext>((services) =>
+        {
+            return new SmartGenealogyContext(Path.Combine(FileSystem.AppDataDirectory, "SQLite001.db3"));
+        });
 
         return builder;
     }

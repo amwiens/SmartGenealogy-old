@@ -16,7 +16,7 @@ public partial class FilePageViewModel : BaseViewModel
     public void NewFile()
     {
         WeakReferenceMessenger.Default.Send(new OpenFileMessage(string.Empty));
-        FileOpen = !FileOpen;
+        FileOpen = !string.IsNullOrEmpty(AppSettings.AppSettings.FilePath);
     }
 
     [RelayCommand]

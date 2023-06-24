@@ -8,5 +8,6 @@
             Text="People page"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
+        <Image Aspect="{OnIdiom Phone='AspectFill', Desktop='AspectFill', Tablet='AspectFit'}" Source="C:\Users\amwie\OneDrive\Genealogy\RootsMagic8\Media\People\Abel\Abel, Beatrice LaVelle (1915)\Pics\AbelBeatriceLaVelle.png" />
     </VerticalStackLayout>
 </ContentPage>
