@@ -79,77 +79,77 @@ public partial class MainMenuViewModel : BaseViewModel, IRecipient<OpenFileMessa
         if (!string.IsNullOrEmpty(AppSettings.AppSettings.FilePath))
         {
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainPeople"),
-                    Icon = MaterialDesignIcons.People,
-                    TargetType = typeof(PeoplePage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPeople"),
+                Icon = MaterialDesignIcons.People,
+                TargetType = typeof(PeoplePage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainPlaces"),
-                    Icon = MaterialDesignIcons.Place,
-                    TargetType = typeof(PlacesPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPlaces"),
+                Icon = MaterialDesignIcons.Place,
+                TargetType = typeof(PlacesPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainSources"),
-                    Icon = MaterialDesignIcons.Tablet,
-                    TargetType = typeof(SourcesPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainSources"),
+                Icon = MaterialDesignIcons.Tablet,
+                TargetType = typeof(SourcesPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainMedia"),
-                    Icon = MaterialDesignIcons.Image,
-                    TargetType = typeof(MediaPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainMedia"),
+                Icon = MaterialDesignIcons.Image,
+                TargetType = typeof(MediaPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainTasks"),
-                    Icon = MaterialDesignIcons.CheckBox,
-                    TargetType = typeof(TasksPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainTasks"),
+                Icon = MaterialDesignIcons.CheckBox,
+                TargetType = typeof(TasksPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainAddresses"),
-                    Icon = MaterialDesignIcons.Mail,
-                    TargetType = typeof(AddressesPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainAddresses"),
+                Icon = MaterialDesignIcons.Mail,
+                TargetType = typeof(AddressesPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainSearch"),
-                    Icon = MaterialDesignIcons.Search,
-                    TargetType = typeof(SearchPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainSearch"),
+                Icon = MaterialDesignIcons.Search,
+                TargetType = typeof(SearchPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainPublish"),
-                    Icon = MaterialDesignIcons.Print,
-                    TargetType = typeof(PublishPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainPublish"),
+                Icon = MaterialDesignIcons.Print,
+                TargetType = typeof(PublishPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainTools"),
-                    Icon = MaterialDesignIcons.Dashboard,
-                    TargetType = typeof(ToolsPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainTools"),
+                Icon = MaterialDesignIcons.Dashboard,
+                TargetType = typeof(ToolsPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainChat"),
-                    Icon = MaterialDesignIcons.Chat,
-                    TargetType = typeof(ChatDetailPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainChat"),
+                Icon = MaterialDesignIcons.Chat,
+                TargetType = typeof(ChatDetailPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainSettings"),
-                    Icon = MaterialDesignIcons.Settings,
-                    TargetType = typeof(SettingsPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainSettings"),
+                Icon = MaterialDesignIcons.Settings,
+                TargetType = typeof(SettingsPage)
+            });
             MainMenuEntries.Add(new MenuEntry
-                {
-                    Title = LocalizationResourceManager.Translate("MenuMainAbout"),
-                    Icon = MaterialDesignIcons.Info,
-                    TargetType = typeof(AboutPage)
-                });
+            {
+                Title = LocalizationResourceManager.Translate("MenuMainAbout"),
+                Icon = MaterialDesignIcons.Info,
+                TargetType = typeof(AboutPage)
+            });
         }
     }
 }

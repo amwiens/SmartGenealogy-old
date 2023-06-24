@@ -110,15 +110,16 @@ public class FilePicker
         {
             var result = await Microsoft.Maui.Storage.FilePicker.Default.PickAsync(new PickOptions
             {
-                PickerTitle = "Please pick a database"
+                PickerTitle = "Please pick a database",
+                FileTypes = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>> { { DevicePlatform.WinUI, new[] { ".sgdb" } } }),
             });
 
             if (result != null)
             {
                 return result;
             }
-            else
-                await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose a new database", "Ok");
+            //else
+            //    await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose a new database", "Ok");
 
             return null;
         }
