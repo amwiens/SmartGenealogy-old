@@ -115,6 +115,24 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        internal static string LabelBackupFile {
+            get {
+                return ResourceManager.GetString("LabelBackupFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup the Smart Genealogy database.
+        /// </summary>
+        internal static string LabelBackupFileDescription {
+            get {
+                return ResourceManager.GetString("LabelBackupFileDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose your Theme.
         /// </summary>
         internal static string LabelChooseTheme {
@@ -124,11 +142,83 @@ namespace SmartGenealogy.Resources.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close File.
+        /// </summary>
+        internal static string LabelCloseFile {
+            get {
+                return ResourceManager.GetString("LabelCloseFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close your Smart Genealogy database.
+        /// </summary>
+        internal static string LabelCloseFileDescription {
+            get {
+                return ResourceManager.GetString("LabelCloseFileDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Data.
+        /// </summary>
+        internal static string LabelExportData {
+            get {
+                return ResourceManager.GetString("LabelExportData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export data from your Smart Genealogy database.
+        /// </summary>
+        internal static string LabelExportDataDescription {
+            get {
+                return ResourceManager.GetString("LabelExportDataDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Files.
         /// </summary>
         internal static string LabelFiles {
             get {
                 return ResourceManager.GetString("LabelFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tools.
+        /// </summary>
+        internal static string LabelFileTools {
+            get {
+                return ResourceManager.GetString("LabelFileTools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run database tools on your Smart Genealogy database.
+        /// </summary>
+        internal static string LabelFileToolsDescription {
+            get {
+                return ResourceManager.GetString("LabelFileToolsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string LabelImportData {
+            get {
+                return ResourceManager.GetString("LabelImportData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import data into your Smart Genealogy database.
+        /// </summary>
+        internal static string LabelImportDataDescription {
+            get {
+                return ResourceManager.GetString("LabelImportDataDescription", resourceCulture);
             }
         }
         

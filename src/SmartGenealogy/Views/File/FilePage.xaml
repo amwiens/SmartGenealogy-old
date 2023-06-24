@@ -79,6 +79,117 @@
                         <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelRestoreFileDescription}" />
                     </StackLayout>
                 </Border>
+
+                <Label Margin="30,30,30,0"
+                       TextColor="#1A73E8"
+                       Text="Current File"
+                       FontSize="25"
+                       IsVisible="{Binding FileOpen}" />
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}" IsVisible="{Binding FileOpen}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackupFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelBackupFile}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelBackupFileDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}" IsVisible="{Binding FileOpen}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ImportDataCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelImportData}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelImportDataDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}" IsVisible="{Binding FileOpen}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ExportDataCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelExportData}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelExportDataDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}" IsVisible="{Binding FileOpen}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToolsFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelFileTools}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelFileToolsDescription}" />
+                    </StackLayout>
+                </Border>
+
+                <Border Padding="30,25" Style="{StaticResource FeatureBorder}" IsVisible="{Binding FileOpen}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseFileCommand}" />
+                    </Border.GestureRecognizers>
+                    <StackLayout Spacing="10" VerticalOptions="Center">
+                        <HorizontalStackLayout Spacing="15" VerticalOptions="Center">
+                            <Image HeightRequest="25" VerticalOptions="Center">
+                                <Image.Source>
+                                    <FontImageSource FontFamily="IonIcons"
+                                                     Glyph="{x:Static views:IonIcons.Folder}"
+                                                     Size="20"
+                                                     Color="{DynamicResource BaseIconColor}" />
+                                </Image.Source>
+                            </Image>
+                            <Label Style="{StaticResource Title2}" Text="{localization:Translate LabelCloseFile}" />
+                        </HorizontalStackLayout>
+
+                        <Label Style="{StaticResource Footnote}" Text="{localization:Translate LabelCloseFileDescription}" />
+                    </StackLayout>
+                </Border>
             </StackLayout>
         </ScrollView>
     </Grid>

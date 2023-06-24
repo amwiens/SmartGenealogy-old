@@ -135,11 +135,41 @@
   <data name="LabelAppDescription" xml:space="preserve">
     <value>Test app description</value>
   </data>
+  <data name="LabelBackupFile" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="LabelBackupFileDescription" xml:space="preserve">
+    <value>Backup the Smart Genealogy database</value>
+  </data>
   <data name="LabelChooseTheme" xml:space="preserve">
     <value>Choose your Theme</value>
   </data>
+  <data name="LabelCloseFile" xml:space="preserve">
+    <value>Close File</value>
+  </data>
+  <data name="LabelCloseFileDescription" xml:space="preserve">
+    <value>Close your Smart Genealogy database</value>
+  </data>
+  <data name="LabelExportData" xml:space="preserve">
+    <value>Export Data</value>
+  </data>
+  <data name="LabelExportDataDescription" xml:space="preserve">
+    <value>Export data from your Smart Genealogy database</value>
+  </data>
   <data name="LabelFiles" xml:space="preserve">
     <value>Files</value>
+  </data>
+  <data name="LabelFileTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="LabelFileToolsDescription" xml:space="preserve">
+    <value>Run database tools on your Smart Genealogy database</value>
+  </data>
+  <data name="LabelImportData" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="LabelImportDataDescription" xml:space="preserve">
+    <value>Import data into your Smart Genealogy database</value>
   </data>
   <data name="LabelModelPath" xml:space="preserve">
     <value>Model Path</value>
