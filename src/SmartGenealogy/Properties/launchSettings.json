@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SmartGenealogy (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SmartGenealogy (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
