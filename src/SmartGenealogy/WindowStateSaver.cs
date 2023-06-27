@@ -25,8 +25,6 @@ using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 
-using System;
-using System.IO;
 using System.Text.Json;
 
 using Windows.Graphics;

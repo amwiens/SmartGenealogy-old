@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace SmartGenealogy.Settings.Models
+using SmartGenealogy.Settings.ViewModels;
+
+namespace SmartGenealogy.Settings.Models;
+
+public partial class Account : ObservableObject
 {
-    internal class Account
+    private readonly IDeveloperId _devId;
+
+    private readonly AccountsProviderViewModel _accountsProvider;
+
+    internal IDeveloperId GetDevId() => _devId;
+
+    public Account(AccountsProviderViewModel accountsProvider, IDeveloperId devId)
     {
+        _accountsProvider = accountsProvider;
+        _devId = devId;
     }
+
+    public string LoginId => _devId.LoginId;
+
+    public void RemoveAccount() => _accountsProvider.RemoveAccount(_devId.LoginId());
 }
