@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 
 using Microsoft.UI.Xaml;
 
+using SmartGenealogy.Common.Services;
+
 using System.Threading.Tasks;
 
 namespace SmartGenealogy.Settings.ViewModels;

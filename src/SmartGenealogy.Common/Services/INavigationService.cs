@@ -1,0 +1,28 @@
+﻿using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
+
+namespace SmartGenealogy.Common.Services;
+
+public interface INavigationService
+{
+    event NavigatedEventHandler Navigated;
+
+    bool CanGoBack
+    {
+        get;
+    }
+
+    Frame? Frame
+    {
+        get; set;
+    }
+
+    string DefaultPage
+    {
+        get; set;
+    }
+
+    bool NavigateTo(string pageKey, object? parameter = null, bool clearNavigation = false);
+
+    bool GoBack();
+}

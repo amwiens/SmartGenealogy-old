@@ -1,4 +1,7 @@
-﻿using SmartGenealogy.Settings.ViewModels;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+using SmartGenealogy.Settings.ViewModels;
 using SmartGenealogy.Settings.Views;
 
 namespace SmartGenealogy.Settings.Extensions;

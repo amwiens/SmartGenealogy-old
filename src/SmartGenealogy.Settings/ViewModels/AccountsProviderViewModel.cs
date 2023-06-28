@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
+using SmartGenealogy.Logging;
 using SmartGenealogy.Settings.Models;
 
 using System;

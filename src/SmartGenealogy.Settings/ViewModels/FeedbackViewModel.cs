@@ -3,6 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 
 using Microsoft.UI.Xaml;
 
+using SmartGenealogy.Common.Extensions;
+using SmartGenealogy.Common.Services;
+
 using System.Threading.Tasks;
 
 namespace SmartGenealogy.Settings.ViewModels;
@@ -37,9 +40,9 @@ public partial class FeedbackViewModel : ObservableObject
 
     private static string GetVersionDescription()
     {
-        IAppInfoService appINfoService = Application.Current.GetService<IAppInfoService>();
-        var localizedAppName = appINfoService.GetAppNameLocalized();
-        var version = appINfoService.GetAppVersion();
+        IAppInfoService appInfoService = Application.Current.GetService<IAppInfoService>();
+        var localizedAppName = appInfoService.GetAppNameLocalized();
+        var version = appInfoService.GetAppVersion();
 
         return $"{localizedAppName} - {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
     }
