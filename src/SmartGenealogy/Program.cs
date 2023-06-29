@@ -2,7 +2,7 @@
 
 using Avalonia;
 
-namespace SmartGenealogy.Desktop;
+namespace SmartGenealogy;
 
 class Program
 {
