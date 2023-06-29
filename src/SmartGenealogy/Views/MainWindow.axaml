@@ -1,12 +1,72 @@
-<Window xmlns="https://github.com/avaloniaui"
+<Window x:Class="SmartGenealogy.Views.MainWindow"
+        xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:SmartGenealogy.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:views="clr-namespace:SmartGenealogy.Views"
+        xmlns:vm="using:SmartGenealogy.ViewModels"
+        xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="SmartGenealogy.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SmartGenealogy">
-        <views:MainView />
+        Title="Smart Genealogy"
+        x:DataType="vm:MainWindowViewModel">
+  <Window.Styles>
+    <Style Selector="TextBlock.Subheadline">
+      <Setter Property="Margin" Value="0, 16" />
+    </Style>
+    <Style Selector="TextBlock.Subheadline2">
+      <Setter Property="Margin" Value="0, 8" />
+    </Style>
+    <Style Selector="TextBlock.Content">
+      <Setter Property="Margin" Value="0, 4" />
+      <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+  </Window.Styles>
+
+  <controls:SnackbarHost HostName="Root" TemplateApplied="TemplatedControl_OnTemplateApplied">
+    <controls:NavigationDrawer Name="LeftDrawer" Classes="permanent">
+      <controls:NavigationDrawer.LeftDrawerContent>
+        <ScrollViewer>
+          <StackPanel>
+
+            <ListBox Classes="NoScroll"
+                     Name="DrawerList">
+              <ListBox.Styles>
+                <Style Selector="ListBoxItem">
+                  <Setter Property="Height" Value="48" />
+                  <Setter Property="Padding" Value="16,0" />
+                  <Setter Property="VerticalContentAlignment" Value="Center" />
+                  
+                </Style>
+              </ListBox.Styles>
+              <TextBlock Classes="Body1" Text="{Binding Greeting}" />
+              <TextBlock Classes="Body1" Text="Home" />
+              <TextBlock Classes="Body1" Text="File" />
+            </ListBox>
+          </StackPanel>
+        </ScrollViewer>
+      </controls:NavigationDrawer.LeftDrawerContent>
+      <DockPanel LastChildFill="True">
+        <controls:ColorZone Name="PART_AAppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
+                            DockPanel.Dock="Top"
+                            Height="56" Mode="PrimaryMid" ZIndex="1">
+          <Grid Margin="16">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="24" />
+              <ColumnDefinition Width="32" />
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="32" />
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ToggleButton Name="NavDrawerSwitch"
+                          Foreground="{DynamicResource MaterialDesignBody}"
+                          Width="32" Height="32" Padding="4">
+              <avalonia:MaterialIcon Kind="Menu" Width="24" Height="24" />
+            </ToggleButton>
+          </Grid>
+        </controls:ColorZone>
+      </DockPanel>
+    </controls:NavigationDrawer>
+  </controls:SnackbarHost>
 </Window>
