@@ -1,6 +1,25 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using Aura.UI.Data;
 
-public partial class MainWindowViewModel : ViewModelBase
+using ReactiveUI;
+
+using System.Collections.ObjectModel;
+
+namespace SmartGenealogy.ViewModels;
+
+public class MainWindowViewModel : ViewModelBase
 {
-    public string Text => "Welcome to Main Window!";
+    private ObservableCollection<INavigationViewItemTemplate> _navigationViewsItems;
+
+    public MainWindowViewModel()
+    {
+        _navigationViewsItems = new();
+
+
+    }
+
+    public ObservableCollection<INavigationViewItemTemplate> Items
+    {
+        get => _navigationViewsItems;
+        set => this.RaiseAndSetIfChanged(ref _navigationViewsItems, value);
+    }
 }

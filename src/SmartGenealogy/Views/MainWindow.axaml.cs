@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
 
 namespace SmartGenealogy.Views;
 
@@ -11,9 +12,10 @@ public partial class MainWindow : Window
 #if DEBUG
         this.AttachDevTools();
 #endif
-        DragBorder.PointerPressed += (s, e) =>
-        {
-            BeginMoveDrag(e);
-        };
+    }
+
+    private void InitializeComponent()
+    {
+        AvaloniaXamlLoader.Load(this);
     }
 }
