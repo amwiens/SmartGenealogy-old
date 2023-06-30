@@ -2,5 +2,5 @@
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Main Window!";
+    public string Text => "Welcome to Main Window!";
 }

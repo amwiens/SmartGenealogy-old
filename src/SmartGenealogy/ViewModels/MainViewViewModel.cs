@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+public partial class MainViewViewModel : ViewModelBase
 {
     public string Greeting => "Welcome to Avalonia!";
 }
