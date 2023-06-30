@@ -6,30 +6,24 @@
         mc:Ignorable="d"
         xmlns:vm="using:SmartGenealogy.ViewModels"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Smart Genealogy">
+        Title="Smart Genealogy"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True">
 
   <Design.DataContext>
     <vm:MainWindowViewModel />
   </Design.DataContext>
 
-  <TextBlock Text="This is a test!" />
-  <!--<NavigationView Name="nv" ItemsPanel="{Binding Items}">
-    <NavigationView.ItemTemplate>
-      <DataTemplate>
-        <TextBlock Text="{Binding Header}" />
-      </DataTemplate>
-    </NavigationView.ItemTemplate>
-
-    <NavigationView.SelectedContentTemplate>
-      <DataTemplate>
-        <TextBlock DataContext="{Binding #nv.SelectedItem}" Text="{Binding Content}" />
-      </DataTemplate>
-    </NavigationView.SelectedContentTemplate>
-
-    <NavigationView.TitleTemplate>
-      <DataTemplate>
-        <TextBlock DataContext="{Binding #nv.SelectedItem}" Text="{Binding Title}" />
-      </DataTemplate>
-    </NavigationView.TitleTemplate>
-  </NavigationView>-->
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                     TintColor="Black"
+                                     TintOpacity="1"
+                                     MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    
+  </Panel>
 </Window>
