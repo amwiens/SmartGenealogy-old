@@ -3,6 +3,8 @@
 using FluentAvalonia.UI.Controls;
 using FluentAvalonia.UI.Media.Animation;
 
+using SmartGenealogy.Controls;
+
 namespace SmartGenealogy.Services;
 
 public class NavigationService
