@@ -7,6 +7,6 @@
         xmlns:views="clr-namespace:SmartGenealogy.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         Icon="/Assets/avalonia-logo.ico"
-        Title="SmartGenealogy">
+        Title="Smart Genealogy">
         <views:MainView />
 </Window>

@@ -12,6 +12,18 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
+  
+  <ItemGroup>
+    <None Remove="Resources\Icons\avalonia-logo.ico" />
+    <None Remove="Resources\Icons\FAIcon.ico" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Resources\Icons\avalonia-logo.ico" />
+    <AvaloniaResource Include="Resources\Icons\FAIcon.ico" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.0.0-rc1.1" />
