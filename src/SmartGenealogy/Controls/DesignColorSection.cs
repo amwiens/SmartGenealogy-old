@@ -15,7 +15,7 @@ public class DesignColorSection : HeaderedContentControl
     public static readonly DirectProperty<DesignColorSection, IList<ColorTile>> TilesProperty =
         AvaloniaProperty.RegisterDirect<DesignColorSection, IList<ColorTile>>(nameof(Tiles),
             x => x.Tiles);
-    
+
     public string Description
     {
         get => GetValue(DescriptionProperty);

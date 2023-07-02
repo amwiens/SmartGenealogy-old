@@ -124,8 +124,8 @@ public class ControlExample : HeaderedContentControl
     {
         base.OnLoaded();
 
-        // Do this here rather than OnApplyTemplate, otherwise this will animate
-        // on load and that isn't desired
+        // Do this here rather than OnApplyTemplate, otherwise this will animate on load and that
+        // isn't desired
         AttachOptionsHostAnimation();
     }
 
@@ -157,7 +157,7 @@ public class ControlExample : HeaderedContentControl
 
     private void BuildMoreButtonMenu()
     {
-        if ( (!EnableShowDefinitionLink && !EnableShowDocsLink))
+        if ((!EnableShowDefinitionLink && !EnableShowDocsLink))
         {
             _moreButton.IsVisible = false;
         }

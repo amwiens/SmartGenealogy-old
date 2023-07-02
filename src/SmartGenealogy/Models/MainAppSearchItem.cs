@@ -4,7 +4,8 @@ namespace SmartGenealogy.Models;
 
 public class MainAppSearchItem
 {
-    public MainAppSearchItem() { }
+    public MainAppSearchItem()
+    { }
 
     public MainAppSearchItem(string pageHeader, Type pageType)
     {

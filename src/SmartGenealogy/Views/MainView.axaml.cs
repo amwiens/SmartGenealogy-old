@@ -28,8 +28,8 @@ public partial class MainView : UserControl
         base.OnAttachedToVisualTree(e);
 
         ClipboardService.Owner = TopLevel.GetTopLevel(this);
-        // Simple check - all desktop versions of this app will have a window as the TopLevel
-        // Mobile and WASM will have something else
+        // Simple check - all desktop versions of this app will have a window as the TopLevel Mobile
+        // and WASM will have something else
         _isDesktop = TopLevel.GetTopLevel(this) is Window;
         var vm = new MainViewViewModel();
         DataContext = vm;
@@ -42,7 +42,7 @@ public partial class MainView : UserControl
         {
             //(aw.SplashScreen as MainAppSplashScreen).InitApp += () =>
             //{
-                InitializeNavigationPages();
+            InitializeNavigationPages();
             //};
         }
         else
@@ -187,8 +187,7 @@ public partial class MainView : UserControl
     {
         var pt = e.GetCurrentPoint(this);
 
-        // Frame handles X1 -> BackRequested automatically, we can handle X2
-        // here to enable forward navigation
+        // Frame handles X1 -> BackRequested automatically, we can handle X2 here to enable forward navigation
         if (pt.Properties.PointerUpdateKind == PointerUpdateKind.XButton2Released)
         {
             if (FrameView.CanGoForward)
@@ -227,7 +226,7 @@ public partial class MainView : UserControl
             //}
             //else
             //{
-                info = e.RecommendedNavigationTransitionInfo;
+            info = e.RecommendedNavigationTransitionInfo;
             //}
 
             NavigationService.Instance.NavigateFromContext(nvi.Tag, info);
@@ -292,8 +291,8 @@ public partial class MainView : UserControl
 
     private void SetNVIIcon(NavigationViewItem item, bool selected)
     {
-        // Technically, yes you could set up binding and converters and whatnot to let the icon change
-        // between filled and unfilled based on selection, but this is so much simpler
+        // Technically, yes you could set up binding and converters and whatnot to let the icon
+        // change between filled and unfilled based on selection, but this is so much simpler
 
         if (item == null)
             return;

@@ -64,8 +64,8 @@ public class SampleCodePresenter : HeaderedContentControl
 
         base.OnApplyTemplate(e);
 
-        // Don't initialize the TExtEditor stuff if we aren't going to use it
-        // AvaloniaEdit w/ TextMate is stupid slow
+        // Don't initialize the TExtEditor stuff if we aren't going to use it AvaloniaEdit w/
+        // TextMate is stupid slow
         var code = Code;
         if (string.IsNullOrEmpty(code) || code.Length == 0)
             return;

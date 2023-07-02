@@ -1,6 +1,7 @@
 ﻿/*
  * Taken from: https://www.code4it.dev/blog/download-and-save-files/
  */
+
 namespace SmartGenealogy.Core.Helpers;
 
 public static class FileDownload

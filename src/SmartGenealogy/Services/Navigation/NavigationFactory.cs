@@ -117,15 +117,11 @@ public class NavigationFactory : INavigationPageFactory
     //    if (pbvm is null)
     //        return null;
 
-    //    Control page = null;
-    //    var key = pbvm.PageKey;
+    // Control page = null; var key = pbvm.PageKey;
 
-    //    if (CorePages.TryGetValue(key, out var func))
-    //    {
-    //        page = func();
+    // if (CorePages.TryGetValue(key, out var func)) { page = func();
 
-    //        const string faPageGithub =
-    //            "https://github.com/amwx/FluentAvalonia/tree/master/samples/FAControlsGallery/Pages/CoreControlPages";
+    // const string faPageGithub = "https://github.com/amwx/FluentAvalonia/tree/master/samples/FAControlsGallery/Pages/CoreControlPages";
 
     //        (page as ControlsPageBase).GithubPrefixString = faPageGithub;
     //        (page as ControlsPageBase).CreationContext = pbvm;

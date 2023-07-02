@@ -18,6 +18,5 @@ public partial class MainViewViewModel : ViewModelBase
 
     public void BuildSearchTerms(MainPageViewModelBase pageItem)
     {
-
     }
 }

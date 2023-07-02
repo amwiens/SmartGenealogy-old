@@ -19,6 +19,7 @@ public class ControlExampleSubstitution : AvaloniaObject
     public string Key { get; set; }
 
     private object _value = null;
+
     public object Value
     {
         get => _value;
@@ -30,6 +31,7 @@ public class ControlExampleSubstitution : AvaloniaObject
     }
 
     private bool _enabled = true;
+
     public bool IsEnabled
     {
         get => _enabled;
