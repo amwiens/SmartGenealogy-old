@@ -14,6 +14,16 @@
 
   
   <ItemGroup>
+    <Compile Remove="Controls\ColorTile.cs" />
+    <Compile Remove="Controls\ControlDefinitionOverlay.cs" />
+    <Compile Remove="Controls\ControlExample.cs" />
+    <Compile Remove="Controls\ControlExampleSubstitution.cs" />
+    <Compile Remove="Controls\DesignColorSection.cs" />
+    <Compile Remove="Controls\SampleCodePresenter.cs" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
     <None Remove="Resources\Icons\avalonia-logo.ico" />
     <None Remove="Resources\Icons\FAIcon.ico" />
   </ItemGroup>

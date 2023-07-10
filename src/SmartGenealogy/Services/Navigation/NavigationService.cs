@@ -3,8 +3,6 @@
 using FluentAvalonia.UI.Controls;
 using FluentAvalonia.UI.Media.Animation;
 
-using SmartGenealogy.Controls;
-
 namespace SmartGenealogy.Services;
 
 public class NavigationService
@@ -28,7 +26,7 @@ public class NavigationService
         _frame.Navigate(t);
     }
 
-    public void NavigateFromContext(object dataContext, NavigationTransitionInfo transitionInfo = null)
+    public void NavigateFromContext(object dataContext, NavigationTransitionInfo? transitionInfo = null)
     {
         _frame.NavigateFromObject(dataContext,
             new FluentAvalonia.UI.Navigation.FrameNavigationOptions
@@ -36,15 +34,6 @@ public class NavigationService
                 IsNavigationStackEnabled = true,
                 TransitionInfoOverride = transitionInfo ?? new SuppressNavigationTransitionInfo()
             });
-    }
-
-    public void ShowControlDefinitionOverlay(Type targetType)
-    {
-        if (_overlayHost != null)
-        {
-            (_overlayHost.Children[0] as ControlDefinitionOverlay).TargetType = targetType;
-            (_overlayHost.Children[0] as ControlDefinitionOverlay).Show();
-        }
     }
 
     public void ClearOverlay()

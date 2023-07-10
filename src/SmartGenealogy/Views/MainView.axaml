@@ -50,7 +50,7 @@
                          Classes="SampleApp"
                          ItemsSource="{Binding SearchTerms}">
           <AutoCompleteBox.ItemTemplate>
-            
+
           </AutoCompleteBox.ItemTemplate>
         </AutoCompleteBox>
       </Border>
@@ -64,10 +64,10 @@
                        IsBackEnabled="{Binding #FrameView.CanGoBack}">
       <ui:Frame Name="FrameView" />
     </ui:NavigationView>
- 
+
     <Panel Name="OverlayHost"
           Grid.Row="1">
-      <local:ControlDefinitionOverlay Name="CtrlDefOverlay" />
+      <!--<local:ControlDefinitionOverlay Name="CtrlDefOverlay" />-->
     </Panel>
   </Grid>
 </UserControl>

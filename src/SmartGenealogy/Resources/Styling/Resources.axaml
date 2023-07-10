@@ -13,10 +13,10 @@
   <!-- Navigation View Icons -->
   <ui:SymbolIconSource Symbol="Home" x:Key="HomeIcon" />
   <ui:SymbolIconSource Symbol="HomeFilled" x:Key="HomeIconFilled" />
-  
+
   <ui:SymbolIconSource Symbol="Document" x:Key="FileIcon" />
   <ui:SymbolIconSource Symbol="DocumentFilled" x:Key="FileIconFilled" />
-  
+
   <ui:SymbolIconSource Symbol="People" x:Key="PeopleIcon" />
   <ui:SymbolIconSource Symbol="PeopleFilled" x:Key="PeopleIconFilled" />
 

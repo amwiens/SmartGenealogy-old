@@ -16,6 +16,10 @@ public enum PageHeaderTextType
 
 public class PageHeaderControl : TemplatedControl
 {
+    private Uri? _titleTextImage;
+    private Image? _text1;
+    private PageHeaderTextType _textType;
+
     public PageHeaderControl()
     {
         SizeChanged += OnSizeChanged;
@@ -50,7 +54,7 @@ public class PageHeaderControl : TemplatedControl
         UpdateTitleText();
     }
 
-    private void OnSizeChanged(object sender, SizeChangedEventArgs e)
+    private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
     {
         var wid = e.NewSize.Width;
         if (wid < 630)
@@ -94,12 +98,8 @@ public class PageHeaderControl : TemplatedControl
         _text1.Source = new Bitmap(s);
     }
 
-    private void OnActualThemeVariantChanged(object sender, EventArgs e)
+    private void OnActualThemeVariantChanged(object? sender, EventArgs e)
     {
         UpdateTitleText();
     }
-
-    private Uri _titleTextImage;
-    private Image _text1;
-    private PageHeaderTextType _textType;
 }
