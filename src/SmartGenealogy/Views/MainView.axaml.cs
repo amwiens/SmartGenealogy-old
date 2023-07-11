@@ -19,6 +19,8 @@ namespace SmartGenealogy.Views;
 
 public partial class MainView : UserControl
 {
+    private bool _isDesktop;
+
     public MainView()
     {
         InitializeComponent();
@@ -34,9 +36,9 @@ public partial class MainView : UserControl
         _isDesktop = TopLevel.GetTopLevel(this) is Window;
         var vm = new MainViewViewModel();
         DataContext = vm;
-        FrameView.NavigationPageFactory = vm.NavigationFactory;
-        NavigationService.Instance.SetFrame(FrameView);
-        NavigationService.Instance.SetOverlayHost(OverlayHost);
+        //FrameView.NavigationPageFactory = vm.NavigationFactory;
+        //NavigationService.Instance.SetFrame(FrameView);
+        //NavigationService.Instance.SetOverlayHost(OverlayHost);
 
         // On desktop, the window will call this during the splashscreen
         if (e.Root is AppWindow aw)
@@ -51,9 +53,9 @@ public partial class MainView : UserControl
             InitializeNavigationPages();
         }
 
-        FrameView.Navigated += OnFrameViewNavigated;
-        NavView.ItemInvoked += OnNavigationViewItemInvoked;
-        NavView.BackRequested += OnNavigationViewBackRequested;
+        //FrameView.Navigated += OnFrameViewNavigated;
+        //NavView.ItemInvoked += OnNavigationViewItemInvoked;
+        //NavView.BackRequested += OnNavigationViewBackRequested;
     }
 
     protected override void OnLoaded(RoutedEventArgs e)
@@ -168,8 +170,8 @@ public partial class MainView : UserControl
                 }
             }
 
-            NavView.MenuItemsSource = menuItems;
-            NavView.FooterMenuItemsSource = footerItems;
+            //NavView.MenuItemsSource = menuItems;
+            //NavView.FooterMenuItemsSource = footerItems;
 
             if (_isDesktop || OperatingSystem.IsBrowser())
             {
@@ -180,33 +182,33 @@ public partial class MainView : UserControl
                 NavView.PaneDisplayMode = NavigationViewPaneDisplayMode.Left;
             }
 
-            FrameView.NavigateFromObject((NavView.MenuItemsSource.ElementAt(0) as Control).Tag);
+            //FrameView.NavigateFromObject((NavView.MenuItemsSource.ElementAt(0) as Control).Tag);
         });
     }
 
-    protected override void OnPointerReleased(PointerReleasedEventArgs e)
-    {
-        var pt = e.GetCurrentPoint(this);
+    //protected override void OnPointerReleased(PointerReleasedEventArgs e)
+    //{
+    //    var pt = e.GetCurrentPoint(this);
 
-        // Frame handles X1 -> BackRequested automatically, we can handle X2 here to enable forward navigation
-        if (pt.Properties.PointerUpdateKind == PointerUpdateKind.XButton2Released)
-        {
-            if (FrameView.CanGoForward)
-            {
-                FrameView.GoForward();
-                e.Handled = true;
-            }
-        }
+    //    // Frame handles X1 -> BackRequested automatically, we can handle X2 here to enable forward navigation
+    //    if (pt.Properties.PointerUpdateKind == PointerUpdateKind.XButton2Released)
+    //    {
+    //        if (FrameView.CanGoForward)
+    //        {
+    //            FrameView.GoForward();
+    //            e.Handled = true;
+    //        }
+    //    }
 
-        base.OnPointerReleased(e);
-    }
+    //    base.OnPointerReleased(e);
+    //}
 
-    private void OnNavigationViewBackRequested(object sender, NavigationViewBackRequestedEventArgs e)
-    {
-        FrameView.GoBack();
-    }
+    //private void OnNavigationViewBackRequested(object? sender, NavigationViewBackRequestedEventArgs e)
+    //{
+    //    FrameView.GoBack();
+    //}
 
-    private void OnNavigationViewItemInvoked(object sender, NavigationViewItemInvokedEventArgs e)
+    private void OnNavigationViewItemInvoked(object? sender, NavigationViewItemInvokedEventArgs e)
     {
         // Change the current selected item back to normal
         // SetNVIIcon(sender as NavigationViewItem, false);
@@ -234,7 +236,7 @@ public partial class MainView : UserControl
         }
     }
 
-    private void OnFrameViewNavigated(object sender, NavigationEventArgs e)
+    private void OnFrameViewNavigated(object? sender, NavigationEventArgs e)
     {
         var page = e.Content as Control;
         var dc = page.DataContext;
@@ -432,6 +434,4 @@ public partial class MainView : UserControl
             await ani.RunAsync(WindowIcon);
         }
     }
-
-    private bool _isDesktop;
 }

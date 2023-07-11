@@ -1,12 +1,15 @@
 using Avalonia.Controls;
 
-namespace SmartGenealogy.Views
+using SmartGenealogy.ViewModels;
+
+namespace SmartGenealogy.Pages
 {
     public partial class SettingsPage : UserControl
     {
         public SettingsPage()
         {
             InitializeComponent();
+            DataContext = new SettingsPageViewModel();
         }
     }
 }

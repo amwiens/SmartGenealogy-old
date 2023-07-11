@@ -1,5 +1,9 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class PublishPageViewModel : MainPageViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class PublishPageViewModel : MainPageViewModelBase
 {
+    [ObservableProperty]
+    private string _greeting = "Publish Page View Model Greeting";
 }

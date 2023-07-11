@@ -1,5 +1,9 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class PlacesPageViewModel : MainPageViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class PlacesPageViewModel : MainPageViewModelBase
 {
+    [ObservableProperty]
+    private string _greeting = "Places Page View Model Greeting";
 }

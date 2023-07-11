@@ -1,6 +1,6 @@
 ﻿namespace SmartGenealogy.ViewModels;
 
-public class MainPageViewModelBase
+public class MainPageViewModelBase : ViewModelBase
 {
     public string? NavHeader { get; set; }
 

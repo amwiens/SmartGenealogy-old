@@ -1,5 +1,9 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class TasksPageViewModel : MainPageViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class TasksPageViewModel : MainPageViewModelBase
 {
+    [ObservableProperty]
+    private string _greeting = "Tasks Page View Model Greeting";
 }

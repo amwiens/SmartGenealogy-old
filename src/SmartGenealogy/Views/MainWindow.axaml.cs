@@ -29,7 +29,7 @@ public partial class MainWindow : AppWindow
         Application.Current.ActualThemeVariantChanged += OnActualThemeVariantChanged;
     }
 
-    private void OnActualThemeVariantChanged(object sender, EventArgs e)
+    private void OnActualThemeVariantChanged(object? sender, EventArgs e)
     {
         if (IsWindows11)
         {
@@ -47,7 +47,7 @@ public partial class MainWindow : AppWindow
 
     private void TryEnableMicaEffect()
     {
-        return;
+        //return;
         // TransparencyBackgroundFallback = Brushes.Transparent; TransparencyLevelHint = WindowTransparencyLevel.Mica;
 
         // The background colors for the Mica brush are still based around

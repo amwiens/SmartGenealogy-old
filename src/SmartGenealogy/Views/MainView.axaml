@@ -61,13 +61,30 @@
                        Grid.RowSpan="2"
                        Name="NavView"
                        IsSettingsVisible="False"
-                       IsBackEnabled="{Binding #FrameView.CanGoBack}">
-      <ui:Frame Name="FrameView" />
+                       IsBackEnabled="{Binding #FrameView.CanGoBack}"
+                       MenuItemsSource="{Binding Categories}"
+                       Content="{Binding CurrentPage}"
+                       SelectedItem="{Binding SelectedCategory}"
+                       FooterMenuItemsSource="{Binding FooterItems}">
+      <ui:NavigationView.MenuItemTemplateSelector>
+        <vm:MenuItemTemplateSelector>
+          <DataTemplate DataType="{x:Type vm:Category}">
+            <ui:NavigationViewItem Content="{Binding Name}" IconSource="{Binding Icon}" ToolTip.Tip="{Binding ToolTip}" />
+          </DataTemplate>
+
+          <vm:MenuItemTemplateSelector.SeparatorTemplate>
+            <DataTemplate DataType="{x:Type vm:Separator}">
+              <ui:NavigationViewItemSeparator />
+            </DataTemplate>
+          </vm:MenuItemTemplateSelector.SeparatorTemplate>
+        </vm:MenuItemTemplateSelector>
+      </ui:NavigationView.MenuItemTemplateSelector>
+      <!--<ui:Frame Name="FrameView" />-->
     </ui:NavigationView>
 
-    <Panel Name="OverlayHost"
+    <!--<Panel Name="OverlayHost"
           Grid.Row="1">
-      <!--<local:ControlDefinitionOverlay Name="CtrlDefOverlay" />-->
-    </Panel>
+      <local:ControlDefinitionOverlay Name="CtrlDefOverlay" />
+    </Panel>-->
   </Grid>
 </UserControl>

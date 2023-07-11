@@ -1,5 +1,7 @@
 using Avalonia.Controls;
 
+using SmartGenealogy.ViewModels;
+
 namespace SmartGenealogy.Pages
 {
     public partial class SourcesPage : UserControl
@@ -7,6 +9,7 @@ namespace SmartGenealogy.Pages
         public SourcesPage()
         {
             InitializeComponent();
+            DataContext = new SourcesPageViewModel();
         }
     }
 }

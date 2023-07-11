@@ -1,5 +1,9 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class FilePageViewModel : MainPageViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class FilePageViewModel : MainPageViewModelBase
 {
+    [ObservableProperty]
+    private string _greeting = "File Page View Model Greeting";
 }

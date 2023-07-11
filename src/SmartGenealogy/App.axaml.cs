@@ -27,6 +27,8 @@ public partial class App : Application
             {
                 DataContext = new MainViewViewModel()
             };
+
+            desktop.ShutdownRequested += ShutdownRequested;
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
@@ -37,5 +39,10 @@ public partial class App : Application
         }
 
         base.OnFrameworkInitializationCompleted();
+    }
+
+    private void ShutdownRequested(object? sender, ShutdownRequestedEventArgs e)
+    {
+
     }
 }

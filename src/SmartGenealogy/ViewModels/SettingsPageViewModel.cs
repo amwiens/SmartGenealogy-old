@@ -1,7 +1,12 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class SettingsPageViewModel : MainPageViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class SettingsPageViewModel : MainPageViewModelBase
 {
+    [ObservableProperty]
+    private string _greeting = "Settings Page View Model Greeting";
+
     public SettingsPageViewModel()
     {
     }
