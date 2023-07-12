@@ -12,6 +12,11 @@
       <controls:PageHeaderControl TitleText="File"
                                   Classes="smaller" />
 
+      <Button Content="Open File"
+              Command="{Binding OpenFileCommand}" />
+      <Button Content="Close File"
+              Command="{Binding CloseFileCommand}" />
+
     </StackPanel>
   </ScrollViewer>
 </UserControl>
