@@ -1,7 +1,5 @@
 ﻿using Avalonia.Collections;
 using Avalonia.Controls;
-using Avalonia.Controls.Templates;
-using Avalonia.Metadata;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
@@ -70,7 +68,6 @@ public partial class MainViewViewModel : ViewModelBase
         }
         //else if (SelectedCategory is NavigationViewItem nvi)
         //{
-
         //}
     }
 }

@@ -43,6 +43,5 @@ public partial class App : Application
 
     private void ShutdownRequested(object? sender, ShutdownRequestedEventArgs e)
     {
-
     }
 }

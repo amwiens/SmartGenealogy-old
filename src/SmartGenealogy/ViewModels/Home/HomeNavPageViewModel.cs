@@ -2,7 +2,8 @@
 
 public partial class HomeNavPageViewModel
 {
-    public HomeNavPageViewModel() { }
+    public HomeNavPageViewModel()
+    { }
 
     public HomeNavPageViewModel(string title, Uri uri)
     {
@@ -15,5 +16,4 @@ public partial class HomeNavPageViewModel
     public string? ImageUri { get; set; }
 
     public Uri NavigateURI { get; set; }
-
 }

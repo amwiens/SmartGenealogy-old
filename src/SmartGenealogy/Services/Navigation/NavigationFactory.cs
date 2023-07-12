@@ -4,7 +4,6 @@ using FluentAvalonia.UI.Controls;
 
 using SmartGenealogy.Pages;
 using SmartGenealogy.ViewModels;
-using SmartGenealogy.Views;
 
 namespace SmartGenealogy.Services;
 
