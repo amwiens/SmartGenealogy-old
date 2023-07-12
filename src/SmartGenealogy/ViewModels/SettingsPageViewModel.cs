@@ -7,6 +7,8 @@ namespace SmartGenealogy.ViewModels;
 
 public partial class SettingsPageViewModel : MainPageViewModelBase
 {
+    private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
+
     [ObservableProperty]
     private string _currentVersion = typeof(SmartGenealogy.Controls.PageHeaderControl).Assembly.GetName().Version?.ToString();
 
@@ -21,6 +23,7 @@ public partial class SettingsPageViewModel : MainPageViewModelBase
         if (oldValue != newValue && Application.Current.ActualThemeVariant != newValue)
         {
             Application.Current.RequestedThemeVariant = newValue;
+            _appSettings.CurrentTheme = newValue;
         }
     }
 

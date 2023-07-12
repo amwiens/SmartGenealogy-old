@@ -16,7 +16,6 @@ namespace SmartGenealogy.ViewModels;
 
 public partial class MainViewViewModel : ObservableRecipient, IRecipient<OpenFileChangedMessage>
 {
-    private bool _fileOpen;
     private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
 
     [ObservableProperty]

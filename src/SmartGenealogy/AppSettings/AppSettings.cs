@@ -1,4 +1,6 @@
-﻿namespace SmartGenealogy.AppSettings;
+﻿using Avalonia.Styling;
+
+namespace SmartGenealogy.AppSettings;
 
 public class AppSettings
 {
@@ -22,10 +24,6 @@ public class AppSettings
     /// </summary>
     public string AppDataPath { get; }
     /// <summary>
-    /// File path for the last open file.
-    /// </summary>
-    public string? FilePath { get; set; }
-    /// <summary>
     /// Width of the main window.
     /// </summary>
     public double Width { get; set; }
@@ -45,6 +43,14 @@ public class AppSettings
     /// Is the main window maximized.
     /// </summary>
     public bool IsMaximized { get; set; }
+    /// <summary>
+    /// File path for the last open file.
+    /// </summary>
+    public string? FilePath { get; set; }
+    /// <summary>
+    /// Current theme.
+    /// </summary>
+    public ThemeVariant CurrentTheme { get; set; }
 
     public AppSettings()
     {

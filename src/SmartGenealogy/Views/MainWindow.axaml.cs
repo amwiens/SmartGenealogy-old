@@ -46,6 +46,7 @@ public partial class MainWindow : AppWindow
             this.Height = settings.Height;
             this.Width = settings.Width;
             this.WindowState = settings.IsMaximized ? WindowState.Maximized : WindowState.Normal;
+            Application.Current.RequestedThemeVariant = settings.CurrentTheme;
         }
         else
         {
