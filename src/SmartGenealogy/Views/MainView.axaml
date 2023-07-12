@@ -6,6 +6,7 @@
              xmlns:ui="using:FluentAvalonia.UI.Controls"
              xmlns:vm="using:SmartGenealogy.ViewModels"
              xmlns:local="using:SmartGenealogy.Controls"
+             xmlns:models="using:SmartGenealogy.Models"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:MainViewViewModel">
   <!--<Design.DataContext>
@@ -62,22 +63,22 @@
                        Name="NavView"
                        IsSettingsVisible="False"
                        IsBackEnabled="{Binding #FrameView.CanGoBack}"
-                       MenuItemsSource="{Binding Categories}"
+                       MenuItemsSource="{Binding NavigationItems}"
                        Content="{Binding CurrentPage}"
-                       SelectedItem="{Binding SelectedCategory}"
+                       SelectedItem="{Binding SelectedNavigationItem}"
                        FooterMenuItemsSource="{Binding FooterItems}">
       <ui:NavigationView.MenuItemTemplateSelector>
-        <vm:MenuItemTemplateSelector>
-          <DataTemplate DataType="{x:Type vm:Category}">
+        <models:NavigationItemTemplateSelector>
+          <DataTemplate DataType="{x:Type models:NavigationItem}">
             <ui:NavigationViewItem Content="{Binding Name}" IconSource="{Binding Icon}" ToolTip.Tip="{Binding ToolTip}" />
           </DataTemplate>
 
-          <vm:MenuItemTemplateSelector.SeparatorTemplate>
-            <DataTemplate DataType="{x:Type vm:Separator}">
+          <models:NavigationItemTemplateSelector.SeparatorTemplate>
+            <DataTemplate DataType="{x:Type models:SeparatorItem}">
               <ui:NavigationViewItemSeparator />
             </DataTemplate>
-          </vm:MenuItemTemplateSelector.SeparatorTemplate>
-        </vm:MenuItemTemplateSelector>
+          </models:NavigationItemTemplateSelector.SeparatorTemplate>
+        </models:NavigationItemTemplateSelector>
       </ui:NavigationView.MenuItemTemplateSelector>
       <!--<ui:Frame Name="FrameView" />-->
     </ui:NavigationView>
