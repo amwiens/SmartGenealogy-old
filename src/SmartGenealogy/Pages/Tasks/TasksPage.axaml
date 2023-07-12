@@ -1,0 +1,17 @@
+<UserControl x:Class="SmartGenealogy.Pages.TasksPage"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:controls="using:SmartGenealogy.Controls"
+             xmlns:vm="using:SmartGenealogy.ViewModels"
+             xmlns:conv="using:SmartGenealogy.Converters">
+  <ScrollViewer>
+    <StackPanel Spacing="-75">
+      <controls:PageHeaderControl TitleText="Tasks"
+                                  Classes="smaller" />
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

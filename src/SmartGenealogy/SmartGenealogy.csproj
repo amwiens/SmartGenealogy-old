@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <OutputType>WinExe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <Compile Remove="Controls\ColorTile.cs" />
+    <Compile Remove="Controls\ControlDefinitionOverlay.cs" />
+    <Compile Remove="Controls\ControlExample.cs" />
+    <Compile Remove="Controls\ControlExampleSubstitution.cs" />
+    <Compile Remove="Controls\DesignColorSection.cs" />
+    <Compile Remove="Controls\SampleCodePresenter.cs" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Remove="Resources\Icons\avalonia-logo.ico" />
+    <None Remove="Resources\Icons\FAIcon.ico" />
+    <None Remove="Resources\Images\AvGithub.png" />
+    <None Remove="Resources\Images\Documentation.png" />
+    <None Remove="Resources\Images\FAHeader2.png" />
+    <None Remove="Resources\Images\FAHeader2_Dark.png" />
+    <None Remove="Resources\Images\FAHeaderBackground.png" />
+    <None Remove="Resources\Images\FAHeaderBackground_Dark.png" />
+    <None Remove="Resources\Images\FAHeader_CoreControls.png" />
+    <None Remove="Resources\Images\FAHeader_CoreControls_Dark.png" />
+    <None Remove="Resources\Images\FAHeader_NewControls.png" />
+    <None Remove="Resources\Images\FAHeader_NewControls_Dark.png" />
+    <None Remove="Resources\Images\FluentDesign.png" />
+    <None Remove="Resources\Images\Github.png" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <AvaloniaResource Include="Resources\Icons\avalonia-logo.ico" />
+    <AvaloniaResource Include="Resources\Icons\FAIcon.ico" />
+    <AvaloniaResource Include="Resources\Images\AvGithub.png" />
+    <AvaloniaResource Include="Resources\Images\Documentation.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader2.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader2_Dark.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeaderBackground.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeaderBackground_Dark.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader_CoreControls.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader_CoreControls_Dark.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader_NewControls.png" />
+    <AvaloniaResource Include="Resources\Images\FAHeader_NewControls_Dark.png" />
+    <AvaloniaResource Include="Resources\Images\FluentDesign.png" />
+    <AvaloniaResource Include="Resources\Images\Github.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.0" />
+    <PackageReference Include="AvaloniaEdit.TextMate" Version="11.0.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0" />
+    <PackageReference Include="FluentAvaloniaUI" Version="2.0.0-rc1" />
+    <PackageReference Include="Sandreas.Avalonia.Preferences" Version="0.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartGenealogy.Core\SmartGenealogy.Core.csproj" />
+  </ItemGroup>
+</Project>

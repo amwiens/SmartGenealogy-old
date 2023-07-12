@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33620.401
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGenealogy.Maui", "SmartGenealogy.Maui\SmartGenealogy.Maui.csproj", "{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGenealogy.Core", "SmartGenealogy.Core\SmartGenealogy.Core.csproj", "{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGenealogy", "SmartGenealogy\SmartGenealogy.csproj", "{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Solution Items", "{1BF398E8-62DB-4D32-B663-1489F4B9825A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Source", "1. Source", "{502DCC9C-F192-4C31-B6B3-891612581BD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Z. Test", "Z. Test", "{AB24E92B-511D-4C82-BDC0-CEDCD9370A6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +19,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F43EC20-A469-4E71-9AA9-C02DB436C2EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDD78FCA-2123-4B05-B8D9-0DBCC3FF45E8} = {502DCC9C-F192-4C31-B6B3-891612581BD0}
+		{22F7E530-FF2E-4AC9-A3EC-F62CCF4A40E0} = {502DCC9C-F192-4C31-B6B3-891612581BD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {267BED8C-4A5B-4A12-8F43-2547F065B263}
