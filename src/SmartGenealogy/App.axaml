@@ -15,6 +15,6 @@
 
   <Application.Styles>
     <sty:FluentAvaloniaTheme PreferSystemTheme="True" PreferUserAccentColor="True" />
-    <!--<StyleInclude Source="avares://SmartGenealogy/Resources/Styling/SmartGenealogyStyles.axaml" />-->
+    <StyleInclude Source="avares://SmartGenealogy/Resources/Styling/SmartGenealogyStyles.axaml" />
   </Application.Styles>
 </Application>

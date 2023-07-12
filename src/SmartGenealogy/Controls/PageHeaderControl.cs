@@ -78,7 +78,7 @@ public class PageHeaderControl : TemplatedControl
 
         var theme = ActualThemeVariant;
 
-        const string asset = "avares://SmartGenealogy/Assets/Images/";
+        const string asset = "avares://SmartGenealogy/Resources/Images/";
 
         var header = TextType switch
         {
