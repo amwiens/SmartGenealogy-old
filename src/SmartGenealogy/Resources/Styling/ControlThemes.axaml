@@ -97,22 +97,14 @@
                   OpacityMask="{DynamicResource HeaderOpacityMaskBrush}" />
 
           <Panel>
-            <Image Name="TitleTextImageHost"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Left"
-                   MaxWidth="400"
-                   Margin="30 50 0 0"
-                   MinWidth="150"
-                   IsVisible="True"
-                   RenderOptions.BitmapInterpolationMode="HighQuality">
-              <Image.Transitions>
-                <Transitions>
-                  <ThicknessTransition Duration="00:00:00.25"
-                                       Property="Margin"
-                                       Easing="0,0 0,1" />
-                </Transitions>
-              </Image.Transitions>
-            </Image>
+            <TextBlock Name="TitleText"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       Margin="30 50 0 0"
+                       IsVisible="True"
+                       Text="{TemplateBinding TitleText}"
+                       Theme="{StaticResource TitleTextBlockStyle}"
+                       FontSize="40" />
           </Panel>
         </Panel>
       </ControlTemplate>
@@ -128,13 +120,13 @@
 
     <Style Selector="^.smaller">
       <Setter Property="Height" Value="200" />
-      <Style Selector="^ /template/ Image#TitleTextImageHost">
+      <Style Selector="^ /template/ TextBlock#TitleText">
         <Setter Property="Margin" Value="30 25 0 0" />
       </Style>
     </Style>
     <Style Selector="^.small">
       <Setter Property="Height" Value="150" />
-      <Style Selector="^ /template/ Image#TitleTextImageHost">
+      <Style Selector="^ /template/ TextBlock#TitleText">
         <Setter Property="Margin" Value="30 25 0 25" />
       </Style>
     </Style>

@@ -29,7 +29,7 @@
 
   <ScrollViewer>
     <StackPanel Spacing="-75">
-      <controls:PageHeaderControl />
+      <controls:PageHeaderControl TitleText="Home" Classes="smaller" />
 
       <ItemsControl ItemsSource="{Binding Pages}"
                     Name="TileItemsControl"

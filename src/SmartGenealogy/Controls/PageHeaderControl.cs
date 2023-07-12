@@ -7,99 +7,108 @@ using Avalonia.Styling;
 
 namespace SmartGenealogy.Controls;
 
-public enum PageHeaderTextType
-{
-    Main,
-    CoreControls,
-    FAControls
-}
+//public enum PageHeaderTextType
+//{
+//    Main,
+//    CoreControls,
+//    FAControls
+//}
 
 public class PageHeaderControl : TemplatedControl
 {
-    private Uri? _titleTextImage;
-    private Image? _text1;
-    private PageHeaderTextType _textType;
+    //private Uri? _titleTextImage;
+    //private Image? _text1;
+    //private PageHeaderTextType _textType;
 
     public PageHeaderControl()
     {
-        SizeChanged += OnSizeChanged;
-        ActualThemeVariantChanged += OnActualThemeVariantChanged;
+        //SizeChanged += OnSizeChanged;
+        //ActualThemeVariantChanged += OnActualThemeVariantChanged;
     }
 
-    public static readonly DirectProperty<PageHeaderControl, PageHeaderTextType> TextTypeProperty =
-        AvaloniaProperty.RegisterDirect<PageHeaderControl, PageHeaderTextType>(nameof(TextType),
-            x => x.TextType, (x, v) => x.TextType = v);
+    //public static readonly DirectProperty<PageHeaderControl, PageHeaderTextType> TextTypeProperty =
+    //    AvaloniaProperty.RegisterDirect<PageHeaderControl, PageHeaderTextType>(nameof(TextType),
+    //        x => x.TextType, (x, v) => x.TextType = v);
 
-    public PageHeaderTextType TextType
+    //public PageHeaderTextType TextType
+    //{
+    //    get => _textType;
+    //    set => SetAndRaise(TextTypeProperty, ref _textType, value);
+    //}
+
+    //public static readonly DirectProperty<PageHeaderControl, Uri> TitleTextImageProperty =
+    //    AvaloniaProperty.RegisterDirect<PageHeaderControl, Uri>(nameof(TitleTextImage),
+    //        x => x.TitleTextImage, (x, v) => x.TitleTextImage = v);
+
+    //public Uri TitleTextImage
+    //{
+    //    get => _titleTextImage;
+    //    set => SetAndRaise(TitleTextImageProperty, ref _titleTextImage, value);
+    //}
+
+    public static readonly StyledProperty<string> TitleTextProperty =
+        AvaloniaProperty.Register<PageHeaderControl, string>(nameof(TitleText));
+
+    public string TitleText
     {
-        get => _textType;
-        set => SetAndRaise(TextTypeProperty, ref _textType, value);
-    }
-
-    public static readonly DirectProperty<PageHeaderControl, Uri> TitleTextImageProperty =
-        AvaloniaProperty.RegisterDirect<PageHeaderControl, Uri>(nameof(TitleTextImage),
-            x => x.TitleTextImage, (x, v) => x.TitleTextImage = v);
-
-    public Uri TitleTextImage
-    {
-        get => _titleTextImage;
-        set => SetAndRaise(TitleTextImageProperty, ref _titleTextImage, value);
+        get => GetValue(TitleTextProperty);
+        set => SetValue(TitleTextProperty, value);
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
     {
         base.OnApplyTemplate(e);
 
-        _text1 = e.NameScope.Get<Image>("TitleTextImageHost");
-        UpdateTitleText();
+        //_text1 = e.NameScope.Get<Image>("TitleTextImageHost");
+        //UpdateTitleText();
     }
 
-    private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
-    {
-        var wid = e.NewSize.Width;
-        if (wid < 630)
-        {
-            var delta = 630 - wid;
+    //private void OnSizeChanged(object? sender, SizeChangedEventArgs e)
+    //{
+        //var wid = e.NewSize.Width;
+        //if (wid < 630)
+        //{
+        //    var delta = 630 - wid;
 
-            _text1.Width = 400 - delta;
-        }
-        else
-        {
-            _text1.Width = double.NaN;
-        }
+        //    _text1.Width = 400 - delta;
+        //}
+        //else
+        //{
+        //    _text1.Width = double.NaN;
+        //}
 
-        PseudoClasses.Set(":small", wid < 450);
-    }
+        //PseudoClasses.Set(":small", wid < 450);
+    //}
 
-    private void UpdateTitleText()
-    {
-        if (_text1 == null)
-            return;
+    //private void UpdateTitleText()
+    //{
+    //    if (_text1 == null)
+    //        return;
 
-        var theme = ActualThemeVariant;
+    //    var theme = ActualThemeVariant;
 
-        const string asset = "avares://SmartGenealogy/Resources/Images/";
+    //    const string asset = "avares://SmartGenealogy/Resources/Images/";
 
-        var header = TextType switch
-        {
-            PageHeaderTextType.CoreControls => "FAHeader_CoreControls",
-            PageHeaderTextType.FAControls => "FAHeader_NewControls",
-            _ => "FAHeader2"
-        };
+    //    var header = TextType switch
+    //    {
+    //        PageHeaderTextType.CoreControls => "FAHeader_CoreControls",
+    //        PageHeaderTextType.FAControls => "FAHeader_NewControls",
+    //        _ => "FAHeader2"
+    //    };
 
-        if (theme == ThemeVariant.Light)
-        {
-            header += "_Dark";
-        }
+    //    if (theme == ThemeVariant.Light)
+    //    {
+    //        header += "_Dark";
+    //    }
 
-        header += ".png";
+    //    header += ".png";
 
-        using var s = AssetLoader.Open(new Uri($"{asset}{header}"));
-        _text1.Source = new Bitmap(s);
-    }
+    //    using var s = AssetLoader.Open(new Uri($"{asset}{header}"));
+    //    _text1.Source = new Bitmap(s);
+    //}
 
-    private void OnActualThemeVariantChanged(object? sender, EventArgs e)
-    {
-        UpdateTitleText();
-    }
+    //private void OnActualThemeVariantChanged(object? sender, EventArgs e)
+    //{
+    //    UpdateTitleText();
+    //}
 }

@@ -5,9 +5,6 @@ namespace SmartGenealogy.ViewModels;
 public partial class HomePageViewModel : MainPageViewModelBase
 {
     [ObservableProperty]
-    private string _greeting = "Home Page View Model Greeting";
-
-    [ObservableProperty]
     private List<HomeNavPageViewModel> _pages = new List<HomeNavPageViewModel>();
 
     public HomePageViewModel()
