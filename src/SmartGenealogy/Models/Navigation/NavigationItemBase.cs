@@ -1,5 +1,7 @@
-﻿namespace SmartGenealogy.Models;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public abstract class NavigationItemBase
+namespace SmartGenealogy.Models;
+
+public abstract class NavigationItemBase : ObservableObject
 {
 }

@@ -1,4 +1,4 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿namespace SmartGenealogy.ViewModels.Home;
 
 public partial class HomeNavPageViewModel
 {
