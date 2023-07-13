@@ -68,6 +68,7 @@ public partial class MainViewViewModel : ObservableRecipient, IRecipient<OpenFil
             NavigationItems.Add(new NavigationItem { Name = "Tools", Icon = Symbol.Repair, ToolTip = "Tools" });
         }
 
+        FooterItems.Clear();
         FooterItems.Add(new NavigationItem { Name = "Settings", Icon = Symbol.Settings, ToolTip = "Settings" });
     }
 
