@@ -4,17 +4,18 @@ using FluentAvalonia.UI.Controls;
 
 using SmartGenealogy.Pages;
 using SmartGenealogy.ViewModels;
+using SmartGenealogy.Views;
 
 namespace SmartGenealogy.Services;
 
 public class NavigationFactory : INavigationPageFactory
 {
-    public NavigationFactory(MainViewViewModel owner)
+    public NavigationFactory(MainWindowViewModel owner)
     {
         Owner = owner;
     }
 
-    public MainViewViewModel Owner { get; }
+    public MainWindowViewModel Owner { get; }
 
     public Control GetPage(Type srcType)
     {
@@ -23,16 +24,16 @@ public class NavigationFactory : INavigationPageFactory
 
     public Control GetPageFromObject(object target)
     {
-        if (target is HomePageViewModel)
+        if (target is HomeViewModel)
         {
-            return new HomePage
+            return new Home
             {
                 DataContext = target
             };
         }
-        else if (target is FilePageViewModel)
+        else if (target is FilesViewModel)
         {
-            return new FilePage
+            return new Files
             {
                 DataContext = target
             };

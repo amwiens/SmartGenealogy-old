@@ -1,13 +1,16 @@
-<UserControl x:Class="SmartGenealogy.Pages.HomePage"
+<UserControl x:Class="SmartGenealogy.Views.Home"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ext="clr-namespace:SmartGenealogy.Extensions"
+             xmlns:contract="clr-namespace:SmartGenealogy.Contracts.ViewModels"
              xmlns:controls="using:SmartGenealogy.Controls"
              xmlns:vm="using:SmartGenealogy.ViewModels"
              xmlns:conv="using:SmartGenealogy.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
-             x:DataType="vm:HomePageViewModel">
+             x:DataType="vm:HomeViewModel"
+             DataContext="{ext:DependencyInjection Type=contract:IHomeViewModel}">
   <UserControl.Resources>
     <ControlTheme x:Key="NavButtonStyle"
                   TargetType="Button"

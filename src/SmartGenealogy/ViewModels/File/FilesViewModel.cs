@@ -2,11 +2,12 @@
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
+using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 
 namespace SmartGenealogy.ViewModels;
 
-public partial class FilePageViewModel : MainPageViewModelBase
+public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
 {
     private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
 

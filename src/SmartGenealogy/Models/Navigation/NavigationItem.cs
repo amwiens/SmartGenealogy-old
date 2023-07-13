@@ -1,12 +1,22 @@
-﻿using FluentAvalonia.UI.Controls;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+using SmartGenealogy.ViewModels;
 
 namespace SmartGenealogy.Models;
 
-public class NavigationItem : NavigationItemBase
+public partial class NavigationItem : NavigationItemBase
 {
-    public string? Name { get; set; }
+    public readonly string? Name;
+    
+    [ObservableProperty]
+    private string? _displayName;
 
-    public string? ToolTip { get; set; }
+    public ViewModelBase ViewModel { get; set; }
 
-    public Symbol Icon { get; set; }
+    public NavigationItem(ViewModelBase viewModel, string displayName, string name)
+    {
+        ViewModel = viewModel;
+        DisplayName = displayName;
+        Name = name;
+    }
 }

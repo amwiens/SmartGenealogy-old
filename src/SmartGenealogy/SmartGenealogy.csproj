@@ -60,11 +60,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
     <PackageReference Include="Avalonia" Version="11.0.0" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.0.0" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.0.0.1" />
     <PackageReference Include="AvaloniaEdit.TextMate" Version="11.0.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
 
@@ -76,5 +78,14 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartGenealogy.Core\SmartGenealogy.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\File\Files.axaml.cs">
+      <DependentUpon>Files.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Home.axaml.cs">
+      <DependentUpon>Home.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

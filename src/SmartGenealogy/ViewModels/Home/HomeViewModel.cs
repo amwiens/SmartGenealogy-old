@@ -1,13 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
+using SmartGenealogy.Contracts.ViewModels;
+
 namespace SmartGenealogy.ViewModels;
 
-public partial class HomePageViewModel : MainPageViewModelBase
+public partial class HomeViewModel : MainPageViewModelBase, IHomeViewModel
 {
     [ObservableProperty]
     private List<HomeNavPageViewModel> _pages = new List<HomeNavPageViewModel>();
 
-    public HomePageViewModel()
+    public HomeViewModel()
     {
         Pages = new List<HomeNavPageViewModel>()
         {
