@@ -1,12 +1,11 @@
 using Avalonia.Controls;
 
-namespace SmartGenealogy.Views
+namespace SmartGenealogy.Views.Files;
+
+public partial class Files : UserControl
 {
-    public partial class Files : UserControl
+    public Files()
     {
-        public Files()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

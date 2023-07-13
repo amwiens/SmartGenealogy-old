@@ -81,11 +81,41 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Addresses\Addresses.axaml.cs">
+      <DependentUpon>Addresses.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\File\Files.axaml.cs">
       <DependentUpon>Files.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Home.axaml.cs">
+    <Compile Update="Views\Home\Home.axaml.cs">
       <DependentUpon>Home.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Media\Media.axaml.cs">
+      <DependentUpon>Media.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\People\People.axaml.cs">
+      <DependentUpon>People.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Places\Places.axaml.cs">
+      <DependentUpon>Places.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Publish\Publish.axaml.cs">
+      <DependentUpon>Publish.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Search\Search.axaml.cs">
+      <DependentUpon>Search.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Settings\SettingsPage.axaml.cs">
+      <DependentUpon>SettingsPage.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Sources\Sources.axaml.cs">
+      <DependentUpon>Sources.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tasks\Tasks.axaml.cs">
+      <DependentUpon>Tasks.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Tools\Tools.axaml.cs">
+      <DependentUpon>Tools.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

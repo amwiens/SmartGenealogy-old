@@ -1,5 +1,5 @@
 ﻿namespace SmartGenealogy.Contracts.ViewModels;
 
-public interface IFileViewModel
+public interface ITasksViewModel
 {
 }

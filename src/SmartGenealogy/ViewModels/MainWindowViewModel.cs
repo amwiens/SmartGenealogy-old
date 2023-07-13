@@ -4,10 +4,11 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
+using FluentAvalonia.UI.Controls;
+
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 using SmartGenealogy.Models;
-using SmartGenealogy.Services;
 
 using System.Collections.ObjectModel;
 
@@ -29,7 +30,18 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
     [ObservableProperty]
     private ObservableCollection<NavigationItem> _footerItems = new();
 
-    public MainWindowViewModel(IHomeViewModel homeViewModel, IFileViewModel fileViewModel)
+    public MainWindowViewModel(IHomeViewModel homeViewModel,
+        IFileViewModel fileViewModel,
+        IPeopleViewModel peopleViewModel,
+        IPlacesViewModel placesViewModel,
+        ISourcesViewModel sourcesViewModel,
+        IMediaViewModel mediaViewModel,
+        ITasksViewModel tasksViewModel,
+        IAddressesViewModel addressesViewModel,
+        ISearchViewModel searchViewModel,
+        IPublishViewModel publishViewModel,
+        IToolsViewModel toolsViewModel,
+        ISettingsPageViewModel settingsViewModel)
     {
         //NavigationFactory = new NavigationFactory(this);
 
@@ -37,9 +49,24 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
         NavigationItems = new ObservableCollection<NavigationItem>
         {
-            new((ViewModelBase)homeViewModel, "Home", "Home"),
-            new((ViewModelBase)fileViewModel, "File", "File")
+            new((ViewModelBase)homeViewModel, "Home", "Home", Symbol.Home),
+            new((ViewModelBase)fileViewModel, "File", "File", Symbol.Document),
+            new((ViewModelBase)peopleViewModel, "People", "People", Symbol.People),
+            new((ViewModelBase)placesViewModel, "Places", "Places", Symbol.Earth),
+            new((ViewModelBase)sourcesViewModel, "Sources", "Sources", Symbol.Library),
+            new((ViewModelBase)mediaViewModel, "Media", "Media", Symbol.Image),
+            new((ViewModelBase)tasksViewModel, "Tasks", "Tasks", Symbol.ShowResults),
+            new((ViewModelBase)addressesViewModel, "Addresses", "Addresses", Symbol.ContactInfo),
+            new((ViewModelBase)searchViewModel, "Search", "Search", Symbol.Find),
+            new((ViewModelBase)publishViewModel, "Publish", "Publish", Symbol.Print),
+            new((ViewModelBase)toolsViewModel, "Tools", "Tools", Symbol.Repair)
         };
+
+        FooterItems = new ObservableCollection<NavigationItem>
+        {
+            new((ViewModelBase)settingsViewModel, "Settings", "Settings", Symbol.Settings)
+        };
+
         SelectedNavigationItem = NavigationItems[0];
         SwitchTab();
     }

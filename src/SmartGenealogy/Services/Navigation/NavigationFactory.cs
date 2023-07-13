@@ -2,9 +2,7 @@
 
 using FluentAvalonia.UI.Controls;
 
-using SmartGenealogy.Pages;
 using SmartGenealogy.ViewModels;
-using SmartGenealogy.Views;
 
 namespace SmartGenealogy.Services;
 
@@ -24,90 +22,90 @@ public class NavigationFactory : INavigationPageFactory
 
     public Control GetPageFromObject(object target)
     {
-        if (target is HomeViewModel)
-        {
-            return new Home
-            {
-                DataContext = target
-            };
-        }
-        else if (target is FilesViewModel)
-        {
-            return new Files
-            {
-                DataContext = target
-            };
-        }
-        else if (target is PeoplePageViewModel)
-        {
-            return new PeoplePage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is PlacesPageViewModel)
-        {
-            return new PlacesPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is SourcesPageViewModel)
-        {
-            return new SourcesPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is MediaPageViewModel)
-        {
-            return new MediaPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is TasksPageViewModel)
-        {
-            return new TasksPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is AddressesPageViewModel)
-        {
-            return new AddressesPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is SearchPageViewModel)
-        {
-            return new SearchPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is PublishPageViewModel)
-        {
-            return new PublishPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is ToolsPageViewModel)
-        {
-            return new ToolsPage
-            {
-                DataContext = target
-            };
-        }
-        else if (target is SettingsPageViewModel)
-        {
-            return new SettingsPage
-            {
-                DataContext = target
-            };
-        }
+        //if (target is HomeViewModel)
+        //{
+        //    return new Home
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is FilesViewModel)
+        //{
+        //    return new Files
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is PeoplePageViewModel)
+        //{
+        //    return new People
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is PlacesPageViewModel)
+        //{
+        //    return new Places
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is SourcesPageViewModel)
+        //{
+        //    return new Sources
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is MediaPageViewModel)
+        //{
+        //    return new Media
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is TasksPageViewModel)
+        //{
+        //    return new Tasks
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is AddressesPageViewModel)
+        //{
+        //    return new Addresses
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is SearchPageViewModel)
+        //{
+        //    return new Search
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is PublishPageViewModel)
+        //{
+        //    return new Publish
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is ToolsPageViewModel)
+        //{
+        //    return new Tools
+        //    {
+        //        DataContext = target
+        //    };
+        //}
+        //else if (target is SettingsPageViewModel)
+        //{
+        //    return new Settings
+        //    {
+        //        DataContext = target
+        //    };
+        //}
 
         return null;
     }

@@ -5,7 +5,7 @@ using CommunityToolkit.Mvvm.Messaging;
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 
-namespace SmartGenealogy.ViewModels;
+namespace SmartGenealogy.ViewModels.Files;
 
 public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
 {

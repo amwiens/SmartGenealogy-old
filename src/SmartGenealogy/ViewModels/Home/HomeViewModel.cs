@@ -2,7 +2,7 @@
 
 using SmartGenealogy.Contracts.ViewModels;
 
-namespace SmartGenealogy.ViewModels;
+namespace SmartGenealogy.ViewModels.Home;
 
 public partial class HomeViewModel : MainPageViewModelBase, IHomeViewModel
 {
