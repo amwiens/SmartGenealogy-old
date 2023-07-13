@@ -5,6 +5,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 using SmartGenealogy.Contracts.ViewModels;
 
+using System.Collections.ObjectModel;
+
 namespace SmartGenealogy.ViewModels.Settings;
 
 public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPageViewModel
@@ -15,10 +17,10 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
     private string _currentVersion = typeof(SmartGenealogy.Controls.PageHeaderControl).Assembly.GetName().Version?.ToString();
 
     [ObservableProperty]
-    private ThemeVariant[] _appThemes = new[] { ThemeVariant.Default, ThemeVariant.Light, ThemeVariant.Dark };
+    private ObservableCollection<ThemeVariant> _appThemes = new ObservableCollection<ThemeVariant> { ThemeVariant.Dark, ThemeVariant.Light };
 
     [ObservableProperty]
-    private ThemeVariant _currentAppTheme;
+    private ThemeVariant _currentAppTheme = Application.Current.ActualThemeVariant;
 
     partial void OnCurrentAppThemeChanged(ThemeVariant? oldValue, ThemeVariant newValue)
     {
@@ -31,6 +33,5 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
 
     public SettingsPageViewModel()
     {
-        CurrentAppTheme = Application.Current.ActualThemeVariant;
     }
 }
