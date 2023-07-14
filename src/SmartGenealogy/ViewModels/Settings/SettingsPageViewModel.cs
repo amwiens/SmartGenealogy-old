@@ -3,6 +3,7 @@ using Avalonia.Styling;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 
+using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
 
 using System.Collections.ObjectModel;
@@ -11,7 +12,7 @@ namespace SmartGenealogy.ViewModels.Settings;
 
 public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPageViewModel
 {
-    private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
+    private readonly ISettingService _settingService;
 
     [ObservableProperty]
     private string _currentVersion = typeof(SmartGenealogy.Controls.PageHeaderControl).Assembly.GetName().Version?.ToString();
@@ -27,11 +28,12 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
         if (oldValue != newValue && Application.Current.ActualThemeVariant != newValue)
         {
             Application.Current.RequestedThemeVariant = newValue;
-            _appSettings.CurrentTheme = newValue;
+            _settingService.Settings.CurrentTheme = newValue;
         }
     }
 
-    public SettingsPageViewModel()
+    public SettingsPageViewModel(ISettingService settingService)
     {
+        _settingService = settingService;
     }
 }
