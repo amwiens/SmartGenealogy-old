@@ -1,11 +1,12 @@
 ﻿using Avalonia.Collections;
-using Avalonia.Markup.Xaml.MarkupExtensions;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
 using FluentAvalonia.UI.Controls;
+
+using Serilog;
 
 using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
@@ -19,8 +20,8 @@ namespace SmartGenealogy.ViewModels;
 
 public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewModel, IRecipient<OpenFileChangedMessage>
 {
+    private readonly ILogger _logger;
     private readonly ISettingService _settingService;
-    //private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
 
     [ObservableProperty]
     private ViewModelBase _currentPage;
@@ -46,11 +47,12 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
         IPublishViewModel publishViewModel,
         IToolsViewModel toolsViewModel,
         ISettingsPageViewModel settingsViewModel,
-        ISettingService settingService)
+        ISettingService settingService,
+        ILogger logger)
     {
+        _logger = logger;
         _settingService = settingService;
-        //NavigationFactory = new NavigationFactory(this);
-
+        
         WeakReferenceMessenger.Default.Register<OpenFileChangedMessage>(this);
 
         NavigationItems = new ObservableCollection<NavigationItem>
@@ -75,41 +77,18 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
         SelectedNavigationItem = NavigationItems[0];
         SwitchTab();
+        _logger.Information("Main Window initialized");
         AppDomain.CurrentDomain.ProcessExit += OnExit!;
     }
 
-    //public NavigationFactory NavigationFactory { get; }
-
     public AvaloniaList<MainAppSearchItem> SearchTerms { get; } = new AvaloniaList<MainAppSearchItem>();
-
-    private void SetupNavigation()
-    {
-        //NavigationItems.Clear();
-
-        //NavigationItems.Add(new NavigationItem { Name = "Home", Icon = Symbol.Home, ToolTip = "Dashboard" });
-        //NavigationItems.Add(new NavigationItem { Name = "File", Icon = Symbol.Document, ToolTip = "File" });
-
-        //if (!string.IsNullOrEmpty(_appSettings.FilePath))
-        //{
-        //    NavigationItems.Add(new NavigationItem { Name = "People", Icon = Symbol.People, ToolTip = "People" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Places", Icon = Symbol.Earth, ToolTip = "Places" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Sources", Icon = Symbol.Library, ToolTip = "Sources" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Media", Icon = Symbol.Image, ToolTip = "Media" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Tasks", Icon = Symbol.ShowResults, ToolTip = "Tasks" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Addresses", Icon = Symbol.ContactInfo, ToolTip = "Addresses" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Search", Icon = Symbol.Find, ToolTip = "Search" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Publish", Icon = Symbol.Print, ToolTip = "Publish" });
-        //    NavigationItems.Add(new NavigationItem { Name = "Tools", Icon = Symbol.Repair, ToolTip = "Tools" });
-        //}
-
-        //FooterItems.Clear();
-        //FooterItems.Add(new NavigationItem { Name = "Settings", Icon = Symbol.Settings, ToolTip = "Settings" });
-    }
 
     [RelayCommand]
     private void SwitchTab()
     {
         CurrentPage = SelectedNavigationItem.ViewModel;
+        var name = SelectedNavigationItem.Name;
+        _logger.Information("Switching content to {Name}", name);
     }
 
     public void BuildSearchTerms(MainPageViewModelBase pageItem)
@@ -118,12 +97,14 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
     public void Receive(OpenFileChangedMessage message)
     {
-        SetupNavigation();
+        //SetupNavigation();
+        _logger.Information("Message received: {Message}", message.Value);
     }
 
     private void OnExit(object sender, EventArgs e)
     {
         var json = JsonSerializer.Serialize(_settingService.Settings, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText("Settings.json", json);
+        _logger.Information("Settings saved");
     }
 }

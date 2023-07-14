@@ -1,5 +1,7 @@
 ﻿using Autofac;
 
+using Serilog;
+
 using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Extensions;
@@ -27,7 +29,7 @@ public static class Bootstrapper
         var builder = new ContainerBuilder();
 
         // Instances
-
+        builder.RegisterInstance(Log.Logger).As<ILogger>().SingleInstance();
 
         // Services
         builder.RegisterType<SettingService>().As<ISettingService>().PropertiesAutowired().SingleInstance();
