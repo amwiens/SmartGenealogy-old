@@ -1,4 +1,5 @@
 ﻿using Avalonia.Collections;
+using Avalonia.Markup.Xaml.MarkupExtensions;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -6,17 +7,20 @@ using CommunityToolkit.Mvvm.Messaging;
 
 using FluentAvalonia.UI.Controls;
 
+using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 using SmartGenealogy.Models;
 
 using System.Collections.ObjectModel;
+using System.Text.Json;
 
 namespace SmartGenealogy.ViewModels;
 
 public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewModel, IRecipient<OpenFileChangedMessage>
 {
-    private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
+    private readonly ISettingService _settingService;
+    //private AppSettings.AppSettings _appSettings => AppSettings.AppSettings.Instance;
 
     [ObservableProperty]
     private ViewModelBase _currentPage;
@@ -41,8 +45,10 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
         ISearchViewModel searchViewModel,
         IPublishViewModel publishViewModel,
         IToolsViewModel toolsViewModel,
-        ISettingsPageViewModel settingsViewModel)
+        ISettingsPageViewModel settingsViewModel,
+        ISettingService settingService)
     {
+        _settingService = settingService;
         //NavigationFactory = new NavigationFactory(this);
 
         WeakReferenceMessenger.Default.Register<OpenFileChangedMessage>(this);
@@ -69,6 +75,7 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
         SelectedNavigationItem = NavigationItems[0];
         SwitchTab();
+        AppDomain.CurrentDomain.ProcessExit += OnExit!;
     }
 
     //public NavigationFactory NavigationFactory { get; }
@@ -112,5 +119,11 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
     public void Receive(OpenFileChangedMessage message)
     {
         SetupNavigation();
+    }
+
+    private void OnExit(object sender, EventArgs e)
+    {
+        var json = JsonSerializer.Serialize(_settingService.Settings, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText("Settings.json", json);
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Autofac;
 
+using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Extensions;
+using SmartGenealogy.Services;
 using SmartGenealogy.ViewModels;
 using SmartGenealogy.ViewModels.Addresses;
 using SmartGenealogy.ViewModels.Files;
@@ -28,7 +30,7 @@ public static class Bootstrapper
 
 
         // Services
-
+        builder.RegisterType<SettingService>().As<ISettingService>().PropertiesAutowired().SingleInstance();
 
         // View Models
         builder.RegisterType<HomeViewModel>().As<IHomeViewModel>().PropertiesAutowired().SingleInstance();
@@ -47,6 +49,6 @@ public static class Bootstrapper
 
         var container = builder.Build();
         DependencyInjectionExtension.Resolver = type => container.Resolve(type!);
-
+        SettingExtensions.SettingService = container.Resolve<ISettingService>();
     }
 }

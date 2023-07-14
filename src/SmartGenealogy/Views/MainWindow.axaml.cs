@@ -10,16 +10,20 @@ using FluentAvalonia.Styling;
 using FluentAvalonia.UI.Media;
 using FluentAvalonia.UI.Windowing;
 
-using System.Text.Json;
+using SmartGenealogy.Extensions;
+using SmartGenealogy.Models;
 
 namespace SmartGenealogy.Views;
 
 public partial class MainWindow : AppWindow
 {
+    private Setting _setting;
+
     public MainWindow()
     {
-        //InitializeComponent();
         AvaloniaXamlLoader.Load(this);
+
+        _setting = SettingExtensions.SettingService.Settings;
 
         this.Closing += (sender, e) => SaveWindowSizeAndPosition();
         this.Loaded += MainWindow_Loaded;
@@ -37,16 +41,14 @@ public partial class MainWindow : AppWindow
 
     private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        var settings = await LoadAppSettingsAsync();
-
-        if (File.Exists(Path.Combine(settings.AppDataPath, "settings.json")))
+        if (File.Exists("Settings.json"))
         {
-            this.Width = settings.Width - 1;
-            this.Position = new PixelPoint(settings.X, settings.Y);
-            this.Height = settings.Height;
-            this.Width = settings.Width;
-            this.WindowState = settings.IsMaximized ? WindowState.Maximized : WindowState.Normal;
-            Application.Current.RequestedThemeVariant = settings.CurrentTheme;
+            this.Width = _setting.Width - 1;
+            this.Position = new PixelPoint(_setting.X, _setting.Y);
+            this.Height = _setting.Height;
+            this.Width = _setting.Width;
+            this.WindowState = _setting.IsMaximized ? WindowState.Maximized : WindowState.Normal;
+            Application.Current.RequestedThemeVariant = _setting.CurrentTheme;
         }
         else
         {
@@ -77,48 +79,14 @@ public partial class MainWindow : AppWindow
         }
     }
 
-    private async Task<AppSettings.AppSettings> LoadAppSettingsAsync()
-    {
-        var settings = AppSettings.AppSettings.Instance;
-
-        settings = new AppSettings.AppSettings();
-
-        if (File.Exists(Path.Combine(settings.AppDataPath, "settings.json")))
-        {
-            try
-            {
-                var options = new JsonSerializerOptions();
-                //options.Converters.Add(new DataGridLengthConverter());
-
-                var jsonString = File.ReadAllText(Path.Combine(settings.AppDataPath, "settings.json"));
-                settings = JsonSerializer.Deserialize<AppSettings.AppSettings>(jsonString, options);
-            }
-            catch (Exception)
-            {
-
-            }
-        }
-
-        return settings;
-    }
-
     public void SaveWindowSizeAndPosition()
     {
-        var settings = AppSettings.AppSettings.Instance;
-        settings.IsMaximized = this.WindowState == WindowState.Maximized;
+        _setting.IsMaximized = this.WindowState == WindowState.Maximized;
         this.WindowState = WindowState.Normal;
-        settings.Width = this.Width;
-        settings.Height = this.Height;
-        settings.X = this.Position.X;
-        settings.Y = this.Position.Y;
-
-        SaveAppSettings(settings);
-    }
-
-    private void SaveAppSettings(AppSettings.AppSettings appSettings)
-    {
-        var jsonString = JsonSerializer.Serialize(appSettings);
-        File.WriteAllText(Path.Combine(appSettings.AppDataPath, "settings.json"), jsonString);
+        _setting.Width = this.Width;
+        _setting.Height = this.Height;
+        _setting.X = this.Position.X;
+        _setting.Y = this.Position.Y;
     }
 
     private void TryEnableMicaEffect()
