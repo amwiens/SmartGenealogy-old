@@ -1,8 +1,11 @@
-﻿namespace SmartGenealogy.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public class MainPageViewModelBase : ViewModelBase
+namespace SmartGenealogy.ViewModels;
+
+public partial class MainPageViewModelBase : ViewModelBase
 {
-    public string? NavHeader { get; set; }
+    [ObservableProperty]
+    public string? _navHeader;
 
     public string? IconKey { get; set; }
 

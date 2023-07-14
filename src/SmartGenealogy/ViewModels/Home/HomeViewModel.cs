@@ -4,6 +4,8 @@ using Serilog;
 
 using SmartGenealogy.Contracts.ViewModels;
 
+using static SmartGenealogy.Localization.Resources;
+
 namespace SmartGenealogy.ViewModels.Home;
 
 public partial class HomeViewModel : MainPageViewModelBase, IHomeViewModel
@@ -24,6 +26,8 @@ public partial class HomeViewModel : MainPageViewModelBase, IHomeViewModel
                 ImageUri = "avares://SmartGenealogy/Resources/Images/Documentation.png"
             }
         };
+
+        NavHeader = XAML_Navigation_Home;
 
         _logger.Information("Home view model initialized");
     }

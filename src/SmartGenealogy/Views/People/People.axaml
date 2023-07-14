@@ -9,7 +9,7 @@
              xmlns:conv="using:SmartGenealogy.Converters">
   <ScrollViewer>
     <StackPanel Spacing="-75">
-      <controls:PageHeaderControl TitleText="People"
+      <controls:PageHeaderControl TitleText="{Binding NavHeader}"
                                   Classes="smaller" />
 
     </StackPanel>

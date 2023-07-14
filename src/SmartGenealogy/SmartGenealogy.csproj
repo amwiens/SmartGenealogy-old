@@ -84,6 +84,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Localization\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Views\Addresses\Addresses.axaml.cs">
       <DependentUpon>Addresses.axaml</DependentUpon>
     </Compile>
@@ -120,5 +125,12 @@
     <Compile Update="Views\Tools\Tools.axaml.cs">
       <DependentUpon>Tools.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Localization\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

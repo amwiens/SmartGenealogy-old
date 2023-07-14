@@ -8,6 +8,8 @@ using SmartGenealogy.Contracts;
 using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 
+using static SmartGenealogy.Localization.Resources;
+
 namespace SmartGenealogy.ViewModels.Files;
 
 public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
@@ -26,6 +28,8 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
     {
         _logger = logger;
         _settingService = settingService;
+
+        NavHeader = XAML_Navigation_File;
 
         IsFileOpen = !string.IsNullOrEmpty(_settingService.Settings.FilePath);
         CurrentFile = _settingService.Settings.FilePath;
