@@ -32,7 +32,9 @@ public static class Bootstrapper
         builder.RegisterInstance(Log.Logger).As<ILogger>().SingleInstance();
 
         // Services
+        builder.RegisterType<LocalizationService>().As<ILocalizationService>().PropertiesAutowired().SingleInstance(); ;
         builder.RegisterType<SettingService>().As<ISettingService>().PropertiesAutowired().SingleInstance();
+        builder.RegisterType<UpdateTextService>().As<IUpdateTextService>().PropertiesAutowired().SingleInstance();
 
         // View Models
         builder.RegisterType<HomeViewModel>().As<IHomeViewModel>().PropertiesAutowired().SingleInstance();
@@ -52,5 +54,6 @@ public static class Bootstrapper
         var container = builder.Build();
         DependencyInjectionExtension.Resolver = type => container.Resolve(type!);
         SettingExtensions.SettingService = container.Resolve<ISettingService>();
+        LocalizeExtensions.LocalizationService = container.Resolve<ILocalizationService>();
     }
 }

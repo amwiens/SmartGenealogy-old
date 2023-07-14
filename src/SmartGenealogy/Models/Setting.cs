@@ -44,6 +44,11 @@ public class Setting
     /// </summary>
     public ThemeVariant? CurrentTheme { get; set; }
 
+    /// <summary>
+    /// Language code.
+    /// </summary>
+    public string? LanguageCode { get; set; }
+
     public Setting Clone()
     {
         return (Setting)MemberwiseClone();

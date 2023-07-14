@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:ext="clr-namespace:SmartGenealogy.Extensions"
+             xmlns:contract="clr-namespace:SmartGenealogy.Contracts.ViewModels"
              xmlns:controls="using:SmartGenealogy.Controls"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
-             xmlns:conv="using:SmartGenealogy.Converters">
+             xmlns:vm="using:SmartGenealogy.ViewModels.Files"
+             xmlns:conv="using:SmartGenealogy.Converters"
+             x:DataType="vm:FilesViewModel"
+             DataContext="{ext:DependencyInjection Type=contract:IFileViewModel}"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450">
 
   <UserControl.Resources>
     <conv:ResourceKeyToIconConverter x:Key="ResKeyToIconConv" />
@@ -19,25 +24,25 @@
     <StackPanel Spacing="25"
                 Margin="0 0 0 30"
                 ClipToBounds="False">
-      <controls:PageHeaderControl TitleText="File"
+      <controls:PageHeaderControl TitleText="{Binding NavHeader}"
                                   Classes="smaller" />
 
       <StackPanel Spacing="4"
                   Margin="30 0">
-        <ui:SettingsExpander Header="Create File"
-                             Description="Create a new Smart Genealogy file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_CreateFile_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_CreateFile_Description}"
                              Command="{Binding CreateFileCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource="" />
-        <ui:SettingsExpander Header="Open File"
-                             Description="Open an existing Smart Genealogy file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_OpenFile_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_OpenFile_Description}"
                              Command="{Binding OpenFileCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource="" />
-        <ui:SettingsExpander Header="Restore File"
-                             Description="Restore an existing backup of a Smart Genealogy file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_RestoreFile_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_RestoreFile_Header}"
                              Command="{Binding RestoreFileCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
@@ -48,36 +53,36 @@
                    Margin="0 25 0 0"
                    IsVisible="{Binding IsFileOpen}" />
 
-        <ui:SettingsExpander Header="Backup"
-                             Description="Backs up the current file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_BackupFile_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_BackupFile_Description}"
                              Command="{Binding BackupFileCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource=""
                              IsVisible="{Binding IsFileOpen}" />
-        <ui:SettingsExpander Header="Import Data"
-                             Description="Imports data into the current file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_ImportData_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_ImportData_Description}"
                              Command="{Binding ImportDataCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource=""
                              IsVisible="{Binding IsFileOpen}" />
-        <ui:SettingsExpander Header="Export Data"
-                             Description="Exports data from the current file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_ExportData_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_ExportData_Description}"
                              Command="{Binding ExportDataCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource=""
                              IsVisible="{Binding IsFileOpen}" />
-        <ui:SettingsExpander Header="Tools"
-                             Description="Run tools on the current file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_Tools_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_Tools_Description}"
                              Command="{Binding ToolsCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"
                              IconSource=""
                              IsVisible="{Binding IsFileOpen}" />
-        <ui:SettingsExpander Header="Close File"
-                             Description="Close the current file"
+        <ui:SettingsExpander Header="{ext:LocalizeExtensions XAML_FilePage_CloseFile_Header}"
+                             Description="{ext:LocalizeExtensions XAML_FilePage_CloseFile_Description}"
                              Command="{Binding CloseFileCommand}"
                              IsClickEnabled="True"
                              ClipToBounds="False"

@@ -13,6 +13,8 @@ using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 using SmartGenealogy.Models;
 
+using static SmartGenealogy.Localization.Resources;
+
 using System.Collections.ObjectModel;
 using System.Text.Json;
 
@@ -57,22 +59,22 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
         NavigationItems = new ObservableCollection<NavigationItem>
         {
-            new((ViewModelBase)homeViewModel, "Home", "Home", Symbol.Home),
-            new((ViewModelBase)fileViewModel, "File", "File", Symbol.Document),
-            new((ViewModelBase)peopleViewModel, "People", "People", Symbol.People),
-            new((ViewModelBase)placesViewModel, "Places", "Places", Symbol.Earth),
-            new((ViewModelBase)sourcesViewModel, "Sources", "Sources", Symbol.Library),
-            new((ViewModelBase)mediaViewModel, "Media", "Media", Symbol.Image),
-            new((ViewModelBase)tasksViewModel, "Tasks", "Tasks", Symbol.ShowResults),
-            new((ViewModelBase)addressesViewModel, "Addresses", "Addresses", Symbol.ContactInfo),
-            new((ViewModelBase)searchViewModel, "Search", "Search", Symbol.Find),
-            new((ViewModelBase)publishViewModel, "Publish", "Publish", Symbol.Print),
-            new((ViewModelBase)toolsViewModel, "Tools", "Tools", Symbol.Repair)
+            new((ViewModelBase)homeViewModel, XAML_Navigation_Home, "Home", Symbol.Home),
+            new((ViewModelBase)fileViewModel, XAML_Navigation_File, "File", Symbol.Document),
+            new((ViewModelBase)peopleViewModel, XAML_Navigation_People, "People", Symbol.People),
+            new((ViewModelBase)placesViewModel, XAML_Navigation_Places, "Places", Symbol.Earth),
+            new((ViewModelBase)sourcesViewModel, XAML_Navigation_Sources, "Sources", Symbol.Library),
+            new((ViewModelBase)mediaViewModel, XAML_Navigation_Media, "Media", Symbol.Image),
+            new((ViewModelBase)tasksViewModel, XAML_Navigation_Tasks, "Tasks", Symbol.ShowResults),
+            new((ViewModelBase)addressesViewModel, XAML_Navigation_Addresses, "Addresses", Symbol.ContactInfo),
+            new((ViewModelBase)searchViewModel, XAML_Navigation_Search, "Search", Symbol.Find),
+            new((ViewModelBase)publishViewModel, XAML_Navigation_Publish, "Publish", Symbol.Print),
+            new((ViewModelBase)toolsViewModel, XAML_Navigation_Tools, "Tools", Symbol.Repair)
         };
 
         FooterItems = new ObservableCollection<NavigationItem>
         {
-            new((ViewModelBase)settingsViewModel, "Settings", "Settings", Symbol.Settings)
+            new((ViewModelBase)settingsViewModel, XAML_Navigation_Settings, "Settings", Symbol.Settings)
         };
 
         SelectedNavigationItem = NavigationItems[0];
