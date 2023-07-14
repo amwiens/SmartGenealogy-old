@@ -40,7 +40,7 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
         if (oldValue != newValue && Application.Current?.ActualThemeVariant != newValue)
         {
             Application.Current.RequestedThemeVariant = newValue;
-            _settingService.Settings.CurrentTheme = newValue;
+            _settingService.Settings.CurrentTheme = newValue.Key.ToString();
         }
     }
 
@@ -66,7 +66,7 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
         if (_settingService.Settings.LanguageCode is not null)
             CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(_settingService.Settings.LanguageCode);
         CurrentLanguageIndex = AvailableLanguages.FindIndex(x => x.Name == CultureInfo.CurrentUICulture.Name);
-        CurrentAppTheme = _settingService.Settings.CurrentTheme;
+        CurrentAppTheme = AppThemes.Where(x => x.Key.ToString() == _settingService.Settings.CurrentTheme).SingleOrDefault()!;
 
         _logger.Information("Settings view model initialized");
     }
