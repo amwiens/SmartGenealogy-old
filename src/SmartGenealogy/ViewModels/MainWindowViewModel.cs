@@ -13,10 +13,10 @@ using SmartGenealogy.Contracts.ViewModels;
 using SmartGenealogy.Messages;
 using SmartGenealogy.Models;
 
-using static SmartGenealogy.Localization.Resources;
-
 using System.Collections.ObjectModel;
 using System.Text.Json;
+
+using static SmartGenealogy.Localization.Resources;
 
 namespace SmartGenealogy.ViewModels;
 
@@ -25,8 +25,21 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
     private readonly ILogger _logger;
     private readonly ISettingService _settingService;
 
+    private readonly IHomeViewModel _homeViewModel;
+    private readonly IFileViewModel _fileViewModel;
+    private readonly IPeopleViewModel _peopleViewModel;
+    private readonly IPlacesViewModel _placesViewModel;
+    private readonly ISourcesViewModel _sourcesViewModel;
+    private readonly IMediaViewModel _mediaViewModel;
+    private readonly ITasksViewModel _tasksViewModel;
+    private readonly IAddressesViewModel _addressesViewModel;
+    private readonly ISearchViewModel _searchViewModel;
+    private readonly IPublishViewModel _publishViewModel;
+    private readonly IToolsViewModel _toolsViewModel;
+    private readonly ISettingsPageViewModel _settingsViewModel;
+
     [ObservableProperty]
-    private ViewModelBase _currentPage;
+    private ViewModelBase? _currentPage;
 
     [ObservableProperty]
     private NavigationItem _selectedNavigationItem;
@@ -54,33 +67,56 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
     {
         _logger = logger;
         _settingService = settingService;
+
+        _homeViewModel = homeViewModel;
+        _fileViewModel = fileViewModel;
+        _peopleViewModel = peopleViewModel;
+        _placesViewModel = placesViewModel;
+        _sourcesViewModel = sourcesViewModel;
+        _mediaViewModel = mediaViewModel;
+        _tasksViewModel = tasksViewModel;
+        _addressesViewModel = addressesViewModel;
+        _searchViewModel = searchViewModel;
+        _publishViewModel = publishViewModel;
+        _toolsViewModel = toolsViewModel;
+        _settingsViewModel = settingsViewModel;
         
         WeakReferenceMessenger.Default.Register<OpenFileChangedMessage>(this);
 
-        NavigationItems = new ObservableCollection<NavigationItem>
-        {
-            new((ViewModelBase)homeViewModel, XAML_Navigation_Home, "Home", Symbol.Home),
-            new((ViewModelBase)fileViewModel, XAML_Navigation_File, "File", Symbol.Document),
-            new((ViewModelBase)peopleViewModel, XAML_Navigation_People, "People", Symbol.People),
-            new((ViewModelBase)placesViewModel, XAML_Navigation_Places, "Places", Symbol.Earth),
-            new((ViewModelBase)sourcesViewModel, XAML_Navigation_Sources, "Sources", Symbol.Library),
-            new((ViewModelBase)mediaViewModel, XAML_Navigation_Media, "Media", Symbol.Image),
-            new((ViewModelBase)tasksViewModel, XAML_Navigation_Tasks, "Tasks", Symbol.ShowResults),
-            new((ViewModelBase)addressesViewModel, XAML_Navigation_Addresses, "Addresses", Symbol.ContactInfo),
-            new((ViewModelBase)searchViewModel, XAML_Navigation_Search, "Search", Symbol.Find),
-            new((ViewModelBase)publishViewModel, XAML_Navigation_Publish, "Publish", Symbol.Print),
-            new((ViewModelBase)toolsViewModel, XAML_Navigation_Tools, "Tools", Symbol.Repair)
-        };
-
-        FooterItems = new ObservableCollection<NavigationItem>
-        {
-            new((ViewModelBase)settingsViewModel, XAML_Navigation_Settings, "Settings", Symbol.Settings)
-        };
-
+        SetupNavigation();
         SelectedNavigationItem = NavigationItems[0];
         SwitchTab();
         _logger.Information("Main Window initialized");
         AppDomain.CurrentDomain.ProcessExit += OnExit!;
+    }
+
+    private void SetupNavigation()
+    {
+        NavigationItems.Clear();
+        NavigationItems = new ObservableCollection<NavigationItem>
+        {
+            new((ViewModelBase)_homeViewModel, XAML_Navigation_Home, "Home", Symbol.Home),
+            new((ViewModelBase)_fileViewModel, XAML_Navigation_File, "File", Symbol.Document),
+        };
+
+        if (!string.IsNullOrEmpty(_settingService.Settings.FilePath))
+        {
+            NavigationItems.Add(new((ViewModelBase)_peopleViewModel, XAML_Navigation_People, "People", Symbol.People));
+            NavigationItems.Add(new((ViewModelBase)_placesViewModel, XAML_Navigation_Places, "Places", Symbol.Earth));
+            NavigationItems.Add(new((ViewModelBase)_sourcesViewModel, XAML_Navigation_Sources, "Sources", Symbol.Library));
+            NavigationItems.Add(new((ViewModelBase)_mediaViewModel, XAML_Navigation_Media, "Media", Symbol.Image));
+            NavigationItems.Add(new((ViewModelBase)_tasksViewModel, XAML_Navigation_Tasks, "Tasks", Symbol.ShowResults));
+            NavigationItems.Add(new((ViewModelBase)_addressesViewModel, XAML_Navigation_Addresses, "Addresses", Symbol.ContactInfo));
+            NavigationItems.Add(new((ViewModelBase)_searchViewModel, XAML_Navigation_Search, "Search", Symbol.Find));
+            NavigationItems.Add(new((ViewModelBase)_publishViewModel, XAML_Navigation_Publish, "Publish", Symbol.Print));
+            NavigationItems.Add(new((ViewModelBase)_toolsViewModel, XAML_Navigation_Tools, "Tools", Symbol.Repair));
+        }
+
+        FooterItems.Clear();
+        FooterItems = new ObservableCollection<NavigationItem>
+        {
+            new((ViewModelBase)_settingsViewModel, XAML_Navigation_Settings, "Settings", Symbol.Settings)
+        };
     }
 
     public AvaloniaList<MainAppSearchItem> SearchTerms { get; } = new AvaloniaList<MainAppSearchItem>();
@@ -99,7 +135,7 @@ public partial class MainWindowViewModel : ObservableRecipient, IMainWindowViewM
 
     public void Receive(OpenFileChangedMessage message)
     {
-        //SetupNavigation();
+        SetupNavigation();
         _logger.Information("Message received: {Message}", message.Value);
     }
 

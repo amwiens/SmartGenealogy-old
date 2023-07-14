@@ -124,6 +124,15 @@ namespace SmartGenealogy.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current File:.
+        /// </summary>
+        internal static string XAML_FilePage_CurrentFile {
+            get {
+                return ResourceManager.GetString("XAML_FilePage_CurrentFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exports data from the current file.
         /// </summary>
         internal static string XAML_FilePage_ExportData_Description {

@@ -138,6 +138,9 @@
   <data name="XAML_FilePage_CreateFile_Header" xml:space="preserve">
     <value>Create File</value>
   </data>
+  <data name="XAML_FilePage_CurrentFile" xml:space="preserve">
+    <value>Current File:</value>
+  </data>
   <data name="XAML_FilePage_ExportData_Description" xml:space="preserve">
     <value>Exports data from the current file</value>
   </data>
