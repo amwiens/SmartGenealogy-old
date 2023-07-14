@@ -70,6 +70,78 @@ namespace SmartGenealogy.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string MsgBox_Button_No {
+            get {
+                return ResourceManager.GetString("MsgBox_Button_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No and Don&apos;t Ask Again.
+        /// </summary>
+        internal static string MsgBox_Button_NoNoAsk {
+            get {
+                return ResourceManager.GetString("MsgBox_Button_NoNoAsk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string MsgBox_Button_Yes {
+            get {
+                return ResourceManager.GetString("MsgBox_Button_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes and Don&apos;t Ask Again.
+        /// </summary>
+        internal static string MsgBox_Button_YesNoAsk {
+            get {
+                return ResourceManager.GetString("MsgBox_Button_YesNoAsk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failure.
+        /// </summary>
+        internal static string MsgBox_Title_Failure {
+            get {
+                return ResourceManager.GetString("MsgBox_Title_Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notice.
+        /// </summary>
+        internal static string MsgBox_Title_Notice {
+            get {
+                return ResourceManager.GetString("MsgBox_Title_Notice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success.
+        /// </summary>
+        internal static string MsgBox_Title_Success {
+            get {
+                return ResourceManager.GetString("MsgBox_Title_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string MsgBox_Title_Warning {
+            get {
+                return ResourceManager.GetString("MsgBox_Title_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back up the current file.
         /// </summary>
         internal static string XAML_FilePage_BackupFile_Description {

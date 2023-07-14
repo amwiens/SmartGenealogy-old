@@ -32,7 +32,8 @@ public static class Bootstrapper
         builder.RegisterInstance(Log.Logger).As<ILogger>().SingleInstance();
 
         // Services
-        builder.RegisterType<LocalizationService>().As<ILocalizationService>().PropertiesAutowired().SingleInstance(); ;
+        builder.RegisterType<LocalizationService>().As<ILocalizationService>().PropertiesAutowired().SingleInstance();
+        builder.RegisterType<MessageBoxService>().PropertiesAutowired().As<IMessageBoxService>();
         builder.RegisterType<SettingService>().As<ISettingService>().PropertiesAutowired().SingleInstance();
         builder.RegisterType<UpdateTextService>().As<IUpdateTextService>().PropertiesAutowired().SingleInstance();
 
