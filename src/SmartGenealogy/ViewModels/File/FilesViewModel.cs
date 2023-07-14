@@ -16,6 +16,7 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
 {
     private readonly ILogger _logger;
     private readonly ISettingService _settingService;
+    public IMessageBoxService MessageBoxService { get; init; }
 
     [ObservableProperty]
     private bool _isFileOpen;
@@ -37,51 +38,57 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
     }
 
     [RelayCommand]
-    private void CreateFile()
+    private async Task CreateFile()
     {
         _logger.Information("Creating file");
         _settingService.Settings.FilePath = "create";
         IsFileOpen = true;
         CurrentFile = $"{XAML_FilePage_CurrentFile} {_settingService.Settings.FilePath}";
         WeakReferenceMessenger.Default.Send(new OpenFileChangedMessage(true));
+        await MessageBoxService.CreateSuccessMessageBox("File created");
     }
 
     [RelayCommand]
-    private void OpenFile()
+    private async Task OpenFile()
     {
         _logger.Information("Opening file");
         _settingService.Settings.FilePath = "open";
         IsFileOpen = true;
         CurrentFile = $"Current File: {_settingService.Settings.FilePath}";
         WeakReferenceMessenger.Default.Send(new OpenFileChangedMessage(true));
+        await MessageBoxService.CreateSuccessMessageBox("File opened");
     }
 
     [RelayCommand]
-    private void RestoreFile()
+    private async Task RestoreFile()
     {
         _logger.Information("Restoring file");
         _settingService.Settings.FilePath = "restore";
         IsFileOpen = true;
         CurrentFile = $"CurrentFile: {_settingService.Settings.FilePath}";
         WeakReferenceMessenger.Default.Send(new OpenFileChangedMessage(true));
+        await MessageBoxService.CreateSuccessMessageBox("File restored");
     }
 
     [RelayCommand]
-    private void BackupFile()
+    private async Task BackupFile()
     {
         _logger.Information("Backing up file");
+        await MessageBoxService.CreateSuccessMessageBox("File backed up");
     }
 
     [RelayCommand]
-    private void ImportData()
+    private async Task ImportData()
     {
         _logger.Information("Importing data");
+        await MessageBoxService.CreateSuccessMessageBox("Data imported");
     }
 
     [RelayCommand]
-    private void ExportData()
+    private async Task ExportData()
     {
         _logger.Information("Exporting data");
+        await MessageBoxService.CreateSuccessMessageBox("Data exported");
     }
 
     [RelayCommand]
