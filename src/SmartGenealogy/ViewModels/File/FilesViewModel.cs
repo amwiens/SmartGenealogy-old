@@ -32,7 +32,7 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
         NavHeader = XAML_Navigation_File;
 
         IsFileOpen = !string.IsNullOrEmpty(_settingService.Settings.FilePath);
-        CurrentFile = _settingService.Settings.FilePath;
+        CurrentFile = $"{XAML_FilePage_CurrentFile} {_settingService.Settings.FilePath}";
         _logger.Information("File view model initialized");
     }
 
@@ -42,7 +42,7 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
         _logger.Information("Creating file");
         _settingService.Settings.FilePath = "create";
         IsFileOpen = true;
-        CurrentFile = $"CurrentFile: {_settingService.Settings.FilePath}";
+        CurrentFile = $"{XAML_FilePage_CurrentFile} {_settingService.Settings.FilePath}";
         WeakReferenceMessenger.Default.Send(new OpenFileChangedMessage(true));
     }
 
@@ -52,7 +52,7 @@ public partial class FilesViewModel : MainPageViewModelBase, IFileViewModel
         _logger.Information("Opening file");
         _settingService.Settings.FilePath = "open";
         IsFileOpen = true;
-        CurrentFile = $"CurrentFile: {_settingService.Settings.FilePath}";
+        CurrentFile = $"Current File: {_settingService.Settings.FilePath}";
         WeakReferenceMessenger.Default.Send(new OpenFileChangedMessage(true));
     }
 
