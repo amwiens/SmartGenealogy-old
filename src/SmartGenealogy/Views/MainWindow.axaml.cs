@@ -48,7 +48,12 @@ public partial class MainWindow : AppWindow
             this.Height = _setting.Height;
             this.Width = _setting.Width;
             this.WindowState = _setting.IsMaximized ? WindowState.Maximized : WindowState.Normal;
-            Application.Current.RequestedThemeVariant = _setting.CurrentTheme;
+            Application.Current.RequestedThemeVariant = _setting.CurrentTheme switch
+            {
+                "Dark" => ThemeVariant.Dark,
+                "Light" => ThemeVariant.Light,
+                _ => ThemeVariant.Default
+            };
         }
         else
         {

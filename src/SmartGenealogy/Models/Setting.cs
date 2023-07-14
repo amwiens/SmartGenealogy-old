@@ -42,7 +42,7 @@ public class Setting
     /// <summary>
     /// Current theme.
     /// </summary>
-    public ThemeVariant? CurrentTheme { get; set; }
+    public string? CurrentTheme { get; set; }
 
     /// <summary>
     /// Language code.
