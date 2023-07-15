@@ -37,7 +37,7 @@ public partial class SettingsPageViewModel : MainPageViewModelBase, ISettingsPag
 
     partial void OnCurrentAppThemeChanged(ThemeVariant? oldValue, ThemeVariant newValue)
     {
-        if (oldValue != newValue && Application.Current?.ActualThemeVariant != newValue)
+        if (oldValue != newValue && Application.Current?.ActualThemeVariant != newValue && newValue is not null)
         {
             Application.Current.RequestedThemeVariant = newValue;
             _settingService.Settings.CurrentTheme = newValue.Key.ToString();
