@@ -36,6 +36,8 @@ public static class Bootstrapper
         builder.RegisterType<MessageBoxService>().PropertiesAutowired().As<IMessageBoxService>();
         builder.RegisterType<SettingService>().As<ISettingService>().PropertiesAutowired().SingleInstance();
         builder.RegisterType<UpdateTextService>().As<IUpdateTextService>().PropertiesAutowired().SingleInstance();
+        builder.RegisterType<NavigationViewModel>().As<INavigationService>().SingleInstance();
+
 
         // View Models
         builder.RegisterType<HomeViewModel>().As<IHomeViewModel>().PropertiesAutowired().SingleInstance();
